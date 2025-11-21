@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFex Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000000;
+            color: #FFFFFF;
+            font-family: 'Inter', 'Poppins', Arial, sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 60px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.35);
+            animation: fadeIn 1s ease-in;
+        }
+
+        .buttons-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            background: #111111;
+            color: #FFFFFF;
+            padding: 12px 20px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 12px 2px rgba(255,255,255,0.35);
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px 4px rgba(255,255,255,0.5);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            box-shadow: 0 0 8px 1px rgba(255,255,255,0.2);
+        }
+
+        .btn.disabled:hover {
+            transform: none;
+            box-shadow: 0 0 8px 1px rgba(255,255,255,0.2);
+        }
+
+        .wait-text {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            margin-right: 8px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3rem;
+                margin-bottom: 40px;
+            }
+
+            .buttons-grid {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="logo">IFex web</h1>
+        
+        <div class="buttons-grid">
+            <a href="jowa-gpt/index.html" class="btn">Install jowa-gpt</a>
+            
+            <a href="jowa-football-ai/index.html" class="btn">Install jowa-football-ai</a>
+            
+            <button class="btn disabled">
+                <span class="wait-text">wait</span> IFelxOS
+            </button>
+            
+            <button class="btn disabled">
+                <span class="wait-text">wait</span> IFelx shop
+            </button>
+        </div>
+    </div>
+</body>
+</html>

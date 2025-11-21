@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jowa Football AI - Download</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Poppins', Arial, sans-serif;
+            background-color: #000000;
+            color: #FFFFFF;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .open-source-badge {
+            display: inline-block;
+            background: #111111;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+            box-shadow: 0 0 12px 2px rgba(255,255,255,0.35);
+        }
+
+        .description-section {
+            background: #111111;
+            padding: 40px;
+            border-radius: 14px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 12px 2px rgba(255,255,255,0.35);
+        }
+
+        .description-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .description-section p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .features {
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-title {
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .controls-section {
+            background: #111111;
+            padding: 40px;
+            border-radius: 14px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 12px 2px rgba(255,255,255,0.35);
+        }
+
+        .controls-section h2 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .player-controls {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+        }
+
+        .player-controls h3 {
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .player-controls p {
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .download-section {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .download-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #111111;
+            color: #FFFFFF;
+            padding: 12px 20px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 12px 2px rgba(255,255,255,0.35);
+            min-width: 250px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px 4px rgba(255,255,255,0.5);
+        }
+
+        .download-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .platform-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 8px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .description-section, .controls-section {
+                padding: 25px;
+            }
+
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jowa Football AI</h1>
+            <p class="subtitle">AI-Powered 3v3 Football Game</p>
+            <span class="open-source-badge">Open Source</span>
+        </header>
+
+        <section class="description-section">
+            <h2>About the Game</h2>
+            <p>Jowa Football AI is an open-source football simulation game featuring intelligent AI players that learn and adapt using Q-table reinforcement learning. Experience dynamic 3v3 matches where AI opponents continuously improve their gameplay.</p>
+            
+            <div class="features">
+                <div class="feature-item">
+                    <div class="feature-title">🤖 Advanced AI Learning</div>
+                    <p>AI players learn and improve using Q-table reinforcement learning algorithms</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">🎮 Multiple Play Modes</div>
+                    <p>Play solo against AI or team up with friends in 1, 2, or 3 player modes</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">⚽ 3v3 Football Action</div>
+                    <p>Fast-paced 3v3 matches with intelligent team coordination</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">💻 Cross-Platform</div>
+                    <p>Available for both Windows and Linux operating systems</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="controls-section">
+            <h2>Game Controls</h2>
+            
+            <div class="player-controls">
+                <h3>Player 1</h3>
+                <p><strong>↑</strong> Up | <strong>↓</strong> Down | <strong>←</strong> Left | <strong>→</strong> Right</p>
+            </div>
+
+            <div class="player-controls">
+                <h3>Player 2</h3>
+                <p><strong>U</strong> Up | <strong>J</strong> Down | <strong>G</strong> Left | <strong>K</strong> Right</p>
+            </div>
+
+            <div class="player-controls">
+                <h3>Player 3</h3>
+                <p><strong>W</strong> Up | <strong>S</strong> Down | <strong>A</strong> Left | <strong>D</strong> Right</p>
+            </div>
+        </section>
+
+        <div class="download-buttons">
+            <a href="./download/jowa-football-ai-with-players.py" class="download-btn" download>
+                <img src="wpng.png" alt="Windows" class="platform-icon">
+                Download for Windows
+            </a>
+
+            <a href="./download/jowa-football-ai-with-players.py" class="download-btn" download>
+                <img src="lpng.png" alt="Linux" class="platform-icon">
+                Download for Linux
+            </a>
+        </div>
+
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Jowa Football AI - Open Source Project</p>
+        </footer>
+    </div>
+</body>
+</html>
