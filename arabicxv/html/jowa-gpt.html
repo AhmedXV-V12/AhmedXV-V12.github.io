@@ -13,7 +13,7 @@
             padding: 0;
         }
         header {
-            background-color: #4CAF50;
+            background-color: #000000;
             color: white;
             text-align: center;
             padding: 2rem 1rem;
@@ -27,22 +27,31 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         h1, h2 {
-            color: #4CAF50;
+            color: #000000;
         }
-        p {
+        p, ul {
             line-height: 1.6;
             margin-bottom: 1rem;
         }
         ul {
-            margin-bottom: 1rem;
+            padding-left: 20px;
         }
         a {
-            color: #4CAF50;
+            color: #000000;
             text-decoration: none;
             font-weight: bold;
         }
         a:hover {
             text-decoration: underline;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
         }
         footer {
             text-align: center;
@@ -54,50 +63,132 @@
 </head>
 <body>
     <header>
-        <h1>نموذج جووا</h1>
+        <h1 id="title">نموذج جووا</h1>
+        <button id="langBtn">تغيير اللغة</button>
     </header>
 
     <main>
-        <h2>ما هو نموذج جووا؟</h2>
-        <p>
+        <h2 id="whatTitle">ما هو نموذج جووا؟</h2>
+        <p id="whatDesc">
             نموذج جووا هو نموذج ذكاء اصطناعي متقدم مصمم لتحليل ومعالجة البيانات بشكل فعال، ويوفر إمكانيات متقدمة في التعلم الآلي وفهم النصوص.
         </p>
 
-        <h2>مميزات نموذج جووا</h2>
-        <ul>
+        <h2 id="featuresTitle">مميزات نموذج جووا</h2>
+        <ul id="featuresList">
             <li>معالجة النصوص باللغة العربية بشكل طبيعي.</li>
             <li>إمكانية التعلم من البيانات الجديدة باستمرار.</li>
             <li>تقديم إجابات دقيقة وسريعة على الاستفسارات.</li>
             <li>تصميم مناسب للتكامل مع التطبيقات والمواقع المختلفة.</li>
         </ul>
 
-        <h2>إصدارات نموذج جووا</h2>
-        <p>
+        <h2 id="versionsTitle">إصدارات نموذج جووا</h2>
+        <p id="ver1">
             <strong>JowaMiniGPT1:</strong> النسخة الأولى من نموذج جووا، وهي مغلقة المصدر وبسيطة جدًا في الفهم، مخصصة للمهام البسيطة والتجريبية.
         </p>
-        <p>
+        <p id="ver2">
             <strong>Jowa-GPT2:</strong> النسخة الثانية، وهي محسّنة بشكل كبير مقارنة بالنسخة الأولى، تقدم أداء أفضل وقدرة أكبر على فهم النصوص والردود المعقدة.
         </p>
 
-        <h2>الصانع</h2>
-        <p>
+        <h2 id="creatorTitle">الصانع</h2>
+        <p id="creatorDesc">
             الصانع: أحمد_XV<br>
             عمر الصانع: 12 سنة
         </p>
 
-        <h2>كيفية استخدام نموذج جووا</h2>
-        <p>
+        <h2 id="usageTitle">كيفية استخدام نموذج جووا</h2>
+        <p id="usageDesc">
             يمكن استخدام نموذج جووا في تطبيقات الدردشة، البحث الذكي، تحليل النصوص، وتطوير أنظمة مساعدة تعتمد على الذكاء الاصطناعي.
         </p>
 
-        <h2>رابط صفحة جووا الرئيسية</h2>
+        <h2 id="linkTitle">رابط صفحة جووا الرئيسية</h2>
         <p>
-            <a href="https://ahmedxv-v12.github.io/jowa-gpt/index.html" target="_blank">اضغط هنا للدخول إلى صفحة جووا الرئيسية</a>
+            <a href="https://ahmedxv-v12.github.io/jowa-gpt/index.html" target="_blank" id="mainLink">اضغط هنا للدخول إلى صفحة جووا الرئيسية</a>
         </p>
     </main>
 
     <footer>
         © 2025 نموذج جووا
     </footer>
+
+    <script>
+        const langBtn = document.getElementById('langBtn');
+        let isArabic = true;
+
+        const arabicTexts = {
+            title: 'نموذج جووا',
+            whatTitle: 'ما هو نموذج جووا؟',
+            whatDesc: 'نموذج جووا هو نموذج ذكاء اصطناعي متقدم مصمم لتحليل ومعالجة البيانات بشكل فعال، ويوفر إمكانيات متقدمة في التعلم الآلي وفهم النصوص.',
+            featuresTitle: 'مميزات نموذج جووا',
+            featuresList: [
+                'معالجة النصوص باللغة العربية بشكل طبيعي.',
+                'إمكانية التعلم من البيانات الجديدة باستمرار.',
+                'تقديم إجابات دقيقة وسريعة على الاستفسارات.',
+                'تصميم مناسب للتكامل مع التطبيقات والمواقع المختلفة.'
+            ],
+            versionsTitle: 'إصدارات نموذج جووا',
+            ver1: 'JowaMiniGPT1: النسخة الأولى من نموذج جووا، وهي مغلقة المصدر وبسيطة جدًا في الفهم، مخصصة للمهام البسيطة والتجريبية.',
+            ver2: 'Jowa-GPT2: النسخة الثانية، وهي محسّنة بشكل كبير مقارنة بالنسخة الأولى، تقدم أداء أفضل وقدرة أكبر على فهم النصوص والردود المعقدة.',
+            creatorTitle: 'الصانع',
+            creatorDesc: 'الصانع: أحمد_XV\nعمر الصانع: 12 سنة',
+            usageTitle: 'كيفية استخدام نموذج جووا',
+            usageDesc: 'يمكن استخدام نموذج جووا في تطبيقات الدردشة، البحث الذكي، تحليل النصوص، وتطوير أنظمة مساعدة تعتمد على الذكاء الاصطناعي.',
+            mainLink: 'اضغط هنا للدخول إلى صفحة جووا الرئيسية'
+        };
+
+        const englishTexts = {
+            title: 'Jowa Model',
+            whatTitle: 'What is Jowa Model?',
+            whatDesc: 'Jowa is an advanced AI model designed to efficiently analyze and process data, providing advanced machine learning and text understanding capabilities.',
+            featuresTitle: 'Jowa Model Features',
+            featuresList: [
+                'Natural processing of Arabic text.',
+                'Ability to learn from new data continuously.',
+                'Provide accurate and fast responses.',
+                'Designed for easy integration with applications and websites.'
+            ],
+            versionsTitle: 'Jowa Model Versions',
+            ver1: 'JowaMiniGPT1: The first version of Jowa, closed-source and very simple in understanding, designed for basic and experimental tasks.',
+            ver2: 'Jowa-GPT2: The second version, significantly improved compared to the first version, offering better performance and deeper text understanding.',
+            creatorTitle: 'Creator',
+            creatorDesc: 'Creator: Ahmed_XV\nCreator Age: 12',
+            usageTitle: 'How to use Jowa Model',
+            usageDesc: 'Jowa can be used in chat applications, smart search, text analysis, and developing AI-based assistant systems.',
+            mainLink: 'Click here to access the Jowa main page'
+        };
+
+        langBtn.addEventListener('click', () => {
+            const texts = isArabic ? englishTexts : arabicTexts;
+
+            document.getElementById('title').innerText = texts.title;
+            document.getElementById('whatTitle').innerText = texts.whatTitle;
+            document.getElementById('whatDesc').innerText = texts.whatDesc;
+            document.getElementById('featuresTitle').innerText = texts.featuresTitle;
+
+            const featureListEl = document.getElementById('featuresList');
+            featureListEl.innerHTML = '';
+            texts.featuresList.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                featureListEl.appendChild(li);
+            });
+
+            document.getElementById('versionsTitle').innerText = texts.versionsTitle;
+            document.getElementById('ver1').innerText = texts.ver1;
+            document.getElementById('ver2').innerText = texts.ver2;
+
+            document.getElementById('creatorTitle').innerText = texts.creatorTitle;
+            document.getElementById('creatorDesc').innerText = texts.creatorDesc;
+
+            document.getElementById('usageTitle').innerText = texts.usageTitle;
+            document.getElementById('usageDesc').innerText = texts.usageDesc;
+
+            document.getElementById('mainLink').innerText = texts.mainLink;
+
+            // تغيير اتجاه الصفحة عند التحويل للإنجليزية
+            document.documentElement.dir = isArabic ? 'ltr' : 'rtl';
+
+            isArabic = !isArabic;
+        });
+    </script>
 </body>
 </html>
