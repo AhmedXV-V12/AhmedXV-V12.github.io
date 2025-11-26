@@ -35,6 +35,7 @@
             padding: 2rem 1rem;
             text-align: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         .header-content {
@@ -44,6 +45,22 @@
             flex-direction: column;
             align-items: center;
             gap: 1rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
@@ -177,14 +194,10 @@
         .creator-avatar {
             width: 80px;
             height: 80px;
-            background: var(--light-gray);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: var(--primary-color);
+            object-fit: cover;
             border: 3px solid var(--primary-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         footer {
@@ -241,6 +254,9 @@
 <body>
     <header>
         <div class="header-content">
+            <div class="logo-container">
+                <img src="./jowa-gpt/logo.png" alt="Jowa Logo" class="logo" id="jowaLogo">
+            </div>
             <h1 id="title">Jowa Model</h1>
             <p class="subtitle" id="subtitle">Advanced AI for natural language processing</p>
             <div class="lang-toggle">
@@ -288,7 +304,7 @@
         <section class="card">
             <h2 id="creatorTitle">Creator</h2>
             <div class="creator-info">
-                <div class="creator-avatar">AX</div>
+                <img src="./logo/axv.png" alt="AXV Logo" class="creator-avatar" id="axvLogo">
                 <div>
                     <p id="creatorDesc">
                         <strong>Creator:</strong> Ahmed_XV<br>
@@ -370,6 +386,17 @@
             usageDesc: 'يمكن دمج جووا في تطبيقات مختلفة بما في ذلك أنظمة الدردشة، محركات البحث الذكية، أدوات تحليل النصوص، وأنظمة المساعدة القائمة على الذكاء الاصطناعي. يوفر واجهات برمجة لتسهيل التنفيذ والتخصيص حسب الاحتياجات المحددة.',
             mainLink: 'اضغط هنا للدخول إلى صفحة جووا الرئيسية',
             langText: 'English'
+        };
+
+        // Handle image loading errors
+        document.getElementById('jowaLogo').onerror = function() {
+            this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNDAiIGN5PSI0MCIgcj0iNDAiIGZpbGw9IiM0YTU1NjgiLz4KPHBhdGggZD0iTTI1IDM1TDM1IDQ1TDU1IDI1IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K';
+            this.alt = 'Jowa Logo Placeholder';
+        };
+
+        document.getElementById('axvLogo').onerror = function() {
+            this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNDAiIGN5PSI0MCIgcj0iNDAiIGZpbGw9IiM3MTgwOTYiLz4KPHN0eWxlPi50ZXh0IHsgZmlsbDogd2hpdGU7IGZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC13ZWlnaHQ6IGJvbGQ7IGZvbnQtc2l6ZTogMjRweDsgfTwvc3R5bGU+Cjx0ZXh0IHg9IjQwIiB5PSI0OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRleHQiPkFYVjwvdGV4dD4KPC9zdmc+';
+            this.alt = 'AXV Logo Placeholder';
         };
 
         langBtn.addEventListener('click', () => {
