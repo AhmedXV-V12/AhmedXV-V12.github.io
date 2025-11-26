@@ -28,6 +28,28 @@
         max-width: 80%;
     }
 
+    .search-container {
+        margin: 20px auto;
+        width: 90%;
+        max-width: 500px;
+    }
+
+    #searchInput {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 16px;
+        border: 2px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: all 0.3s;
+        text-align: center;
+    }
+
+    #searchInput:focus {
+        border-color: #007BFF;
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    }
+
     .container {
         margin: 20px auto;
         width: 90%;
@@ -36,6 +58,7 @@
         border-radius: 15px;
         background: linear-gradient(135deg, #ffffff 0%, #f2f2f2 100%);
         box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        min-height: 200px;
     }
 
     .item {
@@ -43,6 +66,11 @@
         font-size: 18px;
         font-weight: bold;
         padding: 8px;
+        display: none; /* سيتم إظهار العناصر المطابقة فقط */
+    }
+
+    .item.visible {
+        display: block;
     }
 
     a {
@@ -60,6 +88,13 @@
         background-color: rgba(0, 123, 255, 0.05);
     }
 
+    .no-results {
+        display: none;
+        color: #666;
+        font-style: italic;
+        margin-top: 20px;
+    }
+
     p.footer {
         margin-top: 30px;
         font-size: 0.8rem;
@@ -74,10 +109,8 @@
             margin-top: 15px;
         }
         
-        .container {
+        .container, .search-container {
             width: 95%;
-            padding: 10px;
-            margin: 15px auto;
         }
         
         .item {
@@ -87,6 +120,11 @@
         
         a {
             padding: 8px;
+        }
+        
+        #searchInput {
+            padding: 10px 15px;
+            font-size: 14px;
         }
         
         p.footer {
@@ -101,7 +139,7 @@
             width: 140px;
         }
         
-        .container {
+        .container, .search-container {
             width: 85%;
         }
     }
@@ -111,8 +149,16 @@
 
 <img id="logo" src="logo.png" alt="logo">
 
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="ابحث عن موضوع...">
+</div>
+
 <div class="container" id="filesBox">
     يتم التحميل...
+</div>
+
+<div class="no-results" id="noResults">
+    لم يتم العثور على نتائج مطابقة للبحث.
 </div>
 
 <script>
@@ -123,17 +169,91 @@ fetch('files.txt')
     const box = document.getElementById("filesBox");
     box.innerHTML = "";
     const lines = text.split(/\r?\n/).filter(line => line.trim() !== '');
+    
+    // حفظ القائمة الأصلية للاستخدام في البحث
+    window.allItems = [];
+    
     lines.forEach(file => {
         const name = file.replace('.html','');
         const div = document.createElement('div');
-        div.className = 'item';
+        div.className = 'item visible';
         div.innerHTML = `<a href="/arabicxv/html/${file}">${name}</a>`;
         box.appendChild(div);
+        
+        // حفظ العنصر للبحث
+        window.allItems.push({
+            element: div,
+            name: name,
+            file: file
+        });
     });
+    
+    // إعداد البحث
+    setupSearch();
 })
 .catch(() => {
     document.getElementById("filesBox").innerText = "تعذّر تحميل الملفات.";
 });
+
+// دالة لإعداد وظيفة البحث
+function setupSearch() {
+    const searchInput = document.getElementById('searchInput');
+    const noResults = document.getElementById('noResults');
+    
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.trim().toLowerCase();
+        let visibleCount = 0;
+        
+        // البحث في جميع العناصر
+        window.allItems.forEach(item => {
+            const matches = item.name.toLowerCase().includes(searchTerm);
+            
+            if (matches || searchTerm === '') {
+                item.element.classList.add('visible');
+                visibleCount++;
+            } else {
+                item.element.classList.remove('visible');
+            }
+        });
+        
+        // إظهار رسالة عدم وجود نتائج إذا لزم الأمر
+        if (visibleCount === 0 && searchTerm !== '') {
+            noResults.style.display = 'block';
+        } else {
+            noResults.style.display = 'none';
+        }
+    });
+    
+    // إضافة زر مسح البحث (للتجربة الأفضل على الأجهزة المحمولة)
+    searchInput.style.paddingRight = '40px';
+    searchInput.parentElement.style.position = 'relative';
+    
+    const clearButton = document.createElement('button');
+    clearButton.innerHTML = '✕';
+    clearButton.style.position = 'absolute';
+    clearButton.style.left = '15px';
+    clearButton.style.top = '50%';
+    clearButton.style.transform = 'translateY(-50%)';
+    clearButton.style.background = 'none';
+    clearButton.style.border = 'none';
+    clearButton.style.fontSize = '18px';
+    clearButton.style.cursor = 'pointer';
+    clearButton.style.color = '#999';
+    clearButton.style.display = 'none';
+    
+    clearButton.addEventListener('click', function() {
+        searchInput.value = '';
+        searchInput.focus();
+        searchInput.dispatchEvent(new Event('input'));
+        this.style.display = 'none';
+    });
+    
+    searchInput.parentElement.appendChild(clearButton);
+    
+    searchInput.addEventListener('input', function() {
+        clearButton.style.display = this.value ? 'block' : 'none';
+    });
+}
 </script>
 
 <p class="footer">
