@@ -41,6 +41,12 @@
     a:hover {
         color: #007BFF;
     }
+
+    p.footer {
+        margin-top: 40px;
+        font-size: 0.8rem;
+        opacity: 0.6;
+    }
 </style>
 </head>
 <body>
@@ -52,28 +58,29 @@
 </div>
 
 <script>
-const apiUrl = `https://api.github.com/repos/AhmedXV-V12/AhmedXV-V12.github.io/contents/html`;
-
-fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-        const box = document.getElementById("filesBox");
-        box.innerHTML = "";
-
-        data.forEach(file => {
-            if (file.name.endsWith(".html")) {
-                let name = file.name.replace(".html", "");
-                let link = document.createElement("div");
-                link.className = "item";
-                link.innerHTML = `<a href="html/${file.name}">${name}</a>`;
-                box.appendChild(link);
-            }
-        });
-    })
-    .catch(() => {
-        document.getElementById("filesBox").innerText = "تعذّر تحميل الملفات.";
+// جلب أسماء الملفات من files.txt
+fetch('files.txt')
+.then(res => res.text())
+.then(text => {
+    const box = document.getElementById("filesBox");
+    box.innerHTML = "";
+    const lines = text.split(/\r?\n/).filter(line => line.trim() !== '');
+    lines.forEach(file => {
+        const name = file.replace('.html','');
+        const div = document.createElement('div');
+        div.className = 'item';
+        div.innerHTML = `<a href="html/${file}">${name}</a>`;
+        box.appendChild(div);
     });
+})
+.catch(() => {
+    document.getElementById("filesBox").innerText = "تعذّر تحميل الملفات.";
+});
 </script>
+
+<p class="footer">
+    by: Ahmed Walid — all Copyright saved (C)
+</p>
 
 </body>
 </html>
