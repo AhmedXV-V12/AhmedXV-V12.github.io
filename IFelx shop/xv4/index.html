@@ -1,0 +1,85 @@
+<!doctype html>
+ <html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>xv4 Package Manager</title>
+  <style>
+    /* Minimal, no heavy effects */
+    :root{--bg:#0f1220;--panel:#13182b;--text:#e5e7eb;--muted:#9aa3af;--primary:#7c3aed}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0f1220;color:var(--text)}
+    header, main{max-width:1000px;margin:0 auto;padding:16px}
+    .panel{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
+    h1{margin:0 0 8px 0;font-size:24px}
+    .muted{color:var(--muted);font-size:14px}
+    .row{display:flex;gap:8px;flex-wrap:wrap}
+    input,button{border-radius:8px;border:1px solid rgba(255,255,255,.12);background:#0c1022;color:var(--text);padding:10px 12px}
+    button{background:#0c1022;cursor:pointer}
+    .list{display:grid;gap:8px;margin-top:12px}
+    .pkg{display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:10px}
+    .status{margin-top:12px;font-size:14px}
+    code{background:#0b1020;padding:2px 6px;border-radius:6px;border:1px solid rgba(255,255,255,.08)}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>xv4 Package Manager</h1>
+    <div class="muted">Simple frontend. Use the shown commands in your terminal.</div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="row">
+        <input id="pkg" placeholder="package name (e.g. requests)" />
+        <button id="btn-install">Install</button>
+        <button id="btn-update">Update (read update/m.txt)</button>
+        <button id="btn-upgrade">Upgrade (apply updates)</button>
+      </div>
+      <div class="status" id="status">No action performed yet.</div>
+    </section>
+
+    <section class="panel" style="margin-top:12px">
+      <strong>Usage</strong>
+      <div class="list">
+        <div>Install a package: <code>sudo xv4 install &lt;package&gt;</code></div>
+        <div>Mark updates from file: <code>xv4 update</code> (reads <code>./update/m.txt</code>)</div>
+        <div>Apply updates: <code>sudo xv4 upgrade</code></div>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:12px">
+      <strong>Notes</strong>
+      <ul>
+        <li>This UI does not execute commands directly. Copy the command text and run it in your terminal.</li>
+        <li>On systems without <code>sudo</code> (e.g. Windows), omit <code>sudo</code> and run via Python: <code>python xv4/xv4.py ...</code></li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const els = {
+      pkg: document.getElementById('pkg'),
+      st: document.getElementById('status'),
+      bI: document.getElementById('btn-install'),
+      bU: document.getElementById('btn-update'),
+      bG: document.getElementById('btn-upgrade'),
+    };
+
+    function setStatus(t){ els.st.textContent = t; }
+    function cmd(t){ return 'Run in terminal: ' + t; }
+
+    els.bI.addEventListener('click', () => {
+      const name = (els.pkg.value||'').trim();
+      if(!name){ setStatus('Enter a package name first.'); return; }
+      setStatus(cmd('sudo xv4 install ' + name));
+    });
+    els.bU.addEventListener('click', () => {
+      setStatus(cmd('xv4 update'));
+    });
+    els.bG.addEventListener('click', () => {
+      setStatus(cmd('sudo xv4 upgrade'));
+    });
+  </script>
+</body>
+</html>
