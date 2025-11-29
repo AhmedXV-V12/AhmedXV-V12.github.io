@@ -1,5 +1,3 @@
 # the files 
 jotxt
 #jotxt its for https://ahmedxv-v12.github.io 
-
-url=https://debian.org
