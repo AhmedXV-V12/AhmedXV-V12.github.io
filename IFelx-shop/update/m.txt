@@ -3,5 +3,3 @@ jotxt
 #jotxt its for https://ahmedxv-v12.github.io 
 cute.sh
 #it is program to delete the Invalid .desktop
-https://www.debian.org/distrib/packages
-http://debian.org/mirror/listhttps://www.debian.org/distrib/packages
