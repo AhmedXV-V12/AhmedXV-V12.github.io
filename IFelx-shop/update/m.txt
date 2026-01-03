@@ -1,2 +1,3 @@
-jotxt
-cute.sh
+jotxt|1.0.0|First release of jotxt|https://ahmedxv-v12.github.io/IFelx-shop/install/jotxt.ifos
+cute|1.0.0|First release of cute.sh|https://ahmedxv-v12.github.io/IFelx-shop/install/cute.sh.ifos
+apt_pkg_mgr|1.0.0|First release of apt package manager|https://ahmedxv-v12.github.io/IFelx-shop/install/apt_pkg_mgr.ifos
