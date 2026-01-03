@@ -1,1 +1,17 @@
+apt_pkg_mgr_1.0.ifos
+calculator_gui.ifos
+clipboard_helper.ifos
+cute.sh.ifos
+dir_diff_report.ifos
+file_renamer.ifos
+file_searcher.ifos
 jotxt.ifos
+log_watcher.ifos
+notes_cli.ifos
+password_safe.ifos
+simple_http_server.ifos
+simple_notepad.ifos
+stopwatch_cli.ifos
+system_monitor.ifos
+text_stats.ifos
+todo_cli.ifos
