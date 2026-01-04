@@ -1,12 +1,17 @@
 apt_pkg_mgr_1.0.ifos
+bat.ifos
+busybox.ifos
 calculator_gui.ifos
 clipboard_helper.ifos
 cute.sh.ifos
 dir_diff_report.ifos
+fd.ifos
 file_renamer.ifos
 file_searcher.ifos
 jotxt.ifos
+jq.ifos
 log_watcher.ifos
+ncdu.ifos
 notes_cli.ifos
 password_safe.ifos
 simple_http_server.ifos
