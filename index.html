@@ -39,25 +39,6 @@
 
         
 
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-
-            backdrop-filter: blur(2px);
-            background: rgba(0, 120, 255, 0.12);
-
-            box-shadow: 0 0 80px 25px rgba(0, 120, 255, 0.8) inset;
-
-            opacity: 0;
-            transition: opacity 0.25s ease;
-            pointer-events: none;
-        }
-
-        /* عند مرور الماوس */
-        body:hover::after {
-            opacity: 0.2314;
-        }
 
         .container {
             max-width: 800px;
