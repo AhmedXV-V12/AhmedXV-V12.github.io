@@ -4,17 +4,6 @@ import math
 import os
 import json
 import time
-import torch
-import torch.nn as nn
-import torch.optim as optim
-import torch.nn.functional as F
-
-if torch.cuda.is_available() and torch.cuda.get_device_name(0).lower().startswith("nvidia"):
-    device = torch.device("cuda")
-else:
-    device = torch.device("cpu")
-
-print(f"Using device: {device}")
 
 
 # Initialize Pygame
@@ -1095,4 +1084,5 @@ def main_game_loop():
     pygame.quit()
 
 if __name__ == "__main__":
+
     main_game_loop()
