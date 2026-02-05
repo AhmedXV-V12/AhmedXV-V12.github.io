@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
      <script>
+         console.log("log");
 const projects = [
     { name: "jowa-GPT", link: "https://example.com/jowa-gpt" },
     { name: "jowa-football-ai", link: "https://example.com/jowa-football-ai" },
@@ -29,7 +30,7 @@ const projects = [
     { name: "IFelxUI", link: "https://example.com/ifelxui" },
     { name: "WEX browser", link: "https://example.com/wex-browser" }
   ];
-  const grid = document.getElementById("projectsGrid");
+  const grid = document.getElementById("projectGrid");
   projects.forEach(project => {
     const div = document.createElement("div");
     div.className = "project-btn";
@@ -74,7 +75,7 @@ const projects = [
         
         <h2 class="projects-title">Projects:</h2>
         
-        <div class="projects-grid">
+        <div id="projectGrid" class="projects-grid">
          <!-- <div class="project-btn" text=>jowa-GPT</div>
             <div class="project-btn">jowa-football-ai</div>
             <div class="project-btn">jowa-e</div>
