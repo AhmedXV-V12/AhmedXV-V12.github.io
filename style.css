@@ -84,10 +84,11 @@
        }
 
         .logo-img {
-            height: 120px;
-            width: 120px;
-            min-height: 120px;
-            min-width: 120px;
+            height: 300px;
+            width: 300px;
+            min-height: 200px;
+            min-width: 200px;
+               padding:0;
         }
 
         .logo span {
