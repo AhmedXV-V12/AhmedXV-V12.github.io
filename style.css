@@ -67,20 +67,25 @@
         }
 
 
-        .logo {
-            font-size: 4rem;
+        .logo-container {
             margin-bottom: 60px;
-            text-shadow: 0 0 20px rgba(255,255,255,0.35);
             animation: fadeIn 1s ease-in;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 20px;
         }
+       .logo-text{
+            font-size: 4rem;
+            text-shadow: 0 0 20px rgba(255,255,255,0.35);
 
-        .logo img {
+       }
+
+        .logo-img {
             height: 120px;
-            width: auto;
+            width: 120px;
+            min-height: 120px;
+            min-width: 120px;
         }
 
         .logo span {
