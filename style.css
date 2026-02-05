@@ -141,15 +141,17 @@
         }
 
         .projects-title {
-            text-align: left;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #fff;
+         text-align: center;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #fff;
         }
 
         .projects-grid {
-            display: flex;
-            gap: 18px;
+              display: flex;
+               gap: 18px;
+               flex-wrap: wrap;
+                justify-content: center;
         }
 .project-btn{
             background: #e0e1dd;
