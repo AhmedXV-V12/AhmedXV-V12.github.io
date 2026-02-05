@@ -12,6 +12,7 @@
             letter-spacing: 0.5px;
             min-height: 100vh;
             display: flex;
+              flex-direction:column;
             justify-content: center;
             align-items: center;
             padding: 40px 10px;
@@ -37,15 +38,14 @@
             position:relative;
             overflow:hidden;
 
-            /* متغيرات موضع الماوس */
+      
             --x: 50%;
             --y: 50%;
         }
 
-        /* التأثير */
         .area::after{
             content:"";
-            position:absolute;
+            position: absolute;
             inset:0;
             pointer-events:none;
 
