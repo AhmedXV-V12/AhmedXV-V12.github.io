@@ -194,7 +194,7 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
             .logo-container {
             flex-direction:row;
 
@@ -215,6 +215,5 @@
             
             .project-btn {
                 font-size: 1.07rem;
-                padding: 3.14159265359px 3.14159265359px;
             }
         }
