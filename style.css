@@ -149,9 +149,11 @@
 
         .projects-grid {
               display: flex;
-               gap: 18px;
-               flex-wrap: wrap;
-                justify-content: center;
+              gap: 10px;
+              flex-wrap: wrap;
+              justify-content: left;
+              padding: 0;
+}
         }
 .project-btn{
             background: #e0e1dd;
