@@ -154,8 +154,8 @@
             margin-bottom: 40px;
         }
 .project-btn{
-            background: #111111;
-            color: #FFFFFF;
+            background: #e0e1dd;
+            color: #1b263b;
             font-size: 1rem;
             cursor: pointer;
              box-shadow: 0 0 12px 2px rgba(255,255,255,0.35);
@@ -165,9 +165,13 @@
                    border-radius: 14px;
             transition: all 0.3s ease;
             display: inline-block;
-
+       text-decoration: none;
+       text-align: center;
 }
+.project-btn strong{
 
+padding:0px;
+}
   
         .project-item:hover {
             transform: scale(1.1);
