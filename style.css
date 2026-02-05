@@ -17,7 +17,6 @@
             align-items: center;
             padding: 40px 10px;
 
-
         }
 
         .container {
@@ -25,17 +24,14 @@
             width: 100%;
             text-align: left;
         }
-
-        
+ 
         .area{
             width:500px;
             height:300px;
             margin:100px auto;
             border-radius:16px;
             position:relative;
-            overflow:hidden;
-
-      
+            overflow:hidden;  
             --x: 50%;
             --y: 50%;
         }
@@ -62,8 +58,6 @@
         .area:hover::after{
             opacity:0.7;
         }
-
-
         .logo-container {
             margin-bottom: 60px;
             animation: fadeIn 1s ease-in;
@@ -154,7 +148,7 @@
               justify-content: left;
               padding: 0;
 }
-        }
+        
 .project-btn{
             background: #e0e1dd;
             color: #1b263b;
@@ -171,7 +165,6 @@
        text-align: center;
 }
 .project-btn strong{
-
 padding:0px;
 }
   
