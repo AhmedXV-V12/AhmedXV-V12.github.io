@@ -203,7 +203,7 @@ padding:0px;
                 flex-direction: column;
             }
 
-            .project-btn {
+            /* .project-btn {
                 width: 100%;
                 max-width: 300px;
             }
@@ -213,5 +213,18 @@ padding:0px;
             .project-btn {
                 font-size: 1.07rem;
             }
+        } */
+               
+            .project-btn {
+                width: 100%;
+                max-width: 270px;
+            }
+            
+          
+            
+            .project-btn {
+                font-size: 1.2rem;
+            }
         }
+
 
