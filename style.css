@@ -223,3 +223,42 @@ padding:0px;
             }
         }
 
+        .description {
+            font-size: 1.3rem;
+            line-height: 2;
+            margin-bottom: 40px;
+            font-weight: 400;
+            max-width: 800px;
+            width: 100%;
+            text-align: left !important;
+        }
+
+        .description strong {
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+
+        .features {
+            text-align: left;
+            display: block;
+            margin: 20px 0;
+            width: 100%;
+            padding-left: 0;
+        }
+
+        .features li {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: left !important;
+            width: 100%;
+            list-style-position: inside;
+        }
+
+        .features-container {
+            display: block !important;
+            width: 100% !important;
+            text-align: left !important;
+            margin-left: 0 !important;
+            padding-left: 0 !important;
+        }
