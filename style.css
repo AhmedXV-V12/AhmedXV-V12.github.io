@@ -82,6 +82,32 @@
             padding: 6px;
 }
 
+
+     .features {
+            text-align: left;
+            display: block;
+            margin: 20px 0;
+            width: 100%;
+            padding-left: 0;
+        }
+
+        .features li {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: left !important;
+            width: 100%;
+            list-style-position: inside;
+        }
+
+        .features-container {
+            display: block !important;
+            width: 100% !important;
+            text-align: left !important;
+            margin-left: 0 !important;
+            padding-left: 0 !important;
+        }
+
         .description {
             font-size: 1.3rem;
             line-height: 2;
