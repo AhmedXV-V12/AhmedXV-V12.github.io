@@ -82,6 +82,23 @@
             padding: 6px;
 }
 
+        .description {
+            font-size: 1.3rem;
+            line-height: 2;
+            margin-bottom: 40px;
+            font-weight: 400;
+            max-width: 800px;
+            width: 100%;
+            text-align: left !important;
+        }
+
+        .description strong {
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+
+        .features
+
         .logo-img {
             height: 200px;
             width: 200px;
