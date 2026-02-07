@@ -6,6 +6,9 @@
 
         body {
             background-image: url("/background.png");
+           background-repeat: no-repeat;
+           background-position: top center;
+           background-attachment: fixed;
             /* background: #000000; */
             color: #FFFFFF;
             font-family: 'Inter', 'Poppins', Arial, sans-serif;
