@@ -5,7 +5,7 @@
         }
 
         body {
-            background-image: url("background2.png");
+            background-image: url("./background2.png");
             background: #000000;
             color: #FFFFFF;
             font-family: 'Inter', 'Poppins', Arial, sans-serif;
