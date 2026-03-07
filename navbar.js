@@ -25,3 +25,4 @@
     document.body.insertBefore(navbar, document.body.firstChild);
 
 })();
+
