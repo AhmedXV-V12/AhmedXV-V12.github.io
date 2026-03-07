@@ -3,7 +3,7 @@
     navbar.className = 'navbar';
     navbar.innerHTML = `
         <a href="./index.html" class="navbar-brand">
-            <img src="./logo2.png" alt="IFelx Logo">
+            <img src="/logo2.png" alt="IFelx Logo">
             <span class="navbar-brand-name">IFelx Web</span>
         </a>
         <div class="navbar-search">
@@ -23,4 +23,5 @@
         </div>
     `;
     document.body.insertBefore(navbar, document.body.firstChild);
+
 })();
