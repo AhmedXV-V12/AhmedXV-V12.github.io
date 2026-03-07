@@ -3,170 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOWA-GPT - Download</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title>Jowa-mAi - Download</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/navbar.js" defer></script>
 
-        body {
-            background-color: #000000;
-            color: #FFFFFF;
-            font-family: 'Inter', 'Poppins', Arial, sans-serif;
-            letter-spacing: 0.5px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            padding: 40px 20px;
-        }
-
-        .container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: calc(100vh - 80px);
-        }
-
-        .header {
-            text-align: right;
-            padding: 20px 40px;
-            align-self: flex-end;
-        }
-
-        .product-name {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-shadow: 0 0 12px rgba(255,255,255,0.35);
-        }
-
-        .content-section {
-            text-align: center;
-            padding: 60px 40px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            font-weight: 400;
-        }
-
-        .description strong {
-            font-weight: 700;
-            color: #FFFFFF;
-        }
-
-        .features {
-            text-align: left;
-            display: inline-block;
-            margin: 20px 0;
-        }
-
-        .features li {
-            margin: 10px 0;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .download-section {
-            text-align: left;
-            padding: 20px 40px;
-            align-self: flex-start;
-        }
-
-        .download-btn {
-            background-color: #111111;
-            color: #FFFFFF;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 14px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            font-family: 'Inter', 'Poppins', Arial, sans-serif;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 0 12px 2px rgba(255,255,255,0.35);
-            transition: all 0.3s ease;
-        }
-
-        .download-btn:hover {
-            box-shadow: 0 0 20px 4px rgba(255,255,255,0.5);
-            transform: translateY(-2px);
-            background-color: #1a1a1a;
-        }
-
-        .coming-soon {
-            font-size: 0.9rem;
-            margin-top: 15px;
-            color: #CCCCCC;
-            font-weight: 400;
-        }
-
-        .made-by {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.95rem;
-            color: #CCCCCC;
-        }
-
-        @media (max-width: 768px) {
-            .product-name {
-                font-size: 2rem;
-            }
-
-            .content-section {
-                padding: 40px 20px;
-            }
-
-            .description {
-                font-size: 1rem;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1 class="product-name">JOWA-GPT</h1>
-        </div>
 
-        <div class="content-section">
-            <div class="description">
-                <p><strong>JOWA-GPT Version 1</strong> - JOWA-MiniGPT</p>
-                <p>A new AI LLM (Large Language Model) - MiniGPT</p>
-                <br>
-                <ul class="features">
-                    <li>✦ Compact model with small data footprint</li>
-                    <li>✦ Arabic dataset support included</li>
-                    <li>✦ Coming soon: JOWA-MiniGPT 1.1 with expanded data</li>
-                    <li>✦ Future releases: Linux and Mac applications</li>
-                </ul>
+    <div class="page-container">
+
+        <header class="page-header">
+            <h1>Jowa-mAi</h1>
+            <p class="subtitle">Compact Open-Source MiniGPT — Made by <strong>Ahmed Walid (AXV)</strong></p>
+            <div class="badges">
+                <span class="badge">Open Source</span>
+                <span class="badge">v1.6</span>
+                <span class="badge gnu">GNU GPL v2.0</span>
+            </div>
+        </header>
+
+        <section class="card">
+            <h2>About</h2>
+            <p>Jowa-mAi is a lightweight, open-source Large Language Model (MiniGPT) built with PyTorch. It uses an LSTM-based architecture trained on character-level Q&A data fetched from a remote database. Designed to run on low-end hardware with no GPU required.</p>
+
+            <div style="margin-top:20px;">
+                <div class="feature-item">
+                    <div class="feature-title">🧠 LSTM Architecture</div>
+                    <p>2-layer LSTM with 512 hidden units and 256-dim embeddings — lightweight yet capable</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">📡 Remote Database Training</div>
+                    <p>Fetches Q&A pairs live from GitHub and trains on them using cross-entropy loss + Adam optimizer</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">⏱ Early Stopping</div>
+                    <p>Training auto-stops when loss stops improving — saves the best weights automatically</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">💻 Cross-Platform</div>
+                    <p>Runs on Windows and Linux — CPU or GPU via CUDA auto-detection</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>How the Code Works</h2>
+
+            <div class="how-step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                    <h4>Model Definition — <code>JowaMAI</code></h4>
+                    <p>A PyTorch <code>nn.Module</code> with an Embedding layer → 2-layer LSTM → Dropout → Linear output layer. Takes a sequence of character indices and predicts the next character at each step.</p>
+                    <div class="code-block">
+<span class="kw">class</span> <span class="cls">JowaMAI</span>(nn.Module):
+    embedding  → LSTM(layers=2, hidden=512) → Dropout(0.4) → Linear(vocab_size)
+    forward(x) → returns (output_logits, hidden_state)
+                    </div>
+                </div>
             </div>
 
-            <div class="made-by">
-                Made by: <strong>Ahmed Walid</strong>
-            </div>
-        </div>
+            <div class="how-step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                    <h4>Vocabulary / Tokenization</h4>
+                    <p>No subword tokenizer — the model works at the character level. <code>data_tokens</code> is a list of every supported character (a–z, A–Z, 0–9, symbols, space, newline). Each character maps to its list index.</p>
+                    <div class="code-block">
+<span class="cm"># encode</span>
+indices = [data_tokens.index(c) <span class="kw">for</span> c <span class="kw">in</span> text <span class="kw">if</span> c <span class="kw">in</span> data_tokens]
 
-        <div class="download-section">
-            <a href="https://drive.google.com/file/d/1teQ-ae9xJZ9RGYSNfiGbH-J6ByQleGJM/view?usp=drive_link" class="download-btn" target="_blank">
-                Download
+<span class="cm"># decode</span>
+char = data_tokens[predicted_index]
+                    </div>
+                </div>
+            </div>
+
+            <div class="how-step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                    <h4>Remote Data Fetch</h4>
+                    <p><code>fetch_remote_data()</code> pulls a JSON file from GitHub. The JSON is a flat dictionary of <code>"question": "answer"</code> pairs used as the training corpus.</p>
+                    <div class="code-block">
+url = <span class="str">"https://raw.githubusercontent.com/.../database.json"</span>
+data = requests.get(url).json()  <span class="cm"># { "q": "a", ... }</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="how-step">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                    <h4>Training Loop</h4>
+                    <p>Each Q&A pair is formatted as <code>"Q: ...\nA: ...\n"</code> then encoded. The model learns to predict the next character given all previous ones. Uses <code>ReduceLROnPlateau</code> to decay the learning rate and early stopping (patience=10) to avoid overfitting.</p>
+                    <div class="code-block">
+optimizer = Adam(lr=0.001)
+criterion = CrossEntropyLoss()
+scheduler = ReduceLROnPlateau(patience=5, factor=0.5)
+
+<span class="kw">for</span> epoch <span class="kw">in</span> range(100):
+    loss = criterion(model(inputs), targets)
+    loss.backward() → optimizer.step()
+    <span class="kw">if</span> no_improve == 10: <span class="kw">break</span>   <span class="cm"># early stop</span>
+    torch.save(model.state_dict(), <span class="str">"jowa-mAi-1.6.pt"</span>)
+                    </div>
+                </div>
+            </div>
+
+            <div class="how-step">
+                <div class="step-num">5</div>
+                <div class="step-body">
+                    <h4>Text Generation</h4>
+                    <p>Given a user prompt, the model formats it as <code>"Q: {prompt}\nA: "</code>, then generates characters one by one using temperature-scaled softmax sampling until it hits a sentence-ending punctuation or max length.</p>
+                    <div class="code-block">
+prompt → <span class="str">"Q: {prompt}\nA: "</span> → encode → feed to LSTM
+<span class="kw">for</span> step <span class="kw">in</span> range(max_len):
+    logits = output / temperature         <span class="cm"># scale confidence</span>
+    probs  = softmax(logits)
+    char   = multinomial_sample(probs)    <span class="cm"># random weighted pick</span>
+    <span class="kw">if</span> char <span class="kw">in</span> [<span class="str">"."</span>, <span class="str">"!"</span>, <span class="str">"?"</span>]: <span class="kw">break</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="card">
+            <h2>License — GNU GPL v2.0</h2>
+            <div class="license-box">
+                <strong>GNU General Public License v2.0</strong><br>
+                This software is free and open-source. You are free to use, study, modify, and distribute it under the terms of the GNU GPL v2.0. Any derivative work must also be released under the same license. No warranty is provided.
+                <br><br>
+                Copyright &copy; 2025/2026 <strong>Ahmed Walid (AXV)</strong> — <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" target="_blank" style="color:#f5a623;">Full License Text</a>
+            </div>
+        </section>
+
+        <div class="download-buttons">
+            <a href="./jowamAi-folder.zip" class="project-btn" target="_blank">
+                Download Jowa-mAi v1.6
             </a>
-            <p class="coming-soon">Linux and Mac apps coming soon</p>
         </div>
+
+        <footer class="page-footer">
+            &copy; 2025/2026 Jowa-mAi — GNU GPL v2.0 — Open Source Project by AXV
+        </footer>
+
     </div>
+
 </body>
 </html>
