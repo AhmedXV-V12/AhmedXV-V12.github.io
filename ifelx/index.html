@@ -1,236 +1,207 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="./ifelx.png" type="image/x-icon">
     <title>IFelxOS - Download</title>
+    <link rel="icon" href="./ifelx.png" type="image/x-icon">
     <meta name="keywords" content="IFelx, IFelxOS, xv4.sh, ifelxos, ifos, IFOS, IFos">
-    <link href="./css2.css" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
-    <!-- <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/navbar.js" defer></script>
+
+    <style>
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 8px;
         }
 
-        body {
-            background-color: #000000;
-            color: #FFFFFF;
-            font-family: 'Inter', 'Poppins', Arial, sans-serif;
-            letter-spacing: 0.5px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            padding: 40px 20px;
-        }
-
-        .container {
+        .screenshots-grid img {
             width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: calc(100vh - 80px);
-        }
-
-        .header {
-            text-align:  left !important;;
-            padding: 20px 40px;
-        }
-
-        .product-name {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 0 0 12px rgba(255,255,255,0.35);
-        }
-
-        .content-section {
-            text-align: center;
-            padding: 60px 40px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-        }
-
-        .description {
-            font-size: 1.3rem;
-            line-height: 2;
-            margin-bottom: 40px;
-            font-weight: 400;
-            max-width: 800px;
-            width: 100%;
-            text-align: left !important;
-        }
-
-        .description strong {
-            font-weight: 700;
-            color: #FFFFFF;
-        }
-
-        .features {
-            text-align: left;
-            display: block;
-            margin: 20px 0;
-            width: 100%;
-            padding-left: 0;
-        }
-
-        .features li {
-            margin: 10px 0;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            text-align: left !important;
-            width: 100%;
-            list-style-position: inside;
-        }
-
-        .features-container {
-            display: block !important;
-            width: 100% !important;
-            text-align: left !important;
-            margin-left: 0 !important;
-            padding-left: 0 !important;
-        }
-
-        .download-section {
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        .download-btn {
-            background-color: #111111;
-            color: #FFFFFF;
-            padding: 15px 25px;
-            border: none;
-            border-radius: 14px;
-            font-size: 1.3rem;
-            font-weight: 700;
-            font-family: 'Inter', 'Poppins', Arial, sans-serif;
-            letter-spacing: 0.5px;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
             cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 0 12px 2px rgba(255,255,255,0.35);
-            transition: all 0.3s ease;
         }
 
-        .download-btn:hover {
-            box-shadow: 0 0 20px 4px rgba(255,255,255,0.5);
-            transform: translateY(-2px);
-            background-color: #1a1a1a;
+        .screenshots-grid img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(255,255,255,0.15);
         }
 
-        .made-by {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 1.1rem;
-            color: #CCCCCC;
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-weight: 400;
+            font-size: 0.95rem;
         }
 
-        @media (max-width: 768px) {
-            .product-name {
-                font-size: 2.5rem;
-            }
-
-            .description {
-                font-size: 1.1rem;
-            }
+        .specs-table tr {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
-    </style> -->
+
+        .specs-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .specs-table td {
+            padding: 10px 6px;
+            line-height: 1.6;
+        }
+
+        .specs-table td:first-child {
+            font-weight: 700;
+            width: 180px;
+            opacity: 0.6;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .goal-item {
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .goal-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .goal-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+
+        .goal-item p {
+            font-size: 0.95rem;
+            font-weight: 400;
+            line-height: 1.7;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+
+        .login-tip {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 16px 20px;
+            font-size: 0.92rem;
+            font-weight: 400;
+            line-height: 1.7;
+            margin-top: 14px;
+        }
+
+        .login-tip code {
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 767px) {
+            .specs-table td:first-child { width: 120px; }
+            .screenshots-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="logo-container">
-            <img class="logo-img" alt="os" src="./ifelx.png">
-            <span class="logo-text">IFelxOS</span>
-        </h1></div><div class="content-section">
-            <div class="text">
-                <p><strong>IFelxOS1(new) Distrot, A new Distrot linux in 2026</strong></p>
-                
-                <br>
 
-            <div class="features-container">
-            <ul class="features">
-                1 - What is IFelxOS?
-                <li>
-IFelxOS is an operating system based on Debian with updates to the 
-interface, including the addition of a new package manager such as 
-xv4.sh, which will be used as the official package manager in IFelxOS2 
-as a replacement for apt, but is currently used alongside apt.
-The system is relatively large, estimated at 10-13 GB. The system is raw
- and ready to use. </li>
-                2 - What are the goals of IFelxOS ?
-                <li>
-IFelxOS has many goals, and we will organize them so that we can better 
-understand the smaller goals as well as the larger ones.
-1-Building a new package manager 
-This is the first goal, and it is important because other goals will be 
-built upon it later. 
-2-Making IFelxOS an independent distribution 
-Making Linux an independent distribution is a bold step that breaks you 
-out of the Remix barrier, as Ubuntu did. 
-3-Integrating artificial intelligence with the system
-In this world, artificial intelligence has begun to spread, so we must 
-catch up by putting artificial intelligence that helps you and helps 
-system operations in order to get closer to the last two goals.
-3-Building popularity 
-Any company wants popularity in order to become more famous and earn 
-more, so this is logical.
-4-Finally, make IFelxOS an independent operating system like BSD. One 
-day, we will become independent from Linux in order to be an independent
- operating system. 
+    <div class="page-container">
 
-</li>
-
-
-                1 - more :
-                <li>
-                iso file size : 4.5 GB <br>
-                Desktop Environment : cinnamon <br>
-                Package Manager : apt , xv4.sh <br>
-                Based on : Debian <br>
-                Version : 1v <br>
-                Release Date : 01-02-2026 <br>
-                Architecture : x64 <br>
-                
-
-
-                </li>3 - Photos for IFelxOS
-                <li><img src="./Screenshot%202026-01-12%20164449.png" alt="Screenshot 2026-01-12 164449" style="max-width: 100%; height: auto; margin: 10px;"><br>
-<img src="./Screenshot%202026-01-14%20162646.png" alt="Screenshot 2026-01-12 165009" style="max-width: 100%; height: auto; margin: 10px;"><br>
-<img src="./Screenshot%202026-01-12%20164545.png" alt="Screenshot 2026-01-12 164545" style="max-width: 100%; height: auto; margin: 10px;"><br>
-<img src="./Screenshot%202026-01-12%20164812.png" alt="Screenshot 2026-01-12 164812" style="max-width: 100%; height: auto; margin: 10px;"><br>
-<img src="./Screenshot%202026-01-12%20164926.png" alt="Screenshot 2026-01-12 164926" style="max-width: 100%; height: auto; margin: 10px;"><br>
-<img src="./Screenshot%202026-01-12%20165009.png" alt="Screenshot 2026-01-12 165009" style="max-width: 100%; height: auto; margin: 10px;"></li>
-
-                4 - IFelxOS Developers
-                <li>
-The developers of IFelxOS are...  Ahmed Walid (AXV)</li>
-
-
-
-                </ul>
+        <header class="page-header">
+            <img src="./ifelx.png" alt="IFelxOS Logo" style="height:80px;width:80px;object-fit:contain;margin-bottom:16px;border-radius:16px;">
+            <h1>IFelxOS</h1>
+            <p class="subtitle">A New Linux Distribution — Based on Debian · 2026</p>
+            <div class="badges">
+                <span class="badge">v1</span>
+                <span class="badge">Debian-based</span>
+                <span class="badge">Cinnamon DE</span>
+                <span class="badge open-source-badge">Open Source</span>
             </div>
+        </header>
+
+        <section class="card">
+            <h2>What is IFelxOS?</h2>
+            <p>IFelxOS is an operating system based on Debian with updates to the interface, including the addition of a new package manager called <strong>xv4.sh</strong>. It will be used as the official package manager in IFelxOS 2 as a replacement for apt, but currently runs alongside apt. The system is raw and ready to use, estimated at 10–13 GB.</p>
+        </section>
+
+        <section class="card">
+            <h2>System Specs</h2>
+            <table class="specs-table">
+                <tr><td>ISO Size</td><td>4.5 GB</td></tr>
+                <tr><td>Desktop</td><td>Cinnamon</td></tr>
+                <tr><td>Package Manager</td><td>apt, xv4.sh</td></tr>
+                <tr><td>Based on</td><td>Debian</td></tr>
+                <tr><td>Version</td><td>1v</td></tr>
+                <tr><td>Release Date</td><td>01-02-2026</td></tr>
+                <tr><td>Architecture</td><td>x64</td></tr>
+                <tr><td>Developer</td><td>Ahmed Walid (AXV)</td></tr>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Goals of IFelxOS</h2>
+            <div class="goal-item">
+                <div class="goal-title">1 — Build a New Package Manager</div>
+                <p>This is the first and most foundational goal. <strong>xv4.sh</strong> will become the primary package manager, replacing apt in future versions. All other goals depend on this foundation.</p>
             </div>
+            <div class="goal-item">
+                <div class="goal-title">2 — Become an Independent Distribution</div>
+                <p>Making IFelxOS a fully independent Linux distribution — breaking out of the "remix" barrier, similar to how Ubuntu evolved from Debian.</p>
+            </div>
+            <div class="goal-item">
+                <div class="goal-title">3 — Integrate Artificial Intelligence</div>
+                <p>Artificial intelligence is spreading rapidly. IFelxOS aims to integrate AI assistance directly into the system to help both the user and system operations.</p>
+            </div>
+            <div class="goal-item">
+                <div class="goal-title">4 — Build Popularity</div>
+                <p>Growing a community and user base is essential for sustainability and further development of the project.</p>
+            </div>
+            <div class="goal-item">
+                <div class="goal-title">5 — Become Fully Independent (Like BSD)</div>
+                <p>The long-term vision: become completely independent from the Linux kernel and build IFelxOS as a standalone operating system.</p>
+            </div>
+        </section>
 
+        <section class="card">
+            <h2>How to Login (Live Session)</h2>
+            <p>When booting the live ISO, use the following credentials to log in:</p>
+            <div class="login-tip">
+                At the login screen, select <strong>Cinnamon</strong> as the session type, then enter password: <code>live</code>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Screenshots</h2>
+            <div class="screenshots-grid">
+                <img src="./Screenshot%202026-01-12%20164449.png" alt="IFelxOS Desktop">
+                <img src="./Screenshot%202026-01-14%20162646.png" alt="IFelxOS Desktop 2">
+                <img src="./Screenshot%202026-01-12%20164545.png" alt="IFelxOS Terminal xv4.sh">
+                <img src="./Screenshot%202026-01-12%20164812.png" alt="IFelxOS Installer">
+                <img src="./Screenshot%202026-01-12%20164926.png" alt="IFelxOS Install Progress">
+                <img src="./Screenshot%202026-01-12%20165009.png" alt="IFelxOS Login Screen">
+            </div>
+        </section>
+
+        <div class="download-buttons">
+            <a href="https://drive.google.com/uc?export=download&id=157VUNnhUs7V_s5Rj-OxIsId_P-K8ExCq" class="project-btn">
+                Download IFelxOS v1
+            </a>
         </div>
 
-        <div class="download-section">
-            <a href="https://drive.google.com/uc?export=download&id=157VUNnhUs7V_s5Rj-OxIsId_P-K8ExCq" class="project-btn">Download</a>
-        </div>
-
-        <div class="logo-section" style="text-align: center; margin-top: 20px;">
-            <img src="./ifelx.png" alt="IFelxOS Logo" style="width: 100px; height: auto;" class="new-copyright"><div class="new-copyright"></div>
-        </div>
-
-        
+        <footer class="page-footer">
+            &copy; 2025/2026 IFelxOS — Ahmed Walid (AXV)
+        </footer>
 
     </div>
 
-
-</body></html>
+</body>
+</html>
