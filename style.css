@@ -1,4 +1,4 @@
-* {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -132,6 +132,10 @@
             }
 
             .navbar-links {
+                display: flex;
+            }
+
+            .navbar-links a:not(.navbar-instagram) {
                 display: none;
             }
         }
