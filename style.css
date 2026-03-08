@@ -98,6 +98,24 @@
             background: rgba(255,255,255,0.1);
         }
 
+        .navbar-instagram {
+            display: flex !important;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(255,255,255,0.12) !important;
+        }
+
+        .navbar-instagram:hover {
+            border-color: rgba(255,255,255,0.3) !important;
+        }
+
+        .navbar-insta-icon {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
         /* Mobile navbar */
         @media (max-width: 767px) {
             .navbar {
