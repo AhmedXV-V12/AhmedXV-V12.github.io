@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jowa Football AI - Versions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../navbar.js" defer></script>
+
+    <style>
+        .version-card {
+            background: #111111;
+            border-radius: 14px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 12px 2px rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            transition: box-shadow 0.2s;
+        }
+
+        .version-card:hover {
+            box-shadow: 0 0 20px 4px rgba(255,255,255,0.18);
+        }
+
+        .version-card.latest {
+            border: 1px solid rgba(41, 115, 255, 0.4);
+            box-shadow: 0 0 16px 2px rgba(41, 115, 255, 0.15);
+        }
+
+        .version-info h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .version-info p {
+            font-size: 0.9rem;
+            font-weight: 400;
+            opacity: 0.65;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .version-badges {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .v-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.07);
+        }
+
+        .v-badge.new { background: rgba(41,115,255,0.2); color: #6fa3ff; }
+        .v-badge.stable { background: rgba(50,200,100,0.15); color: #6fdf9f; }
+        .v-badge.legacy { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.45); }
+
+        .version-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-end;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+            .version-card { flex-direction: column; align-items: flex-start; }
+            .version-actions { align-items: flex-start; width: 100%; }
+            .version-actions .project-btn { width: 100%; max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+
+        <header class="page-header">
+            <h1>Jowa Football AI</h1>
+            <p class="subtitle">AI-Powered 3v3 Football Game — Open Source</p>
+            <div class="badges">
+                <span class="badge">Open Source</span>
+                <span class="badge">Python</span>
+                <span class="badge">Reinforcement Learning</span>
+            </div>
+        </header>
+
+        <section class="card" style="margin-bottom:32px;">
+            <h2>About</h2>
+            <p>Jowa Football AI is an open-source football simulation game with intelligent AI players that learn using Q-table reinforcement learning. Play 3v3 matches solo or with friends — AI opponents continuously improve their gameplay.</p>
+        </section>
+
+        <h2 style="margin-bottom:16px; font-size:1.4rem;">Versions</h2>
+
+        <div class="version-card latest">
+            <div class="version-info">
+                <h3>⚽ Jowa Football AI v2</h3>
+                <p>New version with improved AI, better graphics, and reworked game engine. Distributed as a ready-to-run ZIP package.</p>
+                <div class="version-badges">
+                    <span class="v-badge new">Latest</span>
+                    <span class="v-badge stable">Stable</span>
+                    <span class="v-badge">2026</span>
+                </div>
+            </div>
+            <div class="version-actions">
+                <a href="./v2/index.html" class="project-btn">View v2</a>
+            </div>
+        </div>
+
+        <div class="version-card">
+            <div class="version-info">
+                <h3>Jowa Football AI v1</h3>
+                <p>Original version — single Python script with Q-table AI. Requires Python installed.</p>
+                <div class="version-badges">
+                    <span class="v-badge legacy">Legacy</span>
+                    <span class="v-badge">2025</span>
+                </div>
+            </div>
+            <div class="version-actions">
+                <a href="./v1/index.html" class="project-btn">View v1</a>
+            </div>
+        </div>
+
+        <footer class="page-footer">
+            &copy; 2025/2026 Jowa Football AI — Open Source Project by AXV
+        </footer>
+
+    </div>
+
+</body>
+</html>

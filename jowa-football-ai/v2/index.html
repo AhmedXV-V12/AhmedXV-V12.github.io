@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jowa Football AI v2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css" />
+    <script src="../../navbar.js" defer></script>
+
+    <style>
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: #fff; }
+
+        .changelog-item {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.95rem;
+            font-weight: 400;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+        .changelog-item:last-child { border-bottom: none; }
+        .changelog-item::before {
+            content: "✦ ";
+            color: #2973ff;
+            font-size: 0.75rem;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-weight: 400;
+            font-size: 0.95rem;
+        }
+        .specs-table tr {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .specs-table tr:last-child { border-bottom: none; }
+        .specs-table td {
+            padding: 10px 6px;
+            line-height: 1.6;
+        }
+        .specs-table td:first-child {
+            font-weight: 700;
+            width: 160px;
+            opacity: 0.55;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+
+        <a href="../index.html" class="back-link">← All Versions</a>
+
+        <header class="page-header">
+            <h1>Jowa Football AI v2</h1>
+            <p class="subtitle">6v6 · DQN Reinforcement Learning · Formation 3-2-1</p>
+            <div class="badges">
+                <span class="badge" style="color:#6fa3ff;background:rgba(41,115,255,0.15);">Latest</span>
+                <span class="badge">2026</span>
+                <span class="badge">Open Source</span>
+            </div>
+        </header>
+
+        <section class="card">
+            <h2>What's New in v2</h2>
+            <div class="changelog-item">Upgraded from 3v3 to <strong>6v6</strong> with Formation 3-2-1</div>
+            <div class="changelog-item">AI replaced from Q-table to <strong>DQN (Deep Q-Network)</strong> using PyTorch</div>
+            <div class="changelog-item">Shared replay buffer with capacity 200,000 transitions</div>
+            <div class="changelog-item">Player selection system — pick any player with ↑↓ then Enter</div>
+            <div class="changelog-item">Auto epsilon decay with periodic model saving every 3600 frames</div>
+            <div class="changelog-item">CUDA support — runs on GPU if available</div>
+        </section>
+
+        <section class="card">
+            <h2>Game Info</h2>
+            <table class="specs-table">
+                <tr><td>Mode</td><td>6v6 (Red vs Blue)</td></tr>
+                <tr><td>Formation</td><td>3-2-1</td></tr>
+                <tr><td>AI Type</td><td>DQN — Deep Q-Network (PyTorch)</td></tr>
+                <tr><td>Actions</td><td>9 — Stop, N, S, E, W, NE, NW, SE, SW</td></tr>
+                <tr><td>Resolution</td><td>800 × 600</td></tr>
+                <tr><td>FPS</td><td>60</td></tr>
+                <tr><td>Device</td><td>CUDA (GPU) or CPU — auto-detected</td></tr>
+                <tr><td>Model Files</td><td>football_model_red.pth, football_model_blue.pth</td></tr>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Requirements</h2>
+            <div class="feature-item">
+                <div class="feature-title">Python 3.8+</div>
+                <p>Required to run the script</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-title">pygame</div>
+                <p><span class="code-block" style="display:inline;padding:2px 8px;margin:0;">pip install pygame</span></p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-title">PyTorch</div>
+                <p><span class="code-block" style="display:inline;padding:2px 8px;margin:0;">pip install torch</span></p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-title">NumPy</div>
+                <p><span class="code-block" style="display:inline;padding:2px 8px;margin:0;">pip install numpy</span></p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>How to Run</h2>
+            <div class="how-step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                    <h4>Install dependencies</h4>
+                    <div class="code-block">pip install pygame torch numpy</div>
+                </div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                    <h4>Download and extract the ZIP</h4>
+                    <p>Extract <code style="background:rgba(255,255,255,0.08);padding:2px 6px;border-radius:4px;font-family:monospace;">jowa-football-ai.zip</code> to any folder.</p>
+                </div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                    <h4>Run the game</h4>
+                    <div class="code-block">python jowa-football-ai-with-players_PLAYMODEAI4_6p.py</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Controls</h2>
+            <div class="player-controls">
+                <h3>Player Selection</h3>
+                <p><strong>↑ / ↓</strong> — cycle through players &nbsp;|&nbsp; <strong>Enter / Space</strong> — control selected player &nbsp;|&nbsp; <strong>ESC</strong> — back to selection</p>
+            </div>
+            <div class="player-controls">
+                <h3>Movement (after selecting a player)</h3>
+                <p><strong>W</strong> Up &nbsp;|&nbsp; <strong>S</strong> Down &nbsp;|&nbsp; <strong>A</strong> Left &nbsp;|&nbsp; <strong>D</strong> Right</p>
+                <p style="margin-top:6px;"><strong>↑</strong> Up &nbsp;|&nbsp; <strong>↓</strong> Down &nbsp;|&nbsp; <strong>←</strong> Left &nbsp;|&nbsp; <strong>→</strong> Right</p>
+            </div>
+        </section>
+
+        <div class="download-buttons">
+            <a href="../jowa-football-ai.zip" class="project-btn" download>
+                Download v2 (.zip)
+            </a>
+        </div>
+
+        <footer class="page-footer">
+            &copy; 2026 Jowa Football AI v2 — Open Source by AXV
+        </footer>
+
+    </div>
+
+</body>
+</html>
