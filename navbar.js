@@ -22,7 +22,7 @@
             <a href="https://wex-br.github.io">WEX</a>
             <a href="https://www.instagram.com/axv.ifelx" target="_blank" class="navbar-instagram">
                 <img src="https://static.cdninstagram.com/rsrc.php/v4/yI/r/VsNE-OHk_8a.png" alt="Instagram" class="navbar-insta-icon">
-                axv.bin
+                axv.ifelx
             </a>
         </div>
     `;
