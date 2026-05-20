@@ -1,12 +1,20 @@
+<script>
+// Force HTTPS redirection for Tailscale Funnel
+if (window.location.protocol === 'http:') {
+    window.location.href = window.location.href.replace('http:', 'https:');
+}
+</script>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+    <link rel="canonical" href="https://ahmedxv-v12.github.io/" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IFelx Web</title>
-    <link rel="icon" href="/logo2.png" type="image/x-icon">
+    <title>IFelx</title>
+    <link rel="icon" href="/logo.png" type="image/x-icon">
     <meta name="description" content="IFelx Web is the official website of AXV (Ahmed Walid), featuring technical applications, AI tools, and operating systems.">
-    <meta name="keywords" content="IFelx Web, IFelx, IFelx web, ifelx web, ifelx, Ahmed_XV, jowa-gpt, jowa, jowa-ai, Jowa-GPT, jowa-football-ai, AI tools, MiniGPT, web AI, IFelxOS, IFelx shop, arabicxv">
+    <meta name="keywords" content="IFelx Web, IFelx, IFelx web, ifelx web, ifelx, Ahmed_XV, jowa-gpt, jowa, jowa-ai, Jowa-GPT, jowa-football-ai,AXV, AI tools, MiniGPT, web AI, IFelxOS, IFelx shop, arabicxv">
     <meta name="robots" content="index, follow">
     <meta name="author" content="AXV">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,8 +28,33 @@
     <div class="container">
 
         <div class="logo-container">
-            <span class="logo-text">page</span>
+            <img class="logo-img" src="logo2my.png" alt="IFelx Logo">
+            <span class="logo-text">IFelx Web</span>
         </div>
+
+        <p class="text" style="max-width:600px; margin: 0 auto 36px; font-size:1rem; line-height:1.8; font-weight:400;">
+            IFelx Web is the official website of <strong>AXV</strong>, where technical applications and operating systems are available. The website is still in its early stages.
+        </p>
+
+        <div class="buttons-grid" id="projectsGrid">
+            <a href="jowa-gpt/index.html" class="project-btn" data-name="jowa-gpt">Install Jowa-mAi</a>
+            <a href="jowa-football-ai/index.html" class="project-btn" data-name="jowa-football-ai">Install Jowa-Football-AI</a>
+            <a href="ifelx/index.html" class="project-btn" data-name="ifelxos">Install IFelxOS</a>
+            </a>
+            <a href="https://ifelx.tailce0b52.ts.net/wex/index.html" class="project-btn" data-name="wex browser">
+                <strong class="new-glow">New </strong>WEX Engine
+            </a>
+        </div>
+
+        <div class="new-copyright">
+            <img src="my.png" alt="AXV">
+            AXV 2025/2026 &copy;
+        </div>
+    </div>
+
+    <style>
+        .new-glow { color: #2973ff; }
+    </style>
 
 </body>
 </html>

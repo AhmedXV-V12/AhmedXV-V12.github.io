@@ -142,7 +142,7 @@
         /* ─────────────────────────────────────────────────────── */
 
         body {
-            background: #000000;
+            background: #090909;
             color: #FFFFFF;
             font-family: 'Inter', 'Poppins', Arial, sans-serif;
             font-weight: 700;
@@ -300,21 +300,21 @@
               padding: 0px;
 }
         
-.project-btn{
-            background: #ddd;
-            color: #152d59;
-            font-size: 1rem;
-            cursor: pointer;
-            padding: 14px 32px;
-             box-shadow: 0 0 100px 20px rgba(132, 132, 132, 0.35);
-                   font-weight: 700;
-                   border: 1px solid #444444;
-                   letter-spacing: -1.5px;
-                   border-radius: 38px;
-            transition: all 0.3s cubic-bezier(.79,.14,.15,.86);
-            display: inline-block;
-       text-decoration: none;
-       text-align: center;
+.project-btn {
+  background: #1c1c1c;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 14px 32px;
+  box-shadow: 0 0 100px 20px rgba(132, 132, 132, 0.35);
+  font-weight: 700;
+  border: 1px solid #363636;
+  letter-spacing: -1.5px;
+  border-radius: 38px;
+  transition: all 0.3s cubic-bezier(.6,.04,.98,.34);
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
 }
 .project-btn strong{
 padding:0px;
