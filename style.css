@@ -43,6 +43,11 @@ body {
     gap: 16px;
 }
 
+element {
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
 .navbar-brand {
     display: flex;
     align-items: center;
