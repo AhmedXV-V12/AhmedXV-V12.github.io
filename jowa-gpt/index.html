@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css" />
-    <script src="/navbar.js" defer></script>
-
+    <script src="../navbar.js" defer></script>
+    <script src="../footer.js" defer></script>
 </head>
 <body>
 
@@ -29,7 +29,7 @@
             <h2>About</h2>
             <p>Jowa-mAi is a lightweight, open-source Large Language Model (MiniGPT) built with PyTorch. It uses an LSTM-based architecture trained on character-level Q&A data fetched from a remote database. Designed to run on low-end hardware with no GPU required.</p>
 
-            <div style="margin-top:20px;">
+            <div class="mt-md">
                 <div class="feature-item">
                     <div class="feature-title">🧠 LSTM Architecture</div>
                     <p>2-layer LSTM with 512 hidden units and 256-dim embeddings — lightweight yet capable</p>
@@ -60,8 +60,7 @@
                     <div class="code-block">
 <span class="kw">class</span> <span class="cls">JowaMAI</span>(nn.Module):
     embedding  → LSTM(layers=2, hidden=512) → Dropout(0.4) → Linear(vocab_size)
-    forward(x) → returns (output_logits, hidden_state)
-                    </div>
+    forward(x) → returns (output_logits, hidden_state)</div>
                 </div>
             </div>
 
@@ -75,8 +74,7 @@
 indices = [data_tokens.index(c) <span class="kw">for</span> c <span class="kw">in</span> text <span class="kw">if</span> c <span class="kw">in</span> data_tokens]
 
 <span class="cm"># decode</span>
-char = data_tokens[predicted_index]
-                    </div>
+char = data_tokens[predicted_index]</div>
                 </div>
             </div>
 
@@ -87,8 +85,7 @@ char = data_tokens[predicted_index]
                     <p><code>fetch_remote_data()</code> pulls a JSON file from GitHub. The JSON is a flat dictionary of <code>"question": "answer"</code> pairs used as the training corpus.</p>
                     <div class="code-block">
 url = <span class="str">"https://raw.githubusercontent.com/.../database.json"</span>
-data = requests.get(url).json()  <span class="cm"># { "q": "a", ... }</span>
-                    </div>
+data = requests.get(url).json()  <span class="cm"># { "q": "a", ... }</span></div>
                 </div>
             </div>
 
@@ -106,8 +103,7 @@ scheduler = ReduceLROnPlateau(patience=5, factor=0.5)
     loss = criterion(model(inputs), targets)
     loss.backward() → optimizer.step()
     <span class="kw">if</span> no_improve == 10: <span class="kw">break</span>   <span class="cm"># early stop</span>
-    torch.save(model.state_dict(), <span class="str">"jowa-mAi-1.6.pt"</span>)
-                    </div>
+    torch.save(model.state_dict(), <span class="str">"jowa-mAi-1.6.pt"</span>)</div>
                 </div>
             </div>
 
@@ -122,8 +118,7 @@ prompt → <span class="str">"Q: {prompt}\nA: "</span> → encode → feed to LS
     logits = output / temperature         <span class="cm"># scale confidence</span>
     probs  = softmax(logits)
     char   = multinomial_sample(probs)    <span class="cm"># random weighted pick</span>
-    <span class="kw">if</span> char <span class="kw">in</span> [<span class="str">"."</span>, <span class="str">"!"</span>, <span class="str">"?"</span>]: <span class="kw">break</span>
-                    </div>
+    <span class="kw">if</span> char <span class="kw">in</span> [<span class="str">"."</span>, <span class="str">"!"</span>, <span class="str">"?"</span>]: <span class="kw">break</span></div>
                 </div>
             </div>
 
@@ -135,7 +130,7 @@ prompt → <span class="str">"Q: {prompt}\nA: "</span> → encode → feed to LS
                 <strong>GNU General Public License v2.0</strong><br>
                 This software is free and open-source. You are free to use, study, modify, and distribute it under the terms of the GNU GPL v2.0. Any derivative work must also be released under the same license. No warranty is provided.
                 <br><br>
-                Copyright &copy; 2025/2026 <strong>Ahmed Walid (AXV)</strong> — <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" target="_blank" style="color:#f5a623;">Full License Text</a>
+                Copyright &copy; 2025/2026 <strong>Ahmed Walid (AXV)</strong> — <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" target="_blank">Full License Text</a>
             </div>
         </section>
 

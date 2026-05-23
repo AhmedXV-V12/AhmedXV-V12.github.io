@@ -9,59 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css" />
     <script src="../../navbar.js" defer></script>
-
-    <style>
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: rgba(255,255,255,0.5);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            transition: color 0.2s;
-        }
-        .back-link:hover { color: #fff; }
-
-        .changelog-item {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            font-size: 0.95rem;
-            font-weight: 400;
-            opacity: 0.85;
-            line-height: 1.6;
-        }
-        .changelog-item:last-child { border-bottom: none; }
-        .changelog-item::before {
-            content: "✦ ";
-            color: #2973ff;
-            font-size: 0.75rem;
-        }
-
-        .specs-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-weight: 400;
-            font-size: 0.95rem;
-        }
-        .specs-table tr {
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        .specs-table tr:last-child { border-bottom: none; }
-        .specs-table td {
-            padding: 10px 6px;
-            line-height: 1.6;
-        }
-        .specs-table td:first-child {
-            font-weight: 700;
-            width: 160px;
-            opacity: 0.55;
-            font-size: 0.82rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-    </style>
+    <script src="../../footer.js" defer></script>
 </head>
 <body>
 
@@ -73,7 +21,7 @@
             <h1>Jowa Football AI v2</h1>
             <p class="subtitle">6v6 · DQN Reinforcement Learning · Formation 3-2-1</p>
             <div class="badges">
-                <span class="badge" style="color:#6fa3ff;background:rgba(41,115,255,0.15);">Latest</span>
+                <span class="badge latest">Latest</span>
                 <span class="badge">2026</span>
                 <span class="badge">Open Source</span>
             </div>
@@ -111,15 +59,15 @@
             </div>
             <div class="feature-item">
                 <div class="feature-title">pygame</div>
-                <p><span class="code-block" style="display:inline;padding:2px 8px;margin:0;">pip install pygame</span></p>
+                <p><code>pip install pygame</code></p>
             </div>
             <div class="feature-item">
                 <div class="feature-title">PyTorch</div>
-                <p><span class="code-block" style="display:inline;padding:2px 8px;margin:0;">pip install torch</span></p>
+                <p><code>pip install torch</code></p>
             </div>
             <div class="feature-item">
                 <div class="feature-title">NumPy</div>
-                <p><span class="code-block" style="display:inline;padding:2px 8px;margin:0;">pip install numpy</span></p>
+                <p><code>pip install numpy</code></p>
             </div>
         </section>
 
@@ -136,7 +84,7 @@
                 <div class="step-num">2</div>
                 <div class="step-body">
                     <h4>Download and extract the ZIP</h4>
-                    <p>Extract <code style="background:rgba(255,255,255,0.08);padding:2px 6px;border-radius:4px;font-family:monospace;">jowa-football-ai.zip</code> to any folder.</p>
+                    <p>Extract <code>jowa-football-ai.zip</code> to any folder.</p>
                 </div>
             </div>
             <div class="how-step">
@@ -157,7 +105,7 @@
             <div class="player-controls">
                 <h3>Movement (after selecting a player)</h3>
                 <p><strong>W</strong> Up &nbsp;|&nbsp; <strong>S</strong> Down &nbsp;|&nbsp; <strong>A</strong> Left &nbsp;|&nbsp; <strong>D</strong> Right</p>
-                <p style="margin-top:6px;"><strong>↑</strong> Up &nbsp;|&nbsp; <strong>↓</strong> Down &nbsp;|&nbsp; <strong>←</strong> Left &nbsp;|&nbsp; <strong>→</strong> Right</p>
+                <p class="mt-sm"><strong>↑</strong> Up &nbsp;|&nbsp; <strong>↓</strong> Down &nbsp;|&nbsp; <strong>←</strong> Left &nbsp;|&nbsp; <strong>→</strong> Right</p>
             </div>
         </section>
 

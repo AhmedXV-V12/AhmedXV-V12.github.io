@@ -9,115 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css" />
-    <script src="/navbar.js" defer></script>
-
-    <style>
-        .screenshots-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 12px;
-            margin-top: 8px;
-        }
-
-        .screenshots-grid img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.08);
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-        }
-
-        .screenshots-grid img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 20px rgba(255,255,255,0.15);
-        }
-
-        .specs-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-weight: 400;
-            font-size: 0.95rem;
-        }
-
-        .specs-table tr {
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .specs-table tr:last-child {
-            border-bottom: none;
-        }
-
-        .specs-table td {
-            padding: 10px 6px;
-            line-height: 1.6;
-        }
-
-        .specs-table td:first-child {
-            font-weight: 700;
-            width: 180px;
-            opacity: 0.6;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .goal-item {
-            padding: 14px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .goal-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .goal-title {
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 6px;
-        }
-
-        .goal-item p {
-            font-size: 0.95rem;
-            font-weight: 400;
-            line-height: 1.7;
-            opacity: 0.8;
-            margin-bottom: 0;
-        }
-
-        .login-tip {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 16px 20px;
-            font-size: 0.92rem;
-            font-weight: 400;
-            line-height: 1.7;
-            margin-top: 14px;
-        }
-
-        .login-tip code {
-            background: rgba(255,255,255,0.1);
-            border-radius: 4px;
-            padding: 2px 8px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 767px) {
-            .specs-table td:first-child { width: 120px; }
-            .screenshots-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../navbar.js" defer></script>
+    <script src="../footer.js" defer></script>
 </head>
 <body>
 
     <div class="page-container">
 
         <header class="page-header">
-            <img src="./ifelx.png" alt="IFelxOS Logo" style="height:80px;width:80px;object-fit:contain;margin-bottom:16px;border-radius:16px;">
+            <div class="logo-circle md"><img src="./ifelx.png" alt="IFelxOS Logo"></div>
             <h1>IFelxOS</h1>
             <p class="subtitle">A New Linux Distribution — Based on Debian · 2026</p>
             <div class="badges">

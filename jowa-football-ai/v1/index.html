@@ -9,34 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css" />
     <script src="../../navbar.js" defer></script>
-
-    <style>
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: rgba(255,255,255,0.5);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            transition: color 0.2s;
-        }
-
-        .back-link:hover { color: #fff; }
-
-        .legacy-notice {
-            background: rgba(255,200,50,0.06);
-            border: 1px solid rgba(255,200,50,0.2);
-            border-radius: 10px;
-            padding: 14px 18px;
-            font-size: 0.9rem;
-            font-weight: 400;
-            line-height: 1.7;
-            margin-bottom: 28px;
-            color: rgba(255,220,100,0.85);
-        }
-    </style>
+    <script src="../../footer.js" defer></script>
 </head>
 <body>
 
@@ -48,20 +21,20 @@
             <h1>Jowa Football AI v1</h1>
             <p class="subtitle">Original Version — Single Python Script</p>
             <div class="badges">
-                <span class="badge" style="opacity:0.5;">Legacy</span>
+                <span class="badge legacy">Legacy</span>
                 <span class="badge">2025</span>
             </div>
         </header>
 
         <div class="legacy-notice">
-            ⚠️ This is the legacy version. Consider downloading <a href="../v2/index.html" style="color:#ffd464;">v2</a> for a better experience.
+            ⚠️ This is the legacy version. Consider downloading <a href="../v2/index.html">v2</a> for a better experience.
         </div>
 
         <section class="card">
             <h2>About v1</h2>
             <p>The original Jowa Football AI — a single Python script featuring 3v3 football with Q-table reinforcement learning AI. Requires Python to be installed on your system.</p>
 
-            <div style="margin-top:20px;">
+            <div class="mt-md">
                 <div class="feature-item">
                     <div class="feature-title">🤖 Q-Table AI</div>
                     <p>AI players learn using Q-table reinforcement learning</p>
