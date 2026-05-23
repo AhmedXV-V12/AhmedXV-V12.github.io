@@ -158,7 +158,6 @@ element {
     padding: 14px 32px;
     border: 1px solid rgba(255,255,255,0.15);
     border-radius: 38px;
-    box-shadow: 0 0 100px 20px rgba(132,132,132,0.25);
     transition: transform 0.3s cubic-bezier(.6,.04,.98,.34), box-shadow 0.3s, border-color 0.3s;
     display: inline-block;
     text-decoration: none;
@@ -609,10 +608,6 @@ element {
     box-shadow: 0 0 20px rgba(255,255,255,0.05);
 }
 
-.version-card.latest {
-    border-color: rgba(21,90,182,0.4);
-    box-shadow: 0 0 20px rgba(21,90,182,0.12);
-}
 
 .version-info h3 {
     font-size: 1.3rem;
