@@ -689,7 +689,7 @@ body.index-page {
     width: 200px;
     min-height: 200px;
     min-width: 200px;
-    border-radius: 50%;
+    border-radius: 36%%;
     object-fit: contain;
     background: #1C1C1C;
     border: 1px solid rgba(255,255,255,0.08);
@@ -1307,7 +1307,7 @@ body.wex-search-page {
     height: 40px;
     object-fit: contain;
     background: #1C1C1C;
-    border-radius: 50%;
+    border-radius: 36%%;
     padding: 8px;
     border: 1px solid rgba(255,255,255,0.08);
 }
