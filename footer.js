@@ -5,7 +5,7 @@
         <div class="site-footer-inner">
 
             <div class="site-footer-brand">
-                <img src="./logo.png" alt="IFelx Logo">
+                <img src="/logo.png" alt="IFelx Logo">
                 <span class="site-footer-brand-name">IFelx Web</span>
                 <p class="site-footer-desc">
                     Official website of AXV (Ahmed Walid) — open-source AI tools, operating systems, and technical projects.
