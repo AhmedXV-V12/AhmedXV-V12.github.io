@@ -166,7 +166,6 @@ element {
 
 .project-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 24px 6px rgba(255,255,255,0.45);
     border-color: rgba(255,255,255,0.35);
 }
 
