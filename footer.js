@@ -17,7 +17,7 @@
                 <a href="/jowa-gpt/index.html">jowamAi</a>
                 <a href="/jowa-football-ai/index.html">Jowa Football AI</a>
                 <a href="/ifelx/index.html">IFelxOS</a>
-                <a href="https://ifelx.tailce0b52.ts.net/wex/">WEX Engine</a>
+                <a href="https://ifelx.tailce0b52.ts.net">WEX Engine</a>
             </div>
 
             <div class="site-footer-col">
@@ -39,7 +39,7 @@
             <span class="site-footer-copy">&copy; 2025/2026 IFelx Web — AXV (Ahmed Walid)</span>
             <div class="site-footer-bottom-links">
                 <a href="/index.html">Home</a>
-                <a href="https://ifelx.tailce0b52.ts.net/wex/">WEX</a>
+                <a href="https://ifelx.tailce0b52.ts.net">WEX</a>
             </div>
         </div>
     `;
