@@ -8,7 +8,7 @@
                 <img src="/logo.png" alt="IFelx Logo">
                 <span class="site-footer-brand-name">IFelx Web</span>
                 <p class="site-footer-desc">
-                    Official website of AXV (Ahmed Walid) — open-source AI tools, operating systems, and technical projects.
+                    Official website of AXV  — open-source AI tools, operating systems, and technical projects.
                 </p>
             </div>
 
@@ -36,7 +36,7 @@
         </div>
 
         <div class="site-footer-bottom">
-            <span class="site-footer-copy">&copy; 2025/2026 IFelx Web — AXV (Ahmed Walid)</span>
+            <span class="site-footer-copy">&copy; 2025/2026 IFelx Web — AXV</span>
             <div class="site-footer-bottom-links">
                 <a href="/index.html">Home</a>
                 <a href="https://ifelx.tailce0b52.ts.net">WEX</a>
