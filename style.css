@@ -277,6 +277,32 @@ element {
     margin-bottom: 16px;
 }
 
+/* Hero animations */
+.page-header .logo-container {
+    animation: heroSlideDown 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+}
+
+.page-header .logo-img {
+    animation: heroScaleIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+    opacity: 0;
+}
+
+.page-header .logo-text {
+    animation: heroSlideDown 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+    opacity: 0;
+}
+
+.page-header .subtitle {
+    animation: fadeIn 0.6s ease-out 0.5s forwards;
+    opacity: 0;
+}
+
+.page-header .badges {
+    animation: fadeIn 0.5s ease-out 0.7s forwards;
+    opacity: 0;
+}
+
 /* ─── Badges ────────────────────────────────────────────── */
 .badges {
     display: flex;
@@ -662,7 +688,7 @@ body.index-page {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 900px;
     width: 100%;
     text-align: center;
     margin: 0 auto;
@@ -708,12 +734,63 @@ body.index-page {
     margin: 0 auto 36px;
 }
 
+/* Description card with blur reveal + shimmer glow */
+.desc-card {
+    background: linear-gradient(135deg, rgba(28,28,28,0.9) 0%, rgba(28,28,28,0.7) 50%, rgba(28,28,28,0.9) 100%);
+    background-size: 200% 200%;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 32px;
+    padding: 36px 40px;
+    margin: 0 auto 40px;
+    max-width: 720px;
+    text-align: center;
+    animation: blurReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards,
+               glowShimmer 4s ease-in-out 2.5s infinite;
+    opacity: 0;
+    filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+}
+
+.desc-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+    animation: glowShimmer 3s ease-in-out 3s infinite;
+}
+
+.desc-card p {
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 2;
+    color: rgba(255,255,255,0.85);
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.desc-card p strong {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
 .buttons-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.buttons-grid .project-btn {
+    width: auto;
+    min-width: 180px;
+    padding: 14px 32px;
 }
 
 .new-copyright {
@@ -1215,13 +1292,49 @@ body.wex-search-page {
     50%       { opacity: 0.8; }
 }
 
+/* Hero: logo slides down from top */
+@keyframes heroSlideDown {
+    from { opacity: 0; transform: translateY(-100px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero: logo image scales in */
+@keyframes heroScaleIn {
+    from { opacity: 0; transform: scale(0.7); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* Description: blur clears + glow shimmer */
+@keyframes blurReveal {
+    0%   { opacity: 0; filter: blur(20px); transform: translateY(30px); }
+    60%  { opacity: 1; filter: blur(0px); transform: translateY(0); }
+    100% { opacity: 1; filter: blur(0px); transform: translateY(0); }
+}
+
+@keyframes glowShimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Status cards: staggered slide up */
+@keyframes statusSlideUp {
+    from { opacity: 0; transform: translateY(40px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Status badge pulse */
+@keyframes statusGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(21,90,182,0.0); }
+    50%      { box-shadow: 0 0 12px 2px rgba(21,90,182,0.15); }
+}
+
 /* ─── Responsive ────────────────────────────────────────── */
 @media (max-width: 767px) {
     .logo-text  { font-size: 2.5rem; }
     .logo-img   { height: 120px; width: 120px; min-height: 120px; min-width: 120px; }
     .logo-container { flex-direction: column; margin-bottom: 30px; }
     .container  { padding: 0 16px; }
-    .project-btn { font-size: 1.2rem; width: 100%; max-width: 280px; }
+    .project-btn { font-size: 1.2rem; width: auto; min-width: 160px; padding: 12px 24px; }
 
     .page-header h1 { font-size: 2rem; }
     .card { padding: 22px; }
@@ -1242,8 +1355,8 @@ body.wex-search-page {
 
 @media (min-width: 768px) {
     .logo-container { flex-direction: row; }
-    .buttons-grid { flex-direction: column; }
-    .project-btn { width: 100%; max-width: 300px; }
+    .buttons-grid { flex-direction: row; }
+    .project-btn { width: auto; min-width: 200px; }
 }
 
 /* ─── Utilities ─────────────────────────────────────────── */
@@ -1276,6 +1389,133 @@ body.wex-search-page {
     letter-spacing: 0;
 }
 
+
+/* ─── Animated Status Section ───────────────────────────── */
+.status-section {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 0 16px;
+}
+
+.status-card {
+    background: #1C1C1C;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 32px;
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    cursor: default;
+    animation: statusSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+}
+
+.status-card:nth-child(1) { animation-delay: 1.4s; }
+.status-card:nth-child(2) { animation-delay: 1.6s; }
+.status-card:nth-child(3) { animation-delay: 1.8s; }
+.status-card:nth-child(4) { animation-delay: 2.0s; }
+
+.status-card:hover {
+    border-color: rgba(255,255,255,0.18);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.status-info {
+    text-align: left;
+    flex: 1;
+}
+
+.status-info h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    color: #FFFFFF;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-info p {
+    font-size: 0.88rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: rgba(255,255,255,0.5);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.status-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    padding: 5px 14px;
+    border-radius: 100px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    animation: statusGlow 2.5s ease-in-out infinite;
+}
+
+.status-badge.latest {
+    background: rgba(21,90,182,0.2);
+    color: #7aafff;
+    border: 1px solid rgba(21,90,182,0.3);
+}
+
+.status-badge.stable {
+    background: rgba(50,200,100,0.12);
+    color: #7adfa0;
+    border: 1px solid rgba(50,200,100,0.2);
+}
+
+.status-badge.live {
+    background: rgba(245,166,35,0.12);
+    color: #f5a623;
+    border: 1px solid rgba(245,166,35,0.2);
+}
+
+.status-badge.beta {
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.status-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    padding: 6px;
+}
+
+.status-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+@media (max-width: 767px) {
+    .status-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .status-info { text-align: center; width: 100%; }
+    .status-info h3 { justify-content: center; }
+    .status-badge { align-self: center; }
+    .status-icon { align-self: center; }
+}
 
 /* ─── Site Footer ───────────────────────────────────────── */
 .site-footer {
