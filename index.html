@@ -1,105 +1,134 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <link rel="canonical" href="https://ahmedxv-v12.github.io/" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IFelx Web — AXV Official</title>
-    <link rel="icon" href="/logo2.png" type="image/x-icon">
+    <link rel="canonical" href="https://ahmedxv-v12.github.io/" />
+    <link rel="icon" href="/logo2.png" type="image/png">
+    <link rel="apple-touch-icon" href="/logo.png">
+    <meta name="theme-color" content="#090909">
     <meta name="description" content="IFelx Web is the official website of AXV (Ahmed Walid), featuring open-source AI tools, operating systems, and technical projects.">
     <meta name="keywords" content="IFelx Web, IFelx, IFelx web, ifelx web, ifelx, Ahmed_XV, jowa-gpt, jowa, jowa-ai, Jowa-GPT, jowa-football-ai, AXV, AI tools, MiniGPT, web AI, IFelxOS, IFelx shop, arabicxv">
     <meta name="robots" content="index, follow">
     <meta name="author" content="AXV">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="IFelx Web">
+    <meta property="og:title" content="IFelx Web — AXV Official">
+    <meta property="og:description" content="Open-source AI tools, operating systems, and technical projects by AXV.">
+    <meta property="og:url" content="https://ahmedxv-v12.github.io/">
+    <meta property="og:image" content="https://ahmedxv-v12.github.io/logo.png">
+    <meta name="twitter:card" content="summary">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <script src="./navbar.js" defer></script>
     <script src="./footer.js" defer></script>
-<base target="_blank">
+    <script src="./site.js" defer></script>
 </head>
 <body class="index-page">
 
-    <div class="container">
+    <main class="container">
 
         <!-- Hero: Logo + Title slide from top -->
-        <div class="page-header">
+        <header class="page-header">
             <div class="logo-container">
-                <img class="logo-img" src="logo.png" alt="IFelx Logo">
-                <span class="logo-text">IFelx Web</span>
+                <span class="logo-halo"><img class="logo-img" src="logo.png" alt="IFelx Logo" width="200" height="200"></span>
+                <h1 class="logo-text">IFelx Web</h1>
             </div>
             <p class="subtitle">Official platform of AXV</p>
             <div class="badges">
                 <span class="badge">Open Source</span>
-                <span class="badge latest">AI Powered</span>
-                <span class="badge">Active</span>
+                <span class="badge"><span class="dot" style="color:#7adfa0"></span>Active</span>
             </div>
-        </div>
+        </header>
 
-        <!-- Description: blur reveal + glow shimmer inside a card box -->
+        <!-- Description: blur reveal + shimmer inside a card box -->
         <div class="desc-card">
             <p>
                 Explore a growing ecosystem of technical applications built by <strong>AXV</strong>. From intelligent AI assistants to custom operating systems — every project is designed with precision, performance, and the open-source community in mind.
             </p>
         </div>
 
-        <!-- Projects: horizontal buttons -->
-        <h2 class="section-title">Projects</h2>
-        <div class="buttons-grid" id="projectsGrid">
-            <a href="jowa-gpt/index.html" class="project-btn" data-name="jowa-gpt">Jowa-mAi</a>
-            <a href="jowa-football-ai/index.html" class="project-btn" data-name="jowa-football-ai">Jowa Football AI</a>
-            <a href="ifelx/index.html" class="project-btn" data-name="ifelxos">IFelxOS</a>
-            <a href="https://ifelx.tailce0b52.ts.net" class="project-btn" data-name="wex browser">IFelx Engine</a>
-            <a href="https://github.com/AhmedXV-V12/OpenWebfilemgr" class="project-btn" data-name="wex browser">OpenWebfilemgr</a>
-
-        </div>
+        <!-- Projects: horizontal pill buttons -->
+        <section aria-labelledby="projectsTitle">
+            <div class="section-head">
+                <h2 class="section-title" id="projectsTitle">Projects</h2>
+                <span class="section-count">5</span>
+            </div>
+            <div class="buttons-grid" id="projectsGrid">
+                <a href="jowa-gpt/index.html" class="project-btn" data-name="jowa-mai jowa-gpt ai llm">Jowa-mAi</a>
+                <a href="jowa-football-ai/index.html" class="project-btn" data-name="jowa-football-ai game rl">Jowa Football AI</a>
+                <a href="ifelx/index.html" class="project-btn" data-name="ifelxos os linux">IFelxOS</a>
+                <a href="https://ifelx.tailce0b52.ts.net" class="project-btn" data-name="ifelx engine wex search">IFelx Engine<svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                <a href="https://github.com/AhmedXV-V12/OpenWebfilemgr" class="project-btn" data-name="openwebfilemgr file manager github">OpenWebfilemgr<svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            </div>
+            <p class="search-empty" id="searchEmpty" role="status">No projects match “<strong></strong>”</p>
+        </section>
 
         <!-- Project Status: animated cards with project images -->
-        <h2 class="section-title" style="margin-top: 48px;">Project Status</h2>
-        <div class="status-section">
-            <div class="status-card">
-                <div class="status-icon">
-                    <img src="jowa.png" alt="Jowa-mAi">
-                </div>
-                <div class="status-info">
-                    <h3>Jowa-mAi</h3>
-                    <p>Conversational AI with advanced reasoning</p>
-                </div>
-                <span class="status-badge latest">Latest</span>
+        <section aria-labelledby="statusTitle">
+            <div class="section-head" style="margin-top: 48px;">
+                <h2 class="section-title" id="statusTitle">Project Status</h2>
             </div>
-            <div class="status-card">
-                <div class="status-icon">
-                    <img src="jowa.png" alt="Jowa Football AI">
-                </div>
-                <div class="status-info">
-                    <h3>Jowa Football AI</h3>
-                    <p>Artificial intelligence plays 6-a-side football</p>
-                </div>
-                <span class="status-badge latest">Latest</span>
+            <div class="status-section">
+                <a class="status-card" href="jowa-gpt/index.html">
+                    <div class="status-icon">
+                        <img src="jowa.png" alt="" width="36" height="36">
+                    </div>
+                    <div class="status-info">
+                        <h3>Jowa-mAi</h3>
+                        <p>Conversational AI with advanced reasoning</p>
+                    </div>
+                    <div class="status-side">
+                        <span class="status-badge latest">Latest</span>
+                        <svg class="status-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </div>
+                </a>
+                <a class="status-card" href="jowa-football-ai/index.html">
+                    <div class="status-icon">
+                        <img src="jowa.png" alt="" width="36" height="36">
+                    </div>
+                    <div class="status-info">
+                        <h3>Jowa Football AI</h3>
+                        <p>Artificial intelligence plays 6-a-side football</p>
+                    </div>
+                    <div class="status-side">
+                        <span class="status-badge latest">Latest</span>
+                        <svg class="status-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </div>
+                </a>
+                <a class="status-card" href="ifelx/index.html">
+                    <div class="status-icon">
+                        <img src="ifelx.png" alt="" width="36" height="36">
+                    </div>
+                    <div class="status-info">
+                        <h3>IFelxOS</h3>
+                        <p>Custom OS for developers &amp; power users</p>
+                    </div>
+                    <div class="status-side">
+                        <span class="status-badge stable">Stable</span>
+                        <svg class="status-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </div>
+                </a>
+                <a class="status-card" href="https://ifelx.tailce0b52.ts.net">
+                    <div class="status-icon">
+                        <img src="logo.png" alt="" width="36" height="36">
+                    </div>
+                    <div class="status-info">
+                        <h3>IFelx Engine</h3>
+                        <p>Independent search engine with custom crawling and indexing</p>
+                    </div>
+                    <div class="status-side">
+                        <span class="status-badge live">Live</span>
+                        <svg class="status-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                    </div>
+                </a>
             </div>
-            <div class="status-card">
-                <div class="status-icon">
-                    <img src="ifelx.png" alt="IFelxOS">
-                </div>
-                <div class="status-info">
-                    <h3>IFelxOS</h3>
-                    <p>Custom OS for developers & power users</p>
-                </div>
-                <span class="status-badge stable">Stable</span>
-            </div>
-            <div class="status-card">
-                <div class="status-icon">
-                    <img src="ifelx.png" alt="IFelx Engine">
-                </div>
-                <div class="status-info">
-                    <h3>IFelx Engine</h3>
-                    <p>Independent search engine with custom crawling and indexing</p>
-                </div>
-                <span class="status-badge live">Live</span>
-            </div>
-        </div>
+        </section>
 
-    </div>
+    </main>
 
 </body>
 </html>
