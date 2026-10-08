@@ -416,11 +416,12 @@ button { cursor: pointer; }
 .navbar.is-menu-open .navbar-menu-btn .icon-open { display: none; }
 .navbar.is-menu-open .navbar-menu-btn .icon-close { display: block; }
 
-@media (max-width: 900px) {
+@media (max-width: 1240px) {
     .navbar-links a:not(.navbar-instagram) { padding: 0 10px; }
 }
 
-@media (max-width: 767px) {
+/* the links fold into the menu button before they stop fitting */
+@media (max-width: 1099px) {
     .navbar-menu-btn { display: inline-flex; }
 
     .navbar-panel {
@@ -450,7 +451,7 @@ button { cursor: pointer; }
     .navbar-instagram { margin-top: 6px; justify-content: center; }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1100px) {
     .navbar-panel {
         flex: 1;
         display: flex;
@@ -1862,3 +1863,95 @@ body.index-page {
 .xv4-pkg:hover { border-color: var(--line-3); background: rgba(255,255,255,0.06); transform: translateY(-2px); }
 .xv4-pkg.is-current { border-color: var(--accent-line); background: var(--accent-soft); }
 .xv4-pkg.is-current small { color: var(--accent-text); }
+
+/* ═══ IFOS subsystem page + "New" badge ══════════════════════ */
+.nav-new {
+    display: inline-flex;
+    align-items: center;
+    height: 18px;
+    padding: 0 7px;
+    margin-left: 6px;
+    border-radius: var(--r-pill);
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.ifos-family {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 18px 0 6px;
+}
+
+.ifos-node {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 14px 16px;
+    background: var(--surface-2);
+    border: 1px solid var(--line-2);
+    border-radius: var(--r-md);
+    color: var(--text-3);
+    font-size: 0.86rem;
+    text-decoration: none;
+    transition: border-color .2s, transform .2s var(--ease-out);
+}
+
+a.ifos-node:hover { border-color: var(--accent-line); transform: translateY(-2px); }
+.ifos-node strong { color: var(--text); font-size: 1.05rem; letter-spacing: -1px; }
+.ifos-node.base { border-color: var(--accent-line); background: var(--accent-soft); }
+.ifos-node.own  { border-style: dashed; }
+
+.ifos-node-kicker {
+    color: var(--accent-text);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.ifos-arrow {
+    width: 2px;
+    height: 22px;
+    margin: 0 auto;
+    background: var(--accent-line);
+}
+
+.ifos-branch {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.ifos-h3 {
+    margin: 26px 0 10px;
+    color: var(--text);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.ifos-note {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    border-radius: 0 var(--r-md) var(--r-md) 0;
+    font-size: 0.9rem;
+}
+
+.card .specs-table { margin-top: 14px; }
+.card .screenshots-grid { margin: 14px 0; }
+.ifos-shots-1 { grid-template-columns: minmax(0, 640px); }
+.ifos-inline-badge { vertical-align: middle; margin-left: 8px; font-size: 0.7rem; }
+.download-buttons .ifos-src-btn { background: var(--surface-3); }
+
+@media (max-width: 767px) {
+    .ifos-branch { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090909">
+    <title>IFOS subsystem</title>
+    <meta name="description" content="IFOS subsystem — IFOS2, the base; IFelxOS2, the full desktop system built on it; the open-source ODE installer; and itelxOS 1.2, a 64-bit system with its own kernel.">
+    <meta name="keywords" content="IFOS, IFOS2, IFelxOS2, IFelxUi, ODE installer, itelxOS, itelx, ITFS, XVC, IFelx">
+    <link rel="icon" href="../ifelx.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../navbar.js" defer></script>
+    <script src="../footer.js" defer></script>
+    <script src="../site.js" defer></script>
+</head>
+<body>
+
+    <main class="page-container">
+
+        <header class="page-header">
+            <div class="logo-circle md"><img src="../ifelx.png" alt="IFOS logo"></div>
+            <h1>IFOS subsystem</h1>
+            <p class="subtitle">The systems built on IFOS, and the installer that puts them on a computer</p>
+            <div class="badges">
+                <span class="badge latest">New</span>
+                <span class="badge">IFOS2</span>
+                <span class="badge">IFelxOS2</span>
+                <span class="badge">ODE installer</span>
+                <span class="badge">itelxOS 1.2</span>
+            </div>
+        </header>
+
+        <!-- ── Overview ─────────────────────────────────────── -->
+        <section class="card">
+            <h2>How it fits together</h2>
+            <p><strong>IFOS2</strong> is the base: a small Debian 13 core. <strong>IFelxOS2</strong> is the complete operating system built on top of it, and the <strong>ODE installer</strong> is the installer, made from the same foundation, that writes it to a disk. <strong>itelxOS 1.2</strong> is a separate system with its own kernel that ODE also installs.</p>
+            <div class="ifos-family" aria-label="Family of IFOS systems">
+                <a class="ifos-node base" href="#ifos2">
+                    <span class="ifos-node-kicker">Base</span>
+                    <strong>IFOS2</strong>
+                    <span>Debian 13 core</span>
+                </a>
+                <div class="ifos-arrow" aria-hidden="true"></div>
+                <div class="ifos-branch">
+                    <a class="ifos-node" href="#ifelxos2">
+                        <span class="ifos-node-kicker">System</span>
+                        <strong>IFelxOS2</strong>
+                        <span>IFelxUi desktop</span>
+                    </a>
+                    <a class="ifos-node" href="#ode">
+                        <span class="ifos-node-kicker">Installer · open source</span>
+                        <strong>ODE installer</strong>
+                        <span>installs IFelxOS2, itelxOS, yours</span>
+                    </a>
+                    <a class="ifos-node own" href="#itelx">
+                        <span class="ifos-node-kicker">Own kernel</span>
+                        <strong>itelxOS 1.2</strong>
+                        <span>installed by ODE</span>
+                    </a>
+                </div>
+            </div>
+            <p class="ifos-note">Everything on this page was tried in a virtual machine (QEMU/KVM, UEFI and BIOS) before it was written: booted, installed and started from the installed disk. The screenshots come from those runs.</p>
+        </section>
+
+        <!-- ── IFOS2 ────────────────────────────────────────── -->
+        <section class="card" id="ifos2">
+            <h2>IFOS2 — the base</h2>
+            <p>IFOS2 is the lightweight core and system foundation that IFelxOS2 and the ODE installer are made from. It is a live Debian 13 (trixie) system with Linux 6.12 that starts straight into a text console, signed in as <code>user</code>. It has no desktop and no installer: it is the starting point for building systems.</p>
+            <p>Its own programs live under <code>/dex</code>, apart from the Debian tree: <code>/dex/apps/ifelx-stable</code> (BusyBox tools, apt, dpkg, flatpak), <code>/dex/apps/xv4.sh</code> (the xv4 package manager, which installs apps isolated under <code>/dex/apps</code>), and <code>/dex/db</code> and <code>/dex/cache</code> for its package data.</p>
+            <table class="specs-table">
+                <tr><td>Type</td><td>Live system, text console</td></tr>
+                <tr><td>Based on</td><td>Debian 13 (trixie), Linux 6.12</td></tr>
+                <tr><td>ISO size</td><td>706 MB</td></tr>
+                <tr><td>Boot</td><td>GRUB, menu entry “IFOS2 Live”</td></tr>
+                <tr><td>Session</td><td>Signs in automatically as <code>user</code> (member of <code>sudo</code>)</td></tr>
+                <tr><td>Package tools</td><td>apt, dpkg, flatpak, xv4.sh</td></tr>
+                <tr><td>Licence</td><td>AGPL-3.0; Debian programs keep their own licences</td></tr>
+                <tr><td>Architecture</td><td>x86-64</td></tr>
+            </table>
+            <h3 class="ifos-h3">Using it</h3>
+            <div class="how-step">
+                <div class="step-num">1</div>
+                <div class="step-body"><h4>Write the ISO</h4><p>Write <code>IFOS2.iso</code> to a USB stick (Rufus, Etcher or <code>dd</code>) or open it in a virtual machine.</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">2</div>
+                <div class="step-body"><h4>Start “IFOS2 Live”</h4><p>GRUB starts it after 5 seconds. The console opens signed in; <code>sudo</code> works without a password in the live session.</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">3</div>
+                <div class="step-body"><h4>Look around</h4><p>The network card starts switched off; bring it up yourself when you need it. Some everyday commands are left out on purpose (for example <code>free</code>) to keep the core small.</p></div>
+            </div>
+<pre class="code-block"><span class="cm"># what IFOS2 is and where its tools are</span>
+cat /etc/os-release
+ls /dex/apps
+ip -br a</pre>
+            <div class="screenshots-grid ifos-shots-1">
+                <img src="./img/ifos2-console.png" alt="IFOS2 console after start, with system details" loading="lazy">
+            </div>
+            <div class="download-buttons">
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/IFOS2.iso" class="project-btn">Download IFOS2 · 706 MB</a>
+            </div>
+        </section>
+
+        <!-- ── IFelxOS2 ─────────────────────────────────────── -->
+        <section class="card" id="ifelxos2">
+            <h2>IFelxOS2</h2>
+            <p>IFelxOS2 is the complete operating system built on IFOS. Its desktop, <strong>IFelxUi</strong>, is a native program that draws straight on the screen (DRM/KMS with cairo and pango): there is no X server, and a small Wayland compositor inside it runs ordinary Linux programs. The interface starts in Arabic (right to left) and switches to English.</p>
+            <p>It comes with a file manager, text editor, photos, calculator, screenshot tool, settings, games, a web browser and Chromium, an app store and an apt store. Widgets on the desktop show the clock, processor, memory, storage and network.</p>
+            <div class="screenshots-grid">
+                <img src="./img/ifelxos2-desktop.png" alt="IFelxOS2 desktop with clock, system and network widgets" loading="lazy">
+                <img src="./img/ifelxos2-menu.png" alt="IFelxOS2 applications menu" loading="lazy">
+                <img src="./img/ifelxos2-login.png" alt="IFelxOS2 sign-in screen after installation" loading="lazy">
+            </div>
+            <table class="specs-table">
+                <tr><td>Based on</td><td>IFOS2 (Debian 13), Linux 6.12</td></tr>
+                <tr><td>Desktop</td><td>IFelxUi (native, Wayland programs inside)</td></tr>
+                <tr><td>Download</td><td>The ODE installer for IFelxOS2, 1.1 GB</td></tr>
+                <tr><td>Disk</td><td>6 GB at least; about 2.8 GB used after installation</td></tr>
+                <tr><td>Starts on</td><td>UEFI (IFelxBoot) and BIOS (GRUB)</td></tr>
+                <tr><td>Languages</td><td>Arabic and English</td></tr>
+                <tr><td>Licence</td><td>AGPL-3.0</td></tr>
+            </table>
+            <h3 class="ifos-h3">Licence</h3>
+            <p>IFelxOS2 is licensed under the <strong>GNU Affero General Public License v3.0</strong>. You may use it, study it, change it and share it; if you share a changed version, or run it for others over a network, its source must be available under the same licence. The Debian programs inside keep their own free licences, listed in <code>/usr/share/doc/*/copyright</code>. The installer shows these terms and asks you to accept them before installing.</p>
+            <h3 class="ifos-h3">Installing it</h3>
+            <p>IFelxOS2 is downloaded as its ODE installer: start the computer from it and the installer opens directly.</p>
+            <div class="how-step">
+                <div class="step-num">1</div>
+                <div class="step-body"><h4>Make the USB stick</h4><p>Any way works: Rufus (either mode), Etcher, Ventoy or <code>dd</code>. Start the computer from the stick.</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">2</div>
+                <div class="step-body"><h4>Start, terms, disk</h4><p>Press <strong>Start</strong>, accept the terms, choose the disk. The stick you started from is never offered.</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">3</div>
+                <div class="step-body"><h4>Installation type</h4><p><strong>Erase disk and install</strong> takes the whole disk. <strong>Choose a partition</strong> keeps the others; GParted opens from this page to make room.</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">4</div>
+                <div class="step-body"><h4>Your account</h4><p>Computer name, account name and password. This account can manage the computer with its password (sudo).</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">5</div>
+                <div class="step-body"><h4>Install and restart</h4><p>After <em>Done</em>, remove the stick and restart. The installed system opens on its sign-in screen; the live account is removed and root is locked.</p></div>
+            </div>
+            <div class="screenshots-grid">
+                <img src="./img/ode-type.png" alt="ODE: installation type page" loading="lazy">
+                <img src="./img/ode-confirm.png" alt="ODE: final confirmation for IFelxOS2" loading="lazy">
+                <img src="./img/ode-installed.png" alt="ODE: IFelxOS2 installed, 100%" loading="lazy">
+            </div>
+            <div class="download-buttons">
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/IFelxOS2-amd64.iso" class="project-btn">Download IFelxOS2 · 1.1 GB</a>
+            </div>
+        </section>
+
+        <!-- ── ODE installer ────────────────────────────────── -->
+        <section class="card" id="ode">
+            <h2>ODE installer <span class="badge open-source-badge ifos-inline-badge">Open Source</span></h2>
+            <p>ODE is an installer medium for operating systems. It starts from a USB stick or a CD on UEFI and BIOS computers, opens a full-screen installer window and writes a system to a disk. Underneath is a small Ubuntu 24.04 that runs entirely from memory, with Xorg, GParted and the window (Python and pygame). The system being installed stays on the stick as <code>/ifelxos/filesystem.squashfs</code> and is read from there.</p>
+            <p>It finds its stick however it was made: written as an image (dd, Etcher, Rufus “DD mode”), files copied to a FAT32, exFAT or NTFS stick (Rufus “ISO mode”), or the ISO kept as a file (Ventoy). Keyboards, mice and laptop touchpads are picked up as they appear, including ones plugged in later.</p>
+            <div class="screenshots-grid">
+                <img src="./img/ode-welcome.png" alt="ODE welcome page" loading="lazy">
+                <img src="./img/ode-terms.png" alt="ODE terms page" loading="lazy">
+                <img src="./img/itelx-ode-terms.png" alt="The same ODE carrying itelxOS" loading="lazy">
+            </div>
+
+            <h3 class="ifos-h3">Put your own system in ODE</h3>
+            <p>You do not rebuild ODE for this. Take a finished ODE ISO, change the system image and the texts, and you have an installer for your system. Kernel, installer system, window and boot loaders stay as they are. The source includes <code>tools/make-custom-ode.sh</code>, which does exactly that:</p>
+<pre class="code-block"><span class="cm"># Linux or WSL, as root (needs xorriso, zstd, cpio, squashfs-tools, python3)</span>
+sudo tools/make-custom-ode.sh \
+    --iso ODE_installer.iso \
+    --config my-config.json \
+    --tree my-rootfs/ \
+    -o MyOS_installer.iso</pre>
+            <div class="how-step">
+                <div class="step-num">1</div>
+                <div class="step-body"><h4>config.json</h4><p>Your system's name, default computer name, minimum size in MiB, and the texts of the welcome, terms and finish pages.</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">2</div>
+                <div class="step-body"><h4>The system image</h4><p>A directory (<code>--tree</code>) or a ready squashfs (<code>--squashfs</code>). Systems built on IFOS2 / IFelxOS2 are installed by the stock backend as they are.</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">3</div>
+                <div class="step-body"><h4>A backend, for other systems</h4><p>Anything else brings its own <code>ode-install</code> (<code>--backend</code>) with the same commands and progress lines the window reads. The itelxOS example in the source is a full one, for a system that is not Linux.</p></div>
+            </div>
+<pre class="code-block">{
+  <span class="str">"system"</span>: {
+    <span class="str">"name"</span>: <span class="str">"MyOS"</span>,
+    <span class="str">"image"</span>: <span class="str">"/run/ode/medium/ifelxos/filesystem.squashfs"</span>,
+    <span class="str">"default_hostname"</span>: <span class="str">"myos"</span>,
+    <span class="str">"min_root_mib"</span>: 4096
+  },
+  <span class="str">"pages"</span>: {
+    <span class="str">"welcome"</span>: { <span class="str">"title"</span>: <span class="str">"ODE Installer"</span>, <span class="str">"subtitle"</span>: <span class="str">"MyOS 1.0"</span> },
+    <span class="str">"terms"</span>:   { <span class="str">"body"</span>: <span class="str">"Your licence and terms here."</span> },
+    <span class="str">"finish"</span>:  { <span class="str">"title"</span>: <span class="str">"Installation Complete"</span>, <span class="str">"message"</span>: <span class="str">"Remove the medium and restart."</span> }
+  }
+}</pre>
+            <p class="ifos-note">Checked: an itelxOS installer made with this script from the IFelxOS2 ODE ISO started in a virtual machine and showed itelxOS on its pages. The itelxOS installer built the same way installed itelxOS and started it.</p>
+            <table class="specs-table">
+                <tr><td>Installer system</td><td>Ubuntu 24.04, Linux 6.8, runs from memory</td></tr>
+                <tr><td>Window</td><td>Python + pygame, 8 pages</td></tr>
+                <tr><td>Install types</td><td>Erase disk · Choose a partition (with GParted)</td></tr>
+                <tr><td>Starts on</td><td>UEFI (IFelxBoot) and BIOS (GRUB)</td></tr>
+                <tr><td>Source</td><td>Window, installer system, build and tests, and IFelxBoot, the UEFI loader written from scratch</td></tr>
+                <tr><td>Licence</td><td>AGPL-3.0</td></tr>
+            </table>
+            <p>ODE's licence does not reach the systems it carries: a system on the same stick is a separate work and keeps its own licence. That is how one ODE installs IFelxOS2 (AGPL-3.0) and itelxOS (its own licences) alike.</p>
+            <div class="download-buttons">
+                <a href="https://github.com/AhmedXV-V12/ODE-installer" class="project-btn ifos-src-btn"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Source code</a>
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/IFelxOS2-amd64.iso" class="project-btn">Download ODE installer (IFelxOS2)</a>
+            </div>
+        </section>
+
+        <!-- ── itelxOS 1.2 ──────────────────────────────────── -->
+        <section class="card" id="itelx">
+            <h2>itelxOS 1.2</h2>
+            <p>itelxOS is a 64-bit operating system of the IFelx family written from scratch: its own kernel, its own filesystem (<strong>ITFS</strong>), the <strong>itelx terminal</strong>, the <strong>XVC</strong> programming language and <strong>XVR</strong> executables. It is not Linux. The console draws Arabic and English, and Arabic text runs right to left.</p>
+            <div class="screenshots-grid">
+                <img src="./img/itelx-boot.png" alt="itelxOS starting from its installed disk" loading="lazy">
+                <img src="./img/itelx-help.png" alt="itelx terminal: help" loading="lazy">
+                <img src="./img/itelx-xvc.png" alt="Running XVC and XVR programs on itelxOS" loading="lazy">
+            </div>
+            <table class="specs-table">
+                <tr><td>Kernel</td><td>itelx (own), x86-64, NX / SMEP / SMAP on</td></tr>
+                <tr><td>Filesystem</td><td>ITFS</td></tr>
+                <tr><td>Starts on</td><td>UEFI (IFelxBoot) and BIOS (its own boot code, no GRUB)</td></tr>
+                <tr><td>Disks</td><td>SATA (AHCI), IDE, NVMe</td></tr>
+                <tr><td>Keyboard</td><td>PS/2 (USB is not supported in 1.2 yet)</td></tr>
+                <tr><td>Disk space</td><td>256 MB at least</td></tr>
+                <tr><td>Installer</td><td>ODE installer for itelxOS</td></tr>
+                <tr><td>Licence</td><td>Kernel: itelx Kernel License 1.0 · Userspace: MPL-2.0</td></tr>
+            </table>
+            <h3 class="ifos-h3">Licence</h3>
+            <p>itelxOS has two licences. The <strong>kernel</strong> (the kernel, the boot code and the ITFS core) is under the <strong>itelx Kernel License 1.0</strong>: anyone may use it for any purpose, including commercially, read its source and share it unchanged, also on installation media such as the ODE installer, but modified versions may not be distributed; changes can be sent back to the author. The <strong>userspace</strong> (init, the itelx terminal, the XVC language, libitx, the system call interface and the apps in <code>/dex</code>) is under the <strong>Mozilla Public License 2.0</strong>: change it and share it, and changed files stay open. Programs you write for itelxOS may be under any licence you like. The licence texts are in <code>/system/licenses</code>.</p>
+            <h3 class="ifos-h3">Installing it</h3>
+            <p>The download is the ODE installer for itelxOS, with the same pages as IFelxOS2's. It asks for an account, but itelxOS 1.2 has no sign-in: the name is kept as the computer's owner (<code>/system/owner</code>) and the password is not stored. After restarting, the computer starts straight into the itelx terminal.</p>
+            <div class="screenshots-grid ifos-shots-1">
+                <img src="./img/itelx-ode-installed.png" alt="ODE: itelxOS installed — ITFS written, BIOS and UEFI set up" loading="lazy">
+            </div>
+            <p class="ifos-note">In a virtual machine give itelxOS a SATA disk and a PS/2 keyboard. With a virtio disk it starts but reports that the system disk was not found, and a USB-only keyboard does not type.</p>
+            <h3 class="ifos-h3">Using the terminal</h3>
+            <table class="specs-table">
+                <tr><td><code>help</code></td><td>all commands</td></tr>
+                <tr><td><code>ls</code> · <code>cd= /system</code></td><td>list and change directory</td></tr>
+                <tr><td><code>add -r</code> · <code>add -f</code> · <code>del</code></td><td>make a directory or a file, delete</td></tr>
+                <tr><td><code>cat</code> · <code>write</code> · <code>copy</code> · <code>move</code></td><td>show, type into, copy, rename files</td></tr>
+                <tr><td><code>run file.xvc</code> · <code>/dex/app.xvr</code></td><td>run an XVC program or an executable</td></tr>
+                <tr><td><code>ps</code> · <code>kill</code> · <code>mem</code> · <code>mounts</code></td><td>processes and system information</td></tr>
+                <tr><td><code>reboot</code> · <code>poweroff</code></td><td>restart, switch off</td></tr>
+                <tr><td>Alt+Shift</td><td>keyboard between English and Arabic</td></tr>
+            </table>
+            <p>Your own programs go in <code>/dex</code>; a file <code>/system/startup.xvc</code>, when present, runs at every start. This is <code>/dex/hello.xvc</code>, which comes with the system:</p>
+<pre class="code-block"><span class="cm"># hello.xvc - the first XVC program</span>
+print(<span class="str">"Hello from XVC!"</span>)
+let name = <span class="str">"itelx"</span>
+print(<span class="str">"this is "</span> + name + <span class="str">" "</span> + str(1) + <span class="str">"."</span> + str(2))</pre>
+            <div class="download-buttons">
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx.iso" class="project-btn">Download itelxOS 1.2 · 179 MB</a>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            &copy; 2026 IFOS subsystem — Ahmed Walid (AXV)
+        </footer>
+
+    </main>
+
+</body>
+</html>

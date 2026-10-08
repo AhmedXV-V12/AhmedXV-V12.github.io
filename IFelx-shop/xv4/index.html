@@ -1,84 +1,152 @@
-<!doctype html>
- <html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>xv4 Package Manager</title>
-  <style>
-    /* Minimal, no heavy effects */
-    :root{--bg:#0f1220;--panel:#13182b;--text:#e5e7eb;--muted:#9aa3af;--primary:#7c3aed}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0f1220;color:var(--text)}
-    header, main{max-width:1000px;margin:0 auto;padding:16px}
-    .panel{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
-    h1{margin:0 0 8px 0;font-size:24px}
-    .muted{color:var(--muted);font-size:14px}
-    .row{display:flex;gap:8px;flex-wrap:wrap}
-    input,button{border-radius:8px;border:1px solid rgba(255,255,255,.12);background:#0c1022;color:var(--text);padding:10px 12px}
-    button{background:#0c1022;cursor:pointer}
-    .list{display:grid;gap:8px;margin-top:12px}
-    .pkg{display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:10px}
-    .status{margin-top:12px;font-size:14px}
-    code{background:#0b1020;padding:2px 6px;border-radius:6px;border:1px solid rgba(255,255,255,.08)}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090909">
+    <title>xv4 Package Manager — IFelx Shop</title>
+    <meta name="description" content="xv4 — the IFelxOS package manager. Browse IFelx Shop packages and get the terminal command to install, update or upgrade.">
+    <link rel="icon" href="/logo2.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css" />
+    <script src="../../navbar.js" defer></script>
+    <script src="../../footer.js" defer></script>
+    <script src="../../site.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>xv4 Package Manager</h1>
-    <div class="muted">Simple frontend. Use the shown commands in your terminal.</div>
-  </header>
 
-  <main>
-    <section class="panel">
-      <div class="row">
-        <input id="pkg" placeholder="package name (e.g. requests)" />
-        <button id="btn-install">Install</button>
-        <button id="btn-update">Update (read update/m.txt)</button>
-        <button id="btn-upgrade">Upgrade (apply updates)</button>
-      </div>
-      <div class="status" id="status">No action performed yet.</div>
-    </section>
+    <main class="page-container">
 
-    <section class="panel" style="margin-top:12px">
-      <strong>Usage</strong>
-      <div class="list">
-        <div>Install a package: <code>sudo xv4 install &lt;package&gt;</code></div>
-        <div>Mark updates from file: <code>xv4 update</code> (reads <code>./update/m.txt</code>)</div>
-        <div>Apply updates: <code>sudo xv4 upgrade</code></div>
-      </div>
-    </section>
+        <header class="page-header">
+            <div class="logo-circle md"><img src="../../ifelx.png" alt="IFelx Shop"></div>
+            <h1>xv4 Package Manager</h1>
+            <p class="subtitle">The IFelxOS package manager — browse IFelx Shop and copy the command</p>
+            <div class="badges">
+                <span class="badge">IFelx Shop</span>
+                <span class="badge latest">xv4.sh</span>
+                <span class="badge" id="pkgCount">Packages</span>
+            </div>
+        </header>
 
-    <section class="panel" style="margin-top:12px">
-      <strong>Notes</strong>
-      <ul>
-        <li>This UI does not execute commands directly. Copy the command text and run it in your terminal.</li>
-      </ul>
-    </section>
-  </main>
+        <section class="card">
+            <h2>Command builder</h2>
+            <p>This page never runs anything — pick an action, then copy the command into your terminal.</p>
 
-  <script>
-    const els = {
-      pkg: document.getElementById('pkg'),
-      st: document.getElementById('status'),
-      bI: document.getElementById('btn-install'),
-      bU: document.getElementById('btn-update'),
-      bG: document.getElementById('btn-upgrade'),
-    };
+            <div class="xv4-actions" role="tablist" aria-label="Action">
+                <button type="button" class="xv4-chip is-current" data-action="install" role="tab" aria-selected="true">Install</button>
+                <button type="button" class="xv4-chip" data-action="update" role="tab" aria-selected="false">Update</button>
+                <button type="button" class="xv4-chip" data-action="upgrade" role="tab" aria-selected="false">Upgrade</button>
+            </div>
 
-    function setStatus(t){ els.st.textContent = t; }
-    function cmd(t){ return 'Run in terminal: ' + t; }
+            <div class="xv4-field" id="pkgField">
+                <input id="pkg" type="text" placeholder="Package name (e.g. jq)" autocomplete="off" spellcheck="false" aria-label="Package name" list="pkgList">
+                <datalist id="pkgList"></datalist>
+            </div>
 
-    els.bI.addEventListener('click', () => {
-      const name = (els.pkg.value||'').trim();
-      if(!name){ setStatus('Enter a package name first.'); return; }
-      setStatus(cmd('sudo xv4 install ' + name));
-    });
-    els.bU.addEventListener('click', () => {
-      setStatus(cmd('xv4 update'));
-    });
-    els.bG.addEventListener('click', () => {
-      setStatus(cmd('sudo xv4 upgrade'));
-    });
-  </script>
+            <p class="xv4-hint" id="hint">Install a package from IFelx Shop.</p>
+            <div class="code-block" id="cmd">sudo xv4 install &lt;package&gt;</div>
+        </section>
+
+        <section class="card">
+            <h2>Packages</h2>
+            <p>Click a package to put it in the command builder.</p>
+            <div class="xv4-grid" id="pkgGrid">
+                <span class="xv4-hint">Loading packages…</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Usage</h2>
+            <div class="feature-item">
+                <div class="feature-title">Install a package</div>
+                <p><code>sudo xv4 install &lt;package&gt;</code> — <a href="../install/index.html" style="color:var(--accent-text)">details</a></p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-title">Mark updates</div>
+                <p><code>xv4 update</code> reads <code>./update/m.txt</code> — <a href="../update/index.html" style="color:var(--accent-text)">details</a></p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-title">Apply updates</div>
+                <p><code>sudo xv4 upgrade</code> — <a href="../upgrade/index.html" style="color:var(--accent-text)">details</a></p>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            &copy; 2025/2026 IFelx Shop — xv4 by AXV
+        </footer>
+
+    </main>
+
+    <script>
+    (function () {
+        const pkg   = document.getElementById('pkg');
+        const field = document.getElementById('pkgField');
+        const cmd   = document.getElementById('cmd');
+        const hint  = document.getElementById('hint');
+        const grid  = document.getElementById('pkgGrid');
+        const chips = document.querySelectorAll('.xv4-chip');
+        let action  = 'install';
+
+        const HINTS = {
+            install: 'Install a package from IFelx Shop.',
+            update:  'Read ./update/m.txt and mark packages for upgrade.',
+            upgrade: 'Apply the updates prepared by xv4 update. On Windows: python xv4/xv4.py upgrade',
+        };
+
+        function render() {
+            const name = pkg.value.trim().replace(/\s+/g, '');
+            const text = action === 'install' ? 'sudo xv4 install ' + (name || '<package>')
+                       : action === 'update'  ? 'xv4 update'
+                       : 'sudo xv4 upgrade';
+            // keep the copy button that site.js appended
+            const btn = cmd.querySelector('.code-copy');
+            cmd.textContent = text;
+            if (btn) cmd.appendChild(btn);
+            field.hidden = action !== 'install';
+            hint.textContent = HINTS[action];
+            grid.querySelectorAll('.xv4-pkg').forEach(b => b.classList.toggle('is-current', b.dataset.name === name));
+        }
+
+        chips.forEach(c => c.addEventListener('click', () => {
+            action = c.dataset.action;
+            chips.forEach(o => {
+                o.classList.toggle('is-current', o === c);
+                o.setAttribute('aria-selected', String(o === c));
+            });
+            render();
+        }));
+
+        pkg.addEventListener('input', render);
+
+        fetch('../install/packages.json')
+            .then(r => r.json())
+            .then(list => {
+                document.getElementById('pkgCount').textContent = list.length + ' packages';
+                document.getElementById('pkgList').innerHTML = list.map(p => `<option value="${p.name}">`).join('');
+                grid.innerHTML = '';
+                list.forEach(p => {
+                    const b = document.createElement('button');
+                    b.type = 'button';
+                    b.className = 'xv4-pkg';
+                    b.dataset.name = p.name;
+                    b.innerHTML = '<span></span><small></small>';
+                    b.querySelector('span').textContent = p.name;
+                    b.querySelector('small').textContent = 'v' + p.version;
+                    b.addEventListener('click', () => {
+                        chips[0].click();
+                        pkg.value = p.name;
+                        render();
+                        cmd.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    });
+                    grid.appendChild(b);
+                });
+                render();
+            })
+            .catch(() => { grid.innerHTML = '<span class="xv4-hint">Could not load the package list.</span>'; });
+    })();
+    </script>
+
 </body>
 </html>

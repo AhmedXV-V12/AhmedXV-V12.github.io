@@ -39,6 +39,8 @@ const PROJECTS = [
     { name: "IFelxOS",          desc: "Debian-based Linux distribution",       href: "/ifelx/index.html",            icon: "/ifelx.png", keys: "ifelxos os linux debian distro xv4 iso cinnamon" },
     { name: "IFelx Engine",     desc: "Independent search engine",             href: ENGINE_URL,                     icon: "/logo.png",  keys: "ifelx engine search wex crawler index ifse" },
     { name: "OpenWebfilemgr",   desc: "Open-source web file manager",          href: "https://github.com/AhmedXV-V12/OpenWebfilemgr", icon: "/logo.png", keys: "file manager web github open" },
+    { name: "IFOS subsystem",   desc: "IFOS2, IFelxOS2, ODE installer, itelxOS 1.2", href: "/ifos-subsystem/index.html", icon: "/ifelx.png", keys: "ifos ifos2 ifelxos2 ifelxui ode installer itelx itelxos itfs xvc subsystem new" },
+    { name: "ODE installer",    desc: "Open-source OS installer (GitHub)",  href: "https://github.com/AhmedXV-V12/ODE-installer", icon: "/ifelx.png", keys: "ode installer ifos iso usb github source open" },
     { name: "xv4 Package Manager", desc: "IFelx Shop — packages for IFelxOS", href: "/IFelx-shop/xv4/index.html",   icon: "/ifelx.png", keys: "xv4 shop package manager install update upgrade ifos" },
 ];
 
@@ -49,6 +51,7 @@ const LINKS = [
     { label: "Football AI",  href: "/jowa-football-ai/index.html" },
     { label: "IFelxOS",      href: "/ifelx/index.html" },
     { label: "IFelx Engine", href: ENGINE_URL },
+    { label: "IFOS subsystem", href: "/ifos-subsystem/index.html", badge: "New" },
 ];
 
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -61,7 +64,8 @@ const here = section(location.pathname);
 
 const linksHtml = LINKS.map(l => {
     const current = !isExternal(l.href) && here && section(l.href) === here;
-    return `<a href="${l.href}"${ext(l.href)}${current ? ' class="is-current" aria-current="page"' : ""}>${esc(l.label)}</a>`;
+    const badge = l.badge ? `<span class="nav-new">${esc(l.badge)}</span>` : "";
+    return `<a href="${l.href}"${ext(l.href)}${current ? ' class="is-current" aria-current="page"' : ""}>${esc(l.label)}${badge}</a>`;
 }).join("");
 
 const navbar = document.createElement("nav");
@@ -113,7 +117,7 @@ const setMenu = open => {
 };
 menuBtn.addEventListener("click", () => setMenu(!navbar.classList.contains("is-menu-open")));
 document.addEventListener("click", e => { if (!navbar.contains(e.target)) setMenu(false); });
-window.addEventListener("resize", () => { if (window.innerWidth > 767) setMenu(false); });
+window.addEventListener("resize", () => { if (window.innerWidth > 1099) setMenu(false); });
 
 /* ── Search ────────────────────────────────────────────── */
 const wrap    = navbar.querySelector(".navbar-search");
@@ -220,7 +224,7 @@ document.addEventListener("keydown", e => {
     const t = e.target;
     if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
     e.preventDefault();
-    if (window.innerWidth <= 767) setMenu(true);
+    if (window.innerWidth <= 1099) setMenu(true);
     input.focus();
 });
 })();

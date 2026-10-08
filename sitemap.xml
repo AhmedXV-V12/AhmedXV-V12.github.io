@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://ahmedxv-v12.github.io</loc>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://ahmedxv-v12.github.io/</loc><priority>1.0</priority></url>
+  <url><loc>https://ahmedxv-v12.github.io/jowa-gpt/</loc><priority>0.8</priority></url>
+  <url><loc>https://ahmedxv-v12.github.io/jowa-football-ai/</loc><priority>0.8</priority></url>
+  <url><loc>https://ahmedxv-v12.github.io/jowa-football-ai/v2/</loc><priority>0.7</priority></url>
+  <url><loc>https://ahmedxv-v12.github.io/jowa-football-ai/v1/</loc><priority>0.5</priority></url>
+  <url><loc>https://ahmedxv-v12.github.io/ifelx/</loc><priority>0.8</priority></url>
+  <url><loc>https://ahmedxv-v12.github.io/ifos-subsystem/</loc><priority>0.8</priority></url>
+  <url><loc>https://ahmedxv-v12.github.io/IFelx-shop/xv4/</loc><priority>0.6</priority></url>
 </urlset>
