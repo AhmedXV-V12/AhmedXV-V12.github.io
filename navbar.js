@@ -32,25 +32,28 @@ const ICON = {
 
 /* ── Projects (single source for quick-search) ─────────── */
 const ENGINE_URL = "https://ifelx.tailce0b52.ts.net";
+const CHAT_URL   = "https://ifelxchat.tailce0b52.ts.net";
 
 const PROJECTS = [
     { name: "Jowa-mAi",         desc: "Compact open-source MiniGPT",           href: "/jowa-gpt/index.html",         icon: "/jowa.png",  keys: "jowa gpt mai ai llm minigpt lstm pytorch chat" },
     { name: "Jowa Football AI", desc: "Football game with self-learning AI",   href: "/jowa-football-ai/index.html", icon: "/jowa.png",  keys: "football soccer game rl dqn reinforcement" },
     { name: "IFelxOS",          desc: "Debian-based Linux distribution",       href: "/ifelx/index.html",            icon: "/ifelx.png", keys: "ifelxos os linux debian distro xv4 iso cinnamon" },
     { name: "IFelx Engine",     desc: "Independent search engine",             href: ENGINE_URL,                     icon: "/logo.png",  keys: "ifelx engine search wex crawler index ifse" },
+    { name: "IFelxChat",        desc: "Private encrypted chat, voice messages and calls", href: CHAT_URL,          icon: "/ifelxchat.png", keys: "ifelxchat chat messenger messages calls voice encrypted new" },
     { name: "OpenWebfilemgr",   desc: "Open-source web file manager",          href: "https://github.com/AhmedXV-V12/OpenWebfilemgr", icon: "/logo.png", keys: "file manager web github open" },
     { name: "IFOS subsystem",   desc: "IFOS2, IFelxOS2, ODE installer, itelxOS 1.2", href: "/ifos-subsystem/index.html", icon: "/ifelx.png", keys: "ifos ifos2 ifelxos2 ifelxui ode installer itelx itelxos itfs xvc subsystem new" },
     { name: "ODE installer",    desc: "Open-source OS installer (GitHub)",  href: "https://github.com/AhmedXV-V12/ODE-installer", icon: "/ifelx.png", keys: "ode installer ifos iso usb github source open" },
     { name: "xv4 Package Manager", desc: "IFelx Shop — packages for IFelxOS", href: "/IFelx-shop/xv4/index.html",   icon: "/ifelx.png", keys: "xv4 shop package manager install update upgrade ifos" },
 ];
 
-window.IFX = { icon: ICON, projects: PROJECTS, engineUrl: ENGINE_URL };
+window.IFX = { icon: ICON, projects: PROJECTS, engineUrl: ENGINE_URL, chatUrl: CHAT_URL };
 
 const LINKS = [
     { label: "Jowa-mAi",     href: "/jowa-gpt/index.html" },
     { label: "Football AI",  href: "/jowa-football-ai/index.html" },
     { label: "IFelxOS",      href: "/ifelx/index.html" },
     { label: "IFelx Engine", href: ENGINE_URL },
+    { label: "IFelxChat",    href: CHAT_URL },
     { label: "IFOS subsystem", href: "/ifos-subsystem/index.html", badge: "New" },
 ];
 

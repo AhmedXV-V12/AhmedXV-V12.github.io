@@ -460,6 +460,8 @@ button { cursor: pointer; }
         gap: 16px;
         min-width: 0;
     }
+    /* let the search box give up width so six links + Instagram still fit */
+    .navbar-search { min-width: 0; }
 }
 
 /* ─── Shared Button ─────────────────────────────────────── */

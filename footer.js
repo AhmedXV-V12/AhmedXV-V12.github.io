@@ -1,5 +1,5 @@
 (function () {
-    const IFX  = window.IFX || { icon: {}, engineUrl: "https://ifelx.tailce0b52.ts.net" };
+    const IFX  = window.IFX || { icon: {}, engineUrl: "https://ifelx.tailce0b52.ts.net", chatUrl: "https://ifelxchat.tailce0b52.ts.net" };
     const ICON = IFX.icon;
     const year = new Date().getFullYear();
 
@@ -28,6 +28,7 @@
                 <a href="/jowa-football-ai/index.html">Jowa Football AI</a>
                 <a href="/ifelx/index.html">IFelxOS</a>
                 <a href="${IFX.engineUrl}" target="_blank" rel="noopener">IFelx Engine</a>
+                <a href="${IFX.chatUrl}" target="_blank" rel="noopener">IFelxChat</a>
             </div>
 
             <div class="site-footer-col">
