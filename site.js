@@ -179,104 +179,214 @@ if (!reduceMotion && "IntersectionObserver" in window) {
 }
 
 /* ── Version badge + release history ───────────────────── */
-/* Official release history of IFelx Web, newest first. Versions are two numbers
-   (major.minor); the first entry is the version shown in the corner. */
+/* Official release history of IFelx Web, newest first; the first entry is the
+   version shown in the corner. Every update is one release and versions count up
+   one step at a time: 1.0 ... 1.9, 2.0 ... 2.9, 3.0 ... (never 1.10). */
 const RELEASES = [
-    { v: "2.4", date: "2026-10-10", changes: [
-        "Version number in the bottom corner of every page; selecting it opens this release history.",
-        "Official release history of IFelx Web back to the first version (1.0, November 2025), written from the site's full GitHub history.",
+    { v: "6.8", date: "2026-10-10", changes: [
+        "Every update of the site is now its own release, including the small ones.",
+        "Versions count up one step per update: 1.0 to 1.9, then 2.0, and so on.",
     ] },
-    { v: "2.3", date: "2026-10-10", changes: [
+    { v: "6.7", date: "2026-10-10", changes: [
+        "Release history extended back to the first version of the site, written from its full GitHub history.",
+    ] },
+    { v: "6.6", date: "2026-10-10", changes: [
+        "Version number in the bottom corner of every page; selecting it opens this release history.",
+    ] },
+    { v: "6.5", date: "2026-10-10", changes: [
         "Jowa Football AI v3 page: 11v11 football played by two AI brains (MAPPO with an entity transformer), with specs and pictures from real matches.",
         "Downloads for v3: Windows and Linux apps with the default weights, and the source code.",
         "v3 is now the latest version on the Jowa Football AI page; the quick search, footer and home page point to it.",
     ] },
-    { v: "2.2", date: "2026-10-09", changes: [
+    { v: "6.4", date: "2026-10-09", changes: [
         "IFelxChat added: button and status card on the home page, links in the navbar and the footer.",
     ] },
-    { v: "2.1", date: "2026-10-08", changes: [
+    { v: "6.3", date: "2026-10-08", changes: [
         "New IFOS subsystem page: IFOS2, IFelxOS2, the ODE installer and itelxOS 1.2, with screenshots and downloads.",
         "IFOS subsystem in the navbar, marked New.",
         "IFelx Shop pages (xv4, install, update, upgrade) moved to the site design.",
     ] },
-    { v: "2.0", date: "2026-09-27", changes: [
+    { v: "6.2", date: "2026-09-27", changes: [
         "New design for the whole site in the IFelx identity: dark theme, blue accent, rounded cards and pill buttons.",
         "Shared navbar with a project quick search (press /) and a phone menu, and a shared footer on every page.",
         "Copy buttons on code blocks, a screenshot viewer, and cards that fade in while scrolling.",
     ] },
-    { v: "1.17", date: "2026-09-26", changes: [
-        "WEX Engine renamed to IFelx Engine (3 Sep), with its new icon (25 Sep).",
+    { v: "6.1", date: "2026-09-26", changes: [
         "IFelxOS 1 download moved to the axv-1 server.",
     ] },
-    { v: "1.16", date: "2026-08-16", changes: [
-        "OpenWebfilemgr added to the home page (7 Aug).",
-        "Status cards: WEX Engine is described as an independent search engine with its own crawling and indexing, and Jowa Football AI as AI playing 6-a-side football.",
+    { v: "6.0", date: "2026-09-25", changes: [
+        "IFelx Engine status card: new name and the IFelx icon.",
     ] },
-    { v: "1.15", date: "2026-07-20", changes: [
+    { v: "5.9", date: "2026-09-03", changes: [
+        "WEX Engine renamed to IFelx Engine on the home page.",
+    ] },
+    { v: "5.8", date: "2026-08-16", changes: [
+        "Jowa Football AI status card: \"Artificial intelligence plays 6-a-side football\".",
+    ] },
+    { v: "5.7", date: "2026-08-07", changes: [
+        "OpenWebfilemgr added to the home page.",
+        "WEX Engine described as an independent search engine with its own crawling and indexing.",
+    ] },
+    { v: "5.6", date: "2026-07-30", changes: [
+        "xv4.sh package removed from the xv4t1 channel and its package index.",
+    ] },
+    { v: "5.5", date: "2026-07-20", changes: [
         "New home page: \"Official platform of AXV\" with Open Source, AI Powered and Active badges, project buttons and a Project Status section.",
-        "Project icons for Jowa-mAi, Jowa Football AI, IFelxOS and WEX Engine.",
-        "xv4 package refreshed in the xv4t1 channel (30 Jul).",
+        "Project icons for Jowa-mAi, Jowa Football AI, IFelxOS and WEX Engine; page title \"IFelx Web — AXV Official\".",
     ] },
-    { v: "1.14", date: "2026-07-10", changes: [
-        "packages.json package index for IFelx Shop and the xv4t1 channel (9 Jul).",
-        "WEX Engine was marked unavailable on 3 Jul and came back on 10 Jul.",
-        "Shorter footer text (5 Jul).",
+    { v: "5.4", date: "2026-07-10", changes: [
+        "WEX Engine button available again.",
     ] },
-    { v: "1.13", date: "2026-05-23", changes: [
+    { v: "5.3", date: "2026-07-09", changes: [
+        "packages.json package index for IFelx Shop and the xv4t1 channel.",
+        "New build of the xv4.sh package.",
+    ] },
+    { v: "5.2", date: "2026-07-05", changes: [
+        "Shorter footer text, signed AXV.",
+    ] },
+    { v: "5.1", date: "2026-07-03", changes: [
+        "WEX Engine marked \"not available now\" and its button disabled.",
+    ] },
+    { v: "5.0", date: "2026-06-20", changes: [
+        "systemOS update script (b.sh): typo fixed.",
+    ] },
+    { v: "4.9", date: "2026-05-24", changes: [
+        "Footer: WEX Engine links point to the main address of the engine.",
+    ] },
+    { v: "4.8", date: "2026-05-23", changes: [
         "Shared footer on every page: projects, downloads, Instagram and GitHub.",
         "New logo, and pictures back on the Jowa Football AI pages.",
     ] },
-    { v: "1.12", date: "2026-05-20", changes: [
+    { v: "4.7", date: "2026-05-21", changes: [
+        "systemOS update script (b.sh) updated.",
+    ] },
+    { v: "4.6", date: "2026-05-20", changes: [
         "Rebuilt navbar with a project search box and the Instagram account axv.ifelx.",
-        "WEX Engine, the search engine at ifelx.tailce0b52.ts.net, replaces WEX Browser on the home page.",
-        "IFelxOS 1 is downloaded from the IFelx server instead of Google Drive (new Drive link on 21 Apr).",
-        "Sitemap, robots.txt and Google Search verification updated.",
+        "Home page back: WEX Engine, the search engine at ifelx.tailce0b52.ts.net, replaces WEX Browser.",
+        "IFelxOS 1 is downloaded from the IFelx server instead of Google Drive.",
+        "New logo; sitemap, robots.txt and Google Search verification updated.",
     ] },
-    { v: "1.11", date: "2026-03-09", changes: [
+    { v: "4.5", date: "2026-05-19", changes: [
+        "Home page and navbar taken down for the rebuild.",
+    ] },
+    { v: "4.4", date: "2026-05-17", changes: [
+        "Google Search verification file updated.",
+    ] },
+    { v: "4.3", date: "2026-04-21", changes: [
+        "IFelxOS 1 download moved to a new Google Drive link.",
+        "New Google Search verification.",
+    ] },
+    { v: "4.2", date: "2026-03-17", changes: [
+        "IFelx_mobile folder removed.",
+    ] },
+    { v: "4.1", date: "2026-03-13", changes: [
+        "Instagram link changed from axv.bin to axv.ifelx.",
+    ] },
+    { v: "4.0", date: "2026-03-11", changes: [
+        "IFelx_mobile folder created.",
+    ] },
+    { v: "3.9", date: "2026-03-09", changes: [
         "Jowa Football AI versions page: v1 (3v3, Q-table, Python script) and v2 (6v6, DQN, ZIP package), each with its own page.",
-        "Instagram link changed from axv.bin to axv.ifelx (13 Mar).",
     ] },
-    { v: "1.10", date: "2026-03-08", changes: [
-        "First shared navbar on every page: IFelx Web, Jowa-GPT, Football AI, IFelxOS, WEX and Instagram.",
+    { v: "3.8", date: "2026-03-08", changes: [
+        "Shared navbar on every page, with an Instagram link (axv.bin).",
         "JOWA-GPT becomes Jowa-mAi: new page with v1.6 hosted on the site, GNU GPL v2.0 licence and an explanation of the LSTM model.",
-        "IFelxOS page rebuilt with a specs table.",
+        "IFelxOS page rebuilt with a specs table; home buttons renamed.",
     ] },
-    { v: "1.9", date: "2026-02-07", changes: [
-        "First shared stylesheet (style.css) for the site (5 Feb), new logo and background images.",
+    { v: "3.7", date: "2026-03-07", changes: [
+        "First shared navbar: IFelx Web, Jowa-GPT, Football AI, IFelxOS and WEX.",
+        "Project list removed from the home page.",
+    ] },
+    { v: "3.6", date: "2026-02-08", changes: [
+        "Home server survey page removed.",
+    ] },
+    { v: "3.5", date: "2026-02-07", changes: [
+        "Background images for the site.",
+        "IFelxOS page restyled, with a direct download link.",
+        "Survey page about a home server (homeserver).",
+    ] },
+    { v: "3.4", date: "2026-02-06", changes: [
+        "New logo.",
         "\"What is IFelx Web?\" introduction on the home page.",
-        "IFelxOS page restyled with a direct download link; Jowa Football AI download updated (4 Feb).",
     ] },
-    { v: "1.8", date: "2026-01-31", changes: [
+    { v: "3.3", date: "2026-02-05", changes: [
+        "First shared stylesheet (style.css): new fonts and project buttons on the home page.",
+    ] },
+    { v: "3.2", date: "2026-02-04", changes: [
+        "Jowa Football AI download: the script no longer needs PyTorch.",
+    ] },
+    { v: "3.1", date: "2026-01-31", changes: [
         "IFelxOS page: IFelxOS 1, a Debian-based distribution with Cinnamon, apt and xv4.sh (4.5 GB ISO, released 1 Feb 2026), its goals, screenshots and download.",
         "\"New: Install IFelxOS\" button on the home page.",
     ] },
-    { v: "1.7", date: "2026-01-24", changes: [
+    { v: "3.0", date: "2026-01-24", changes: [
         "New home page with the list of AXV projects: jowa-GPT, jowa-football-ai, jowa-e, jowa-ifelx, xv2-xv5, IFelxOS, IFelx-mini, IFelxUI and WEX browser.",
-        "\"New: WEX browser\" link.",
+        "\"New: WEX browser\" link and a new logo.",
     ] },
-    { v: "1.6", date: "2026-01-15", changes: [
-        "xv4t1 package channel with xv4.sh (5 Jan) and the axv, joda and xv3 packages (8 Jan).",
+    { v: "2.9", date: "2026-01-16", changes: [
+        "New description of the site for search engines.",
+    ] },
+    { v: "2.8", date: "2026-01-15", changes: [
         "Home page: IFelxOS release date announced, author shown as AXV.",
+        "systemOS update script (b.sh).",
+        "New build of the xv4.sh package.",
     ] },
-    { v: "1.5", date: "2026-01-04", changes: [
-        "IFelx Shop grows to over 20 packages: apt_pkg_mgr 1.0 (14 Dec), 14 tools such as calculator_gui, notes_cli, password_safe, system_monitor and todo_cli (3 Jan), and bat, busybox, fd, jq and ncdu (4 Jan).",
+    { v: "2.7", date: "2026-01-12", changes: [
+        "New build of the xv4.sh package.",
     ] },
-    { v: "1.4", date: "2025-12-04", changes: [
+    { v: "2.6", date: "2026-01-10", changes: [
+        "New build of the xv4.sh package.",
+    ] },
+    { v: "2.5", date: "2026-01-08", changes: [
+        "axv, joda and xv3 packages in the xv4t1 channel.",
+    ] },
+    { v: "2.4", date: "2026-01-05", changes: [
+        "xv4t1 package channel, starting with the xv4.sh package.",
+    ] },
+    { v: "2.3", date: "2026-01-04", changes: [
+        "IFelx Shop: bat, busybox, fd, jq and ncdu packages.",
+    ] },
+    { v: "2.2", date: "2026-01-03", changes: [
+        "IFelx Shop: 14 new packages, among them calculator_gui, notes_cli, password_safe, system_monitor and todo_cli.",
+        "Update list rewritten as a list of package files.",
+    ] },
+    { v: "2.1", date: "2025-12-14", changes: [
+        "IFelx Shop: apt_pkg_mgr 1.0 package.",
+    ] },
+    { v: "2.0", date: "2025-12-05", changes: [
+        "Home page language set to English.",
+    ] },
+    { v: "1.9", date: "2025-12-04", changes: [
         "The site takes its name, IFelx Web (was IFlex Web).",
-        "Bing Webmaster verification (3 Dec).",
     ] },
-    { v: "1.3", date: "2025-11-28", changes: [
-        "IFelx Shop: pages for the xv4 package manager (install, update, upgrade), an update list and the first packages (jotxt; cute.sh on 30 Nov).",
+    { v: "1.8", date: "2025-12-03", changes: [
+        "Bing Webmaster verification.",
+        "arabicxv link spelled correctly on the home page.",
+    ] },
+    { v: "1.7", date: "2025-11-30", changes: [
+        "IFelx Shop: cute.sh package, which deletes invalid .desktop files.",
+        "Windows commands removed from the xv4 update page.",
+    ] },
+    { v: "1.6", date: "2025-11-29", changes: [
+        "IFelx Shop update list: note for the jotxt package.",
+    ] },
+    { v: "1.5", date: "2025-11-28", changes: [
+        "IFelx Shop: pages for the xv4 package manager (install, update, upgrade), an update list and the first package, jotxt.",
         "Site renamed from IFex Web to IFlex Web.",
         "Google Search verification.",
     ] },
-    { v: "1.2", date: "2025-11-27", changes: [
-        "arabicxv: an Arabic topic search page (26 Nov), linked from the home page as \"arabicxv Topic Search Engine\".",
-        "Home page introduction and copyright line.",
+    { v: "1.4", date: "2025-11-27", changes: [
+        "Home page introduction; the arabicxv link becomes \"arabicx Topic Search Engine\".",
     ] },
-    { v: "1.1", date: "2025-11-23", changes: [
-        "\"Official Site\" title, robots.txt and sitemap.xml for search engines (22 Nov).",
+    { v: "1.3", date: "2025-11-26", changes: [
+        "arabicxv: an Arabic topic search page, linked from the home page.",
+        "Logo and copyright line on the home page.",
+    ] },
+    { v: "1.2", date: "2025-11-23", changes: [
         "Site icon (favicon).",
+    ] },
+    { v: "1.1", date: "2025-11-22", changes: [
+        "\"Official Site\" title, robots.txt and sitemap.xml for search engines.",
     ] },
     { v: "1.0", date: "2025-11-21", changes: [
         "IFex Web goes online: home page with Jowa-GPT and Jowa Football AI; IFelxOS and IFelx Shop announced as coming soon.",
