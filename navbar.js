@@ -36,7 +36,7 @@ const CHAT_URL   = "https://ifelxchat.tailce0b52.ts.net";
 
 const PROJECTS = [
     { name: "Jowa-mAi",         desc: "Compact open-source MiniGPT",           href: "/jowa-gpt/index.html",         icon: "/jowa.png",  keys: "jowa gpt mai ai llm minigpt lstm pytorch chat" },
-    { name: "Jowa Football AI", desc: "Football game with self-learning AI",   href: "/jowa-football-ai/index.html", icon: "/jowa.png",  keys: "football soccer game rl dqn reinforcement" },
+    { name: "Jowa Football AI", desc: "11v11 football played by two AI brains", href: "/jowa-football-ai/index.html", icon: "/jowa.png",  keys: "football soccer game rl dqn mappo 11v11 v3 self-play reinforcement" },
     { name: "IFelxOS",          desc: "Debian-based Linux distribution",       href: "/ifelx/index.html",            icon: "/ifelx.png", keys: "ifelxos os linux debian distro xv4 iso cinnamon" },
     { name: "IFelx Engine",     desc: "Independent search engine",             href: ENGINE_URL,                     icon: "/logo.png",  keys: "ifelx engine search wex crawler index ifse" },
     { name: "IFelxChat",        desc: "Private encrypted chat, voice messages and calls", href: CHAT_URL,          icon: "/ifelxchat.png", keys: "ifelxchat chat messenger messages calls voice encrypted new" },

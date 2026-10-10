@@ -34,7 +34,7 @@
             <div class="site-footer-col">
                 <h4>Resources</h4>
                 <a href="/ifelx/index.html">Download IFelxOS</a>
-                <a href="/jowa-football-ai/v2/index.html">Download Football AI v2</a>
+                <a href="/jowa-football-ai/v3/index.html#download">Download Football AI v3</a>
                 <a href="/jowa-gpt/index.html">Download Jowa-mAi</a>
                 <a href="/IFelx-shop/xv4/index.html">xv4 Package Manager</a>
             </div>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090909">
+    <title>Jowa Football AI v3</title>
+    <meta name="description" content="Jowa Football AI v3 — 11v11 football played by two AI brains trained with MAPPO and an entity transformer. Windows and Linux apps with the default weights, plus the full source code.">
+    <meta name="keywords" content="Jowa Football AI, jowa-football-ai, 11v11, MAPPO, reinforcement learning, self-play, entity transformer, AXV, IFelx">
+    <link rel="icon" href="/logo2.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css" />
+    <script src="../../navbar.js" defer></script>
+    <script src="../../footer.js" defer></script>
+    <script src="../../site.js" defer></script>
+</head>
+<body>
+
+    <main class="page-container">
+
+        <a href="../index.html" class="back-link">← All Versions</a>
+
+        <header class="page-header">
+            <div class="logo-circle md"><img src="../../jowa.png" alt="Jowa Football AI logo"></div>
+            <h1>Jowa Football AI v3</h1>
+            <p class="subtitle">11v11 · Two AI brains · MAPPO with an entity transformer</p>
+            <div class="badges">
+                <span class="badge latest">Latest</span>
+                <span class="badge">2026</span>
+                <span class="badge">Windows</span>
+                <span class="badge">Linux</span>
+                <span class="badge">Open Source</span>
+            </div>
+            <div class="download-buttons">
+                <a href="#download" class="project-btn">Download v3</a>
+            </div>
+        </header>
+
+        <!-- ── The AI ───────────────────────────────────────── -->
+        <section class="card">
+            <h2>The AI</h2>
+            <p>Jowa Football AI v3 is a full <strong>11v11</strong> football match where all 22 players are controlled by AI. Two separate brains play each other: <strong>red</strong> always plays team 0 and <strong>blue</strong> always plays team 1. Each brain has its own network, its own training and its own pool of past opponents.</p>
+            <p>Each brain is a <strong>multi-agent PPO (MAPPO)</strong> model. One shared <strong>entity transformer</strong> drives all eleven players of its team: every player sees the ball, its ten teammates and the eleven opponents as separate tokens, and attention lets each decision take the whole pitch into account. A <strong>coach head</strong> picks the team instruction (block height and style), and a <strong>centralised critic</strong> scores the play during training.</p>
+            <p>The policy decides <em>what</em> to do — who presses, who covers, who runs in behind, whom to pass to and when to shoot — while a tactical layer executes the movement and keeps the team in shape. For every pass option the brain is given an estimate of its chance of success.</p>
+            <div class="screenshots-grid">
+                <img src="./img/match.jpg" alt="A real match: the red brain against the blue brain on the full 105 × 68 m pitch" loading="lazy">
+                <img src="./img/overlay.jpg" alt="Tactical overlay: defensive lines, anchors and every pass option coloured by its success estimate" loading="lazy">
+            </div>
+            <p class="ifos-note">Both pictures are real matches of the red brain against the blue brain with the default weights. The second one shows the tactical overlay (key <code>O</code>): the team lines, the formation anchors and every pass option, coloured by its estimated chance of success.</p>
+        </section>
+
+        <!-- ── What's new ───────────────────────────────────── -->
+        <section class="card">
+            <h2>What's New in v3</h2>
+            <div class="changelog-item">From 6v6 to a full <strong>11v11</strong> match on a real 105 × 68 m pitch, 4-4-2 (4-3-3 optional)</div>
+            <div class="changelog-item">AI rebuilt from DQN to <strong>MAPPO</strong> with an entity transformer and a centralised critic</div>
+            <div class="changelog-item"><strong>Two independent brains</strong>, red and blue, each with its own model, optimizer and opponent pool</div>
+            <div class="changelog-item">Learned <strong>coach</strong> and a tactical layer: build-up, attack, counter-attack, pressing, high / mid / low block</div>
+            <div class="changelog-item">Laws of the game: offside, fouls, free kicks, corners, throw-ins, goal kicks and penalties</div>
+            <div class="changelog-item">Ball physics with height: lofted passes, headers, bounces, shots over the bar; stamina for every player</div>
+            <div class="changelog-item">Self-play against past versions, a seven-stage curriculum and crash-safe checkpoints with automatic resume</div>
+            <div class="changelog-item">Ready-to-run <strong>Windows and Linux apps</strong> that ship with the default weights</div>
+        </section>
+
+        <!-- ── Specs ────────────────────────────────────────── -->
+        <section class="card">
+            <h2>Model &amp; Game Info</h2>
+            <table class="specs-table">
+                <tr><td>Mode</td><td>11v11, red brain vs blue brain</td></tr>
+                <tr><td>Pitch</td><td>105 × 68 m · physics 20 Hz · decisions 5 Hz</td></tr>
+                <tr><td>Algorithm</td><td>MAPPO — PPO with GAE, value normalisation, self-play</td></tr>
+                <tr><td>Network</td><td>Entity transformer: 3 layers, d = 192, 6 heads</td></tr>
+                <tr><td>Parameters</td><td>About 3.1M per brain (actor 1.62M + critic 1.50M)</td></tr>
+                <tr><td>Observation</td><td>24 tokens × 56 features per team</td></tr>
+                <tr><td>Actions</td><td>19 per player (move, press, mark, cover, tackle, shoot, …) + pass target</td></tr>
+                <tr><td>Default weights</td><td>Red &amp; blue brains at <strong>52,783,408</strong> training steps</td></tr>
+                <tr><td>Device</td><td>Apps: CPU · Source code: CUDA (GPU) or CPU</td></tr>
+                <tr><td>Build</td><td>2.1.0</td></tr>
+            </table>
+            <p class="ifos-note">The first 3M training steps imitate the built-in rule-based AI to get started; after that the brains learn only from playing. They are still learning: against the rule-based AI they lose more matches than they win.</p>
+        </section>
+
+        <!-- ── Download ─────────────────────────────────────── -->
+        <section class="card" id="download">
+            <h2>Download</h2>
+            <p>The Windows and Linux apps come as a <strong>ZIP</strong> with the default weights inside — the red and blue brains at 52.8M training steps — so the AI plays right away. The source code is the full project without weights.</p>
+            <div class="jfa-downloads">
+                <a class="jfa-dl" href="https://axv-1.tailce0b52.ts.net/jowa-football-ai/jowa-football-ai-v3-windows-x86_64.zip">
+                    <svg class="jfa-dl-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3zM11.5 4.3 21 3v8.5h-9.5zM3 12.5h7.5v7.1L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg>
+                    <span class="jfa-dl-kicker">ZIP · 208 MB · weights included</span>
+                    <strong>Windows app</strong>
+                    <span class="jfa-dl-meta">Windows x86-64 · runs on the CPU</span>
+                    <span class="jfa-dl-go">Download</span>
+                </a>
+                <a class="jfa-dl" href="https://axv-1.tailce0b52.ts.net/jowa-football-ai/jowa-football-ai-v3-linux-x86_64.zip">
+                    <svg class="jfa-dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m7 9 3 3-3 3M12 15h5"/></svg>
+                    <span class="jfa-dl-kicker">ZIP · 294 MB · weights included</span>
+                    <strong>Linux app</strong>
+                    <span class="jfa-dl-meta">ELF x86-64 · Ubuntu 22.04+, Debian 12+</span>
+                    <span class="jfa-dl-go">Download</span>
+                </a>
+                <a class="jfa-dl" href="./jowa-football-ai-v3-source.zip" download>
+                    <svg class="jfa-dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+                    <span class="jfa-dl-kicker">ZIP · 154 KB</span>
+                    <strong>Source code</strong>
+                    <span class="jfa-dl-meta">Python · no weights</span>
+                    <span class="jfa-dl-go">Download</span>
+                </a>
+            </div>
+            <p class="jfa-dl-note">The apps include PyTorch for the CPU, so no Python or GPU is needed; to train on an NVIDIA GPU, use the source code. <a href="https://axv-1.tailce0b52.ts.net/jowa-football-ai/SHA256SUMS.txt">SHA-256 checksums</a></p>
+        </section>
+
+        <!-- ── How to run ───────────────────────────────────── -->
+        <section class="card">
+            <h2>How to Run</h2>
+            <h3 class="ifos-h3">Windows or Linux app</h3>
+            <div class="how-step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                    <h4>Extract the ZIP</h4>
+                    <p>Keep the extracted folder together: the weights sit next to the app.</p>
+                </div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                    <h4>Watch the two brains play</h4>
+                    <p>Start the app from a terminal in the extracted folder with <code>--play</code>. On Linux, mark the ELF file as executable first.</p>
+<pre class="code-block"><span class="cm"># Windows</span>
+jowa-football-ai.exe --play
+<span class="cm"># Linux</span>
+chmod +x ./jowa-football-ai
+./jowa-football-ai --play</pre>
+                </div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                    <h4>Or let them train</h4>
+                    <p>Without options (or with a double-click on Windows) the app starts in normal mode: a visible match at real-time speed while both brains keep training from the default weights. New checkpoints, <code>logs/</code> and <code>screenshots/</code> are saved in the app's folder. <code>--help</code> lists every option.</p>
+                </div>
+            </div>
+            <h3 class="ifos-h3">From the source code</h3>
+            <div class="how-step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                    <h4>Install the dependencies</h4>
+                    <p>Python 3 with PyTorch (the CUDA build for an NVIDIA GPU), pygame and NumPy.</p>
+                    <div class="code-block">pip install torch pygame numpy</div>
+                </div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                    <h4>Add the weights (optional)</h4>
+                    <p>To use the default brains, copy the <code>checkpoints</code> folder from the Windows or Linux ZIP (<code>latest_red.pt</code>, <code>latest_blue.pt</code> and their <code>.sha256</code> files) next to <code>jowa-football-ai.py</code>. Without it, training starts new brains.</p>
+                </div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                    <h4>Run it</h4>
+<pre class="code-block"><span class="cm"># watch the red brain play the blue brain</span>
+python jowa-football-ai.py --play
+<span class="cm"># red brain against the rule-based AI</span>
+python jowa-football-ai.py --play --blue scripted
+<span class="cm"># visible training at max speed, resumes automatically</span>
+python jowa-football-ai.py --train</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Controls ─────────────────────────────────────── -->
+        <section class="card">
+            <h2>Controls</h2>
+            <div class="player-controls">
+                <h3>Match window</h3>
+                <p><strong>P</strong> pause &nbsp;|&nbsp; <strong>1</strong>…<strong>8</strong> or <strong>+</strong>/<strong>−</strong> speed &nbsp;|&nbsp; <strong>O</strong> tactical overlay &nbsp;|&nbsp; <strong>H</strong> stats panel &nbsp;|&nbsp; <strong>S</strong> screenshot &nbsp;|&nbsp; <strong>Q</strong> save and quit</p>
+            </div>
+            <div class="player-controls">
+                <h3>Take control of a player</h3>
+                <p><strong>TAB</strong> / <strong>↑</strong> <strong>↓</strong> select &nbsp;|&nbsp; <strong>Enter</strong> take control &nbsp;|&nbsp; <strong>ESC</strong> give it back to the AI</p>
+                <p class="mt-sm"><strong>WASD</strong> / arrows move &nbsp;|&nbsp; <strong>Space</strong> shoot &nbsp;|&nbsp; <strong>F</strong> pass &nbsp;|&nbsp; <strong>T</strong> tackle</p>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            &copy; 2026 Jowa Football AI v3 — Open Source by AXV
+        </footer>
+
+    </main>
+
+</body>
+</html>
