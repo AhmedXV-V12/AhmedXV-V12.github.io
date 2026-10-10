@@ -2017,3 +2017,141 @@ a.ifos-node:hover { border-color: var(--accent-line); transform: translateY(-2px
 .jfa-dl-note { margin-top: 14px; font-size: 0.86rem; color: var(--text-3); }
 .jfa-dl-note a { color: var(--accent-text); text-decoration: none; font-weight: 700; white-space: nowrap; }
 .jfa-dl-note a:hover { text-decoration: underline; }
+
+/* ─── Version badge + release history (site.js) ─────────── */
+.ifx-version {
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    z-index: 900;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 28px;
+    padding: 0 11px;
+    background: rgba(17,17,17,0.82);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--line-2);
+    border-radius: var(--r-pill);
+    color: var(--text-3);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    transition: color .2s, border-color .2s, background .2s;
+}
+
+.ifx-version::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-text);
+}
+
+.ifx-version:hover,
+.ifx-version:focus-visible { color: var(--text); border-color: var(--accent-line); background: #151515; }
+
+/* room under the footer's last row for the badge */
+.site-footer { padding-bottom: 64px; }
+
+.ifx-changelog {
+    width: min(560px, calc(100vw - 32px));
+    max-width: none;
+    max-height: min(80vh, 720px);
+    padding: 0;
+    margin: auto;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--line-2);
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-pop);
+    overflow: hidden;
+}
+
+.ifx-changelog[open] { display: flex; animation: popIn .25s var(--ease-out); }
+.ifx-changelog::backdrop { background: rgba(0,0,0,0.62); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+
+.ifx-changelog-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 0;
+}
+
+.ifx-changelog-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 24px 24px 16px;
+    border-bottom: 1px solid var(--line);
+}
+
+.ifx-changelog-kicker { font-size: 0.72rem; font-weight: 700; letter-spacing: 0; color: var(--accent-text); }
+.ifx-changelog-head h2 { margin: 4px 0 0; font-size: 1.6rem; font-weight: 700; letter-spacing: -1.5px; line-height: 1.1; }
+
+.ifx-changelog-close {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--line-2);
+    border-radius: 12px;
+    color: var(--text-3);
+    transition: color .2s, border-color .2s, background .2s;
+}
+
+.ifx-changelog-close svg { width: 16px; height: 16px; }
+.ifx-changelog-close:hover { color: var(--text); border-color: var(--line-3); background: var(--surface-3); }
+
+.ifx-changelog-list {
+    list-style: none;
+    margin: 0;
+    padding: 4px 24px 20px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.ifx-release { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.ifx-release:last-child { border-bottom: 0; }
+
+.ifx-release-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+
+.ifx-release-v {
+    display: inline-flex;
+    align-items: center;
+    height: 26px;
+    padding: 0 10px;
+    background: var(--surface-3);
+    border: 1px solid var(--line-2);
+    border-radius: var(--r-pill);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.ifx-release time { font-size: 0.8rem; letter-spacing: 0; color: var(--text-4); }
+
+.ifx-release-latest {
+    margin-left: auto;
+    padding: 3px 10px;
+    border: 1px solid var(--accent-line);
+    border-radius: var(--r-pill);
+    background: var(--accent-soft);
+    color: var(--accent-text);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.ifx-release ul { margin: 0; padding-left: 18px; list-style: disc; }
+.ifx-release ul li { margin: 5px 0; font-size: 0.9rem; font-weight: 400; line-height: 1.6; letter-spacing: 0; color: var(--text-2); }
+.ifx-release ul li::marker { color: var(--accent-text); }
+
+@media (prefers-reduced-motion: reduce) {
+    .ifx-changelog[open] { animation: none; }
+}

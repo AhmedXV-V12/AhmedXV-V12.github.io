@@ -177,4 +177,110 @@ if (!reduceMotion && "IntersectionObserver" in window) {
         io.observe(el);
     });
 }
+
+/* ── Version badge + release history ───────────────────── */
+/* Official release history of IFelx Web, newest first. Versions are two numbers
+   (major.minor); the first entry is the version shown in the corner. */
+const RELEASES = [
+    { v: "2.4", date: "2026-10-10", changes: [
+        "Version number in the bottom corner of every page; selecting it opens this release history.",
+        "Official release history of IFelx Web, starting from 2.0.",
+    ] },
+    { v: "2.3", date: "2026-10-10", changes: [
+        "Jowa Football AI v3 page: 11v11 football played by two AI brains (MAPPO with an entity transformer), with specs and pictures from real matches.",
+        "Downloads for v3: Windows and Linux apps with the default weights, and the source code.",
+        "v3 is now the latest version on the Jowa Football AI page; the quick search, footer and home page point to it.",
+    ] },
+    { v: "2.2", date: "2026-10-09", changes: [
+        "IFelxChat added: button and status card on the home page, links in the navbar and the footer.",
+    ] },
+    { v: "2.1", date: "2026-10-08", changes: [
+        "New IFOS subsystem page: IFOS2, IFelxOS2, the ODE installer and itelxOS 1.2, with screenshots and downloads.",
+        "IFOS subsystem in the navbar, marked New.",
+        "IFelx Shop pages (xv4, install, update, upgrade) moved to the site design.",
+    ] },
+    { v: "2.0", date: "2026-09-27", changes: [
+        "New design for the whole site in the IFelx identity: dark theme, blue accent, rounded cards and pill buttons. Replaces the original design.",
+        "Shared navbar with a project quick search (press /) and a phone menu, and a shared footer on every page.",
+        "Copy buttons on code blocks, a screenshot viewer, and cards that fade in while scrolling.",
+    ] },
+];
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const fmtDate = iso => {
+    const [y, m, d] = iso.split("-").map(Number);
+    return `${d} ${MONTHS[m - 1]} ${y}`;
+};
+
+const versionBtn = document.createElement("button");
+versionBtn.type = "button";
+versionBtn.className = "ifx-version";
+versionBtn.textContent = "v" + RELEASES[0].v;
+versionBtn.setAttribute("aria-label", `IFelx Web version ${RELEASES[0].v}, open the release history`);
+versionBtn.setAttribute("aria-haspopup", "dialog");
+document.body.appendChild(versionBtn);
+
+let changelog = null;
+const buildChangelog = () => {
+    const dlg = document.createElement("dialog");
+    dlg.className = "ifx-changelog";
+    dlg.setAttribute("aria-labelledby", "ifx-changelog-title");
+    dlg.innerHTML = `
+        <div class="ifx-changelog-panel">
+            <div class="ifx-changelog-head">
+                <div>
+                    <span class="ifx-changelog-kicker">IFelx Web · v${RELEASES[0].v}</span>
+                    <h2 id="ifx-changelog-title">Release history</h2>
+                </div>
+                <button type="button" class="ifx-changelog-close" aria-label="Close">${ICON.close || "×"}</button>
+            </div>
+            <ol class="ifx-changelog-list"></ol>
+        </div>`;
+    const list = dlg.querySelector(".ifx-changelog-list");
+    RELEASES.forEach((r, i) => {
+        const li = document.createElement("li");
+        li.className = "ifx-release";
+        li.innerHTML = `
+            <div class="ifx-release-head">
+                <span class="ifx-release-v"></span>
+                <time></time>
+                ${i === 0 ? '<span class="ifx-release-latest">Latest</span>' : ""}
+            </div>
+            <ul></ul>`;
+        li.querySelector(".ifx-release-v").textContent = r.v;
+        const t = li.querySelector("time");
+        t.dateTime = r.date;
+        t.textContent = fmtDate(r.date);
+        const ul = li.querySelector("ul");
+        r.changes.forEach(c => {
+            const item = document.createElement("li");
+            item.textContent = c;
+            ul.appendChild(item);
+        });
+        list.appendChild(li);
+    });
+    // "close" is also fired for Esc, but Chromium delays it until the next rendered frame,
+    // so the buttons restore the page themselves; running twice is harmless
+    const restore = () => {
+        document.documentElement.style.overflow = "";
+        versionBtn.focus();
+    };
+    const closeIt = () => { dlg.close(); restore(); };
+    dlg.querySelector(".ifx-changelog-close").addEventListener("click", closeIt);
+    dlg.addEventListener("click", e => { if (e.target === dlg) closeIt(); });   // backdrop
+    dlg.addEventListener("close", restore);
+    document.body.appendChild(dlg);
+    return dlg;
+};
+
+const openChangelog = () => {
+    changelog = changelog || buildChangelog();
+    if (changelog.open) return;
+    changelog.showModal();
+    document.documentElement.style.overflow = "hidden";
+    changelog.querySelector(".ifx-changelog-list").scrollTop = 0;
+};
+
+versionBtn.addEventListener("click", openChangelog);
+if (location.hash === "#changelog") openChangelog();
 })();
