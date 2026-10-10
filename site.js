@@ -184,7 +184,7 @@ if (!reduceMotion && "IntersectionObserver" in window) {
 const RELEASES = [
     { v: "2.4", date: "2026-10-10", changes: [
         "Version number in the bottom corner of every page; selecting it opens this release history.",
-        "Official release history of IFelx Web, starting from 2.0.",
+        "Official release history of IFelx Web back to the first version (1.0, November 2025), written from the site's full GitHub history.",
     ] },
     { v: "2.3", date: "2026-10-10", changes: [
         "Jowa Football AI v3 page: 11v11 football played by two AI brains (MAPPO with an entity transformer), with specs and pictures from real matches.",
@@ -200,9 +200,88 @@ const RELEASES = [
         "IFelx Shop pages (xv4, install, update, upgrade) moved to the site design.",
     ] },
     { v: "2.0", date: "2026-09-27", changes: [
-        "New design for the whole site in the IFelx identity: dark theme, blue accent, rounded cards and pill buttons. Replaces the original design.",
+        "New design for the whole site in the IFelx identity: dark theme, blue accent, rounded cards and pill buttons.",
         "Shared navbar with a project quick search (press /) and a phone menu, and a shared footer on every page.",
         "Copy buttons on code blocks, a screenshot viewer, and cards that fade in while scrolling.",
+    ] },
+    { v: "1.17", date: "2026-09-26", changes: [
+        "WEX Engine renamed to IFelx Engine (3 Sep), with its new icon (25 Sep).",
+        "IFelxOS 1 download moved to the axv-1 server.",
+    ] },
+    { v: "1.16", date: "2026-08-16", changes: [
+        "OpenWebfilemgr added to the home page (7 Aug).",
+        "Status cards: WEX Engine is described as an independent search engine with its own crawling and indexing, and Jowa Football AI as AI playing 6-a-side football.",
+    ] },
+    { v: "1.15", date: "2026-07-20", changes: [
+        "New home page: \"Official platform of AXV\" with Open Source, AI Powered and Active badges, project buttons and a Project Status section.",
+        "Project icons for Jowa-mAi, Jowa Football AI, IFelxOS and WEX Engine.",
+        "xv4 package refreshed in the xv4t1 channel (30 Jul).",
+    ] },
+    { v: "1.14", date: "2026-07-10", changes: [
+        "packages.json package index for IFelx Shop and the xv4t1 channel (9 Jul).",
+        "WEX Engine was marked unavailable on 3 Jul and came back on 10 Jul.",
+        "Shorter footer text (5 Jul).",
+    ] },
+    { v: "1.13", date: "2026-05-23", changes: [
+        "Shared footer on every page: projects, downloads, Instagram and GitHub.",
+        "New logo, and pictures back on the Jowa Football AI pages.",
+    ] },
+    { v: "1.12", date: "2026-05-20", changes: [
+        "Rebuilt navbar with a project search box and the Instagram account axv.ifelx.",
+        "WEX Engine, the search engine at ifelx.tailce0b52.ts.net, replaces WEX Browser on the home page.",
+        "IFelxOS 1 is downloaded from the IFelx server instead of Google Drive (new Drive link on 21 Apr).",
+        "Sitemap, robots.txt and Google Search verification updated.",
+    ] },
+    { v: "1.11", date: "2026-03-09", changes: [
+        "Jowa Football AI versions page: v1 (3v3, Q-table, Python script) and v2 (6v6, DQN, ZIP package), each with its own page.",
+        "Instagram link changed from axv.bin to axv.ifelx (13 Mar).",
+    ] },
+    { v: "1.10", date: "2026-03-08", changes: [
+        "First shared navbar on every page: IFelx Web, Jowa-GPT, Football AI, IFelxOS, WEX and Instagram.",
+        "JOWA-GPT becomes Jowa-mAi: new page with v1.6 hosted on the site, GNU GPL v2.0 licence and an explanation of the LSTM model.",
+        "IFelxOS page rebuilt with a specs table.",
+    ] },
+    { v: "1.9", date: "2026-02-07", changes: [
+        "First shared stylesheet (style.css) for the site (5 Feb), new logo and background images.",
+        "\"What is IFelx Web?\" introduction on the home page.",
+        "IFelxOS page restyled with a direct download link; Jowa Football AI download updated (4 Feb).",
+    ] },
+    { v: "1.8", date: "2026-01-31", changes: [
+        "IFelxOS page: IFelxOS 1, a Debian-based distribution with Cinnamon, apt and xv4.sh (4.5 GB ISO, released 1 Feb 2026), its goals, screenshots and download.",
+        "\"New: Install IFelxOS\" button on the home page.",
+    ] },
+    { v: "1.7", date: "2026-01-24", changes: [
+        "New home page with the list of AXV projects: jowa-GPT, jowa-football-ai, jowa-e, jowa-ifelx, xv2-xv5, IFelxOS, IFelx-mini, IFelxUI and WEX browser.",
+        "\"New: WEX browser\" link.",
+    ] },
+    { v: "1.6", date: "2026-01-15", changes: [
+        "xv4t1 package channel with xv4.sh (5 Jan) and the axv, joda and xv3 packages (8 Jan).",
+        "Home page: IFelxOS release date announced, author shown as AXV.",
+    ] },
+    { v: "1.5", date: "2026-01-04", changes: [
+        "IFelx Shop grows to over 20 packages: apt_pkg_mgr 1.0 (14 Dec), 14 tools such as calculator_gui, notes_cli, password_safe, system_monitor and todo_cli (3 Jan), and bat, busybox, fd, jq and ncdu (4 Jan).",
+    ] },
+    { v: "1.4", date: "2025-12-04", changes: [
+        "The site takes its name, IFelx Web (was IFlex Web).",
+        "Bing Webmaster verification (3 Dec).",
+    ] },
+    { v: "1.3", date: "2025-11-28", changes: [
+        "IFelx Shop: pages for the xv4 package manager (install, update, upgrade), an update list and the first packages (jotxt; cute.sh on 30 Nov).",
+        "Site renamed from IFex Web to IFlex Web.",
+        "Google Search verification.",
+    ] },
+    { v: "1.2", date: "2025-11-27", changes: [
+        "arabicxv: an Arabic topic search page (26 Nov), linked from the home page as \"arabicxv Topic Search Engine\".",
+        "Home page introduction and copyright line.",
+    ] },
+    { v: "1.1", date: "2025-11-23", changes: [
+        "\"Official Site\" title, robots.txt and sitemap.xml for search engines (22 Nov).",
+        "Site icon (favicon).",
+    ] },
+    { v: "1.0", date: "2025-11-21", changes: [
+        "IFex Web goes online: home page with Jowa-GPT and Jowa Football AI; IFelxOS and IFelx Shop announced as coming soon.",
+        "JOWA-GPT page: JOWA-MiniGPT version 1, a compact language model with Arabic data, downloaded from Google Drive.",
+        "Jowa Football AI page: a 3v3 football game with Q-table AI for 1 to 3 players, download for Windows and Linux.",
     ] },
 ];
 
@@ -231,13 +310,27 @@ const buildChangelog = () => {
                 <div>
                     <span class="ifx-changelog-kicker">IFelx Web · v${RELEASES[0].v}</span>
                     <h2 id="ifx-changelog-title">Release history</h2>
+                    <p class="ifx-changelog-sub">${RELEASES.length} releases since ${fmtDate(RELEASES[RELEASES.length - 1].date)}</p>
                 </div>
                 <button type="button" class="ifx-changelog-close" aria-label="Close">${ICON.close || "×"}</button>
             </div>
             <ol class="ifx-changelog-list"></ol>
         </div>`;
     const list = dlg.querySelector(".ifx-changelog-list");
+    const major = r => r.v.split(".")[0];
+    let groupList = null;
     RELEASES.forEach((r, i) => {
+        if (i === 0 || major(r) !== major(RELEASES[i - 1])) {
+            // one group per major version, headed "Version 1.x · 21 Nov 2025 – 26 Sep 2026";
+            // the sticky heading stays inside its own group, so the next one pushes it away
+            const members = RELEASES.filter(x => major(x) === major(r));
+            const group = document.createElement("li");
+            group.className = "ifx-era";
+            group.innerHTML = '<div class="ifx-release-era"></div><ol></ol>';
+            group.firstChild.textContent = `Version ${major(r)}.x · ${fmtDate(members[members.length - 1].date)} – ${fmtDate(members[0].date)}`;
+            list.appendChild(group);
+            groupList = group.lastChild;
+        }
         const li = document.createElement("li");
         li.className = "ifx-release";
         li.innerHTML = `
@@ -257,7 +350,7 @@ const buildChangelog = () => {
             item.textContent = c;
             ul.appendChild(item);
         });
-        list.appendChild(li);
+        groupList.appendChild(li);
     });
     // "close" is also fired for Esc, but Chromium delays it until the next rendered frame,
     // so the buttons restore the page themselves; running twice is harmless

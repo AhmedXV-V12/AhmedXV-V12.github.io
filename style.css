@@ -2111,7 +2111,7 @@ a.ifos-node:hover { border-color: var(--accent-line); transform: translateY(-2px
 .ifx-changelog-list {
     list-style: none;
     margin: 0;
-    padding: 4px 24px 20px;
+    padding: 0 24px 20px;
     overflow-y: auto;
     overscroll-behavior: contain;
 }
@@ -2155,3 +2155,25 @@ a.ifos-node:hover { border-color: var(--accent-line); transform: translateY(-2px
 @media (prefers-reduced-motion: reduce) {
     .ifx-changelog[open] { animation: none; }
 }
+
+.ifx-changelog-sub { margin: 6px 0 0; font-size: 0.82rem; font-weight: 400; letter-spacing: 0; color: var(--text-3); }
+
+.ifx-release-era {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin: 0 -24px;
+    padding: 10px 24px;
+    background: rgba(28,28,28,0.94);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: var(--text-4);
+}
+
+.ifx-era > ol { list-style: none; margin: 0; padding: 0; }
+.ifx-release-era + ol > .ifx-release:first-child { padding-top: 14px; }
