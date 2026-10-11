@@ -183,6 +183,10 @@ if (!reduceMotion && "IntersectionObserver" in window) {
    version shown in the corner. Every update is one release and versions count up
    one step at a time: 1.0 ... 1.9, 2.0 ... 2.9, 3.0 ... (never 1.10). */
 const RELEASES = [
+    { v: "6.9", date: "2026-10-11", changes: [
+        "IFOS subsystem page: itelxOS 1.3, with USB, FAT storage and programs from USB sticks; the download is ITelxOS 1.3.",
+        "A version history of itelxOS on the same page, with what each version brought and a download for every version, the first one (1.2) too.",
+    ] },
     { v: "6.8", date: "2026-10-10", changes: [
         "Every update of the site is now its own release, including the small ones.",
         "Versions count up one step per update: 1.0 to 1.9, then 2.0, and so on.",

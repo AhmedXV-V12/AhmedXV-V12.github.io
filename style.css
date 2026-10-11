@@ -1953,6 +1953,13 @@ a.ifos-node:hover { border-color: var(--accent-line); transform: translateY(-2px
 .ifos-shots-1 { grid-template-columns: minmax(0, 640px); }
 .ifos-inline-badge { vertical-align: middle; margin-left: 8px; font-size: 0.7rem; }
 .download-buttons .ifos-src-btn { background: var(--surface-3); }
+.ifos-versions td:first-child { color: var(--text); font-size: 0.95rem; letter-spacing: -0.5px; text-transform: none; }
+.ifos-versions td:first-child .badge { margin: 6px 0 4px; font-size: 0.65rem; letter-spacing: 0; }
+.ifos-versions p { margin: 0 0 6px; }
+.ifos-changes { margin: 0 0 8px; padding-left: 18px; color: var(--text-3); font-size: 0.9rem; }
+.ifos-changes li { margin: 3px 0; }
+.ifos-version-dl { font-size: 0.88rem; }
+.ifos-sha { color: var(--text-4); font-size: 0.74rem; word-break: break-all; }
 
 @media (max-width: 767px) {
     .ifos-branch { grid-template-columns: 1fr; }

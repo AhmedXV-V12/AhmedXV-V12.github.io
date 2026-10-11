@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#090909">
     <title>IFOS subsystem</title>
-    <meta name="description" content="IFOS subsystem — IFOS2, the base; IFelxOS2, the full desktop system built on it; the open-source ODE installer; and itelxOS 1.2, a 64-bit system with its own kernel.">
+    <meta name="description" content="IFOS subsystem — IFOS2, the base; IFelxOS2, the full desktop system built on it; the open-source ODE installer; and itelxOS 1.3, a 64-bit system with its own kernel.">
     <meta name="keywords" content="IFOS, IFOS2, IFelxOS2, IFelxUi, ODE installer, itelxOS, itelx, ITFS, XVC, IFelx">
     <link rel="icon" href="../ifelx.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,14 +29,14 @@
                 <span class="badge">IFOS2</span>
                 <span class="badge">IFelxOS2</span>
                 <span class="badge">ODE installer</span>
-                <span class="badge">itelxOS 1.2</span>
+                <span class="badge">itelxOS 1.3</span>
             </div>
         </header>
 
         <!-- ── Overview ─────────────────────────────────────── -->
         <section class="card">
             <h2>How it fits together</h2>
-            <p><strong>IFOS2</strong> is the base: a small Debian 13 core. <strong>IFelxOS2</strong> is the complete operating system built on top of it, and the <strong>ODE installer</strong> is the installer, made from the same foundation, that writes it to a disk. <strong>itelxOS 1.2</strong> is a separate system with its own kernel that ODE also installs.</p>
+            <p><strong>IFOS2</strong> is the base: a small Debian 13 core. <strong>IFelxOS2</strong> is the complete operating system built on top of it, and the <strong>ODE installer</strong> is the installer, made from the same foundation, that writes it to a disk. <strong>itelxOS 1.3</strong> is a separate system with its own kernel that ODE also installs.</p>
             <div class="ifos-family" aria-label="Family of IFOS systems">
                 <a class="ifos-node base" href="#ifos2">
                     <span class="ifos-node-kicker">Base</span>
@@ -57,7 +57,7 @@
                     </a>
                     <a class="ifos-node own" href="#itelx">
                         <span class="ifos-node-kicker">Own kernel</span>
-                        <strong>itelxOS 1.2</strong>
+                        <strong>itelxOS 1.3</strong>
                         <span>installed by ODE</span>
                     </a>
                 </div>
@@ -218,9 +218,9 @@ sudo tools/make-custom-ode.sh \
             </div>
         </section>
 
-        <!-- ── itelxOS 1.2 ──────────────────────────────────── -->
+        <!-- ── itelxOS 1.3 ──────────────────────────────────── -->
         <section class="card" id="itelx">
-            <h2>itelxOS 1.2</h2>
+            <h2>itelxOS 1.3</h2>
             <p>itelxOS is a 64-bit operating system of the IFelx family written from scratch: its own kernel, its own filesystem (<strong>ITFS</strong>), the <strong>itelx terminal</strong>, the <strong>XVC</strong> programming language and <strong>XVR</strong> executables. It is not Linux. The console draws Arabic and English, and Arabic text runs right to left.</p>
             <div class="screenshots-grid">
                 <img src="./img/itelx-boot.png" alt="itelxOS starting from its installed disk" loading="lazy">
@@ -231,8 +231,10 @@ sudo tools/make-custom-ode.sh \
                 <tr><td>Kernel</td><td>itelx (own), x86-64, NX / SMEP / SMAP on</td></tr>
                 <tr><td>Filesystem</td><td>ITFS</td></tr>
                 <tr><td>Starts on</td><td>UEFI (IFelxBoot) and BIOS (its own boot code, no GRUB)</td></tr>
-                <tr><td>Disks</td><td>SATA (AHCI), IDE, NVMe</td></tr>
-                <tr><td>Keyboard</td><td>PS/2 (USB is not supported in 1.2 yet)</td></tr>
+                <tr><td>Disks</td><td>SATA (AHCI), IDE, NVMe, USB</td></tr>
+                <tr><td>Keyboard</td><td>PS/2 and USB, English and Arabic (Alt+Shift)</td></tr>
+                <tr><td>USB</td><td>xHCI (USB 1.1 to 3.x): keyboards, mice, hubs, sticks, card readers, external disks</td></tr>
+                <tr><td>USB storage</td><td>FAT32, FAT16, FAT12, read and write (not exFAT or NTFS)</td></tr>
                 <tr><td>Disk space</td><td>256 MB at least</td></tr>
                 <tr><td>Installer</td><td>ODE installer for itelxOS</td></tr>
                 <tr><td>Licence</td><td>Kernel: itelx Kernel License 1.0 · Userspace: MPL-2.0</td></tr>
@@ -240,11 +242,11 @@ sudo tools/make-custom-ode.sh \
             <h3 class="ifos-h3">Licence</h3>
             <p>itelxOS has two licences. The <strong>kernel</strong> (the kernel, the boot code and the ITFS core) is under the <strong>itelx Kernel License 1.0</strong>: anyone may use it for any purpose, including commercially, read its source and share it unchanged, also on installation media such as the ODE installer, but modified versions may not be distributed; changes can be sent back to the author. The <strong>userspace</strong> (init, the itelx terminal, the XVC language, libitx, the system call interface and the apps in <code>/dex</code>) is under the <strong>Mozilla Public License 2.0</strong>: change it and share it, and changed files stay open. Programs you write for itelxOS may be under any licence you like. The licence texts are in <code>/system/licenses</code>.</p>
             <h3 class="ifos-h3">Installing it</h3>
-            <p>The download is the ODE installer for itelxOS, with the same pages as IFelxOS2's. It asks for an account, but itelxOS 1.2 has no sign-in: the name is kept as the computer's owner (<code>/system/owner</code>) and the password is not stored. After restarting, the computer starts straight into the itelx terminal.</p>
+            <p>The download is the ODE installer for itelxOS, with the same pages as IFelxOS2's. It asks for an account, but itelxOS has no sign-in: the name is kept as the computer's owner (<code>/system/owner</code>) and the password is not stored. After restarting, the computer starts straight into the itelx terminal.</p>
             <div class="screenshots-grid ifos-shots-1">
                 <img src="./img/itelx-ode-installed.png" alt="ODE: itelxOS installed — ITFS written, BIOS and UEFI set up" loading="lazy">
             </div>
-            <p class="ifos-note">In a virtual machine give itelxOS a SATA disk and a PS/2 keyboard. With a virtio disk it starts but reports that the system disk was not found, and a USB-only keyboard does not type.</p>
+            <p class="ifos-note">In a virtual machine give itelxOS a SATA, IDE or NVMe disk: with a virtio disk it starts but reports that the system disk was not found. PS/2 and USB keyboards both type.</p>
             <h3 class="ifos-h3">Using the terminal</h3>
             <table class="specs-table">
                 <tr><td><code>help</code></td><td>all commands</td></tr>
@@ -252,6 +254,7 @@ sudo tools/make-custom-ode.sh \
                 <tr><td><code>add -r</code> · <code>add -f</code> · <code>del</code></td><td>make a directory or a file, delete</td></tr>
                 <tr><td><code>cat</code> · <code>write</code> · <code>copy</code> · <code>move</code></td><td>show, type into, copy, rename files</td></tr>
                 <tr><td><code>run file.xvc</code> · <code>/dex/app.xvr</code></td><td>run an XVC program or an executable</td></tr>
+                <tr><td><code>usb</code> · <code>install</code> · <code>eject</code></td><td>USB devices, put a program from a stick into <code>/dex</code>, write a stick out before unplugging it</td></tr>
                 <tr><td><code>ps</code> · <code>kill</code> · <code>mem</code> · <code>mounts</code></td><td>processes and system information</td></tr>
                 <tr><td><code>reboot</code> · <code>poweroff</code></td><td>restart, switch off</td></tr>
                 <tr><td>Alt+Shift</td><td>keyboard between English and Arabic</td></tr>
@@ -260,10 +263,41 @@ sudo tools/make-custom-ode.sh \
 <pre class="code-block"><span class="cm"># hello.xvc - the first XVC program</span>
 print(<span class="str">"Hello from XVC!"</span>)
 let name = <span class="str">"itelx"</span>
-print(<span class="str">"this is "</span> + name + <span class="str">" "</span> + str(1) + <span class="str">"."</span> + str(2))</pre>
+print(<span class="str">"this is "</span> + name + <span class="str">" "</span> + str(1) + <span class="str">"."</span> + str(3))</pre>
             <div class="download-buttons">
-                <a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx.iso" class="project-btn">Download itelxOS 1.2 · 179 MB</a>
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx.iso" class="project-btn">Download ITelxOS 1.3 · 179 MB</a>
             </div>
+            <h3 class="ifos-h3">Versions</h3>
+            <table class="specs-table ifos-versions">
+                <tr>
+                    <td>1.3<br><span class="badge latest">Latest</span><br>2026-10-10</td>
+                    <td>
+                        <p>USB, FAT storage, and programs from outside the system.</p>
+                        <ul class="ifos-changes">
+                            <li>USB through xHCI (USB 1.1 to 3.x devices): keyboards (English and Arabic), mice, hubs, sticks, card readers and external disks, plugged in and out while the system runs</li>
+                            <li>FAT32, FAT16 and FAT12, read and write, with long and Arabic file names; volumes appear in <code>/media</code></li>
+                            <li>Programs from a USB stick: run them from it or <code>install</code> them into <code>/dex</code>; a stick with an update program is offered as an update</li>
+                            <li>Terminal: <code>usb</code>, <code>eject</code>, <code>install</code>, <code>copy -r</code>, <code>del -r</code>, <code>move</code> between disks</li>
+                            <li>Can start from a USB disk</li>
+                        </ul>
+                        <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx-1.3.iso">ODE_installer_itelx-1.3.iso</a> · 179 MB<br><span class="ifos-sha">SHA-256 fe13da93e6a2cd2dd4efa7f0306df0cdcf6a9a51298c7a9e8f19887990461a1d</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1.2<br><span class="badge">First version</span><br>2026-10-04</td>
+                    <td>
+                        <p>The first version of itelxOS.</p>
+                        <ul class="ifos-changes">
+                            <li>Its own 64-bit kernel (NX, SMEP and SMAP on) and the ITFS filesystem</li>
+                            <li>Starts on UEFI (IFelxBoot) and BIOS (its own boot code, no GRUB); SATA, IDE and NVMe disks</li>
+                            <li>The itelx terminal in English and Arabic, Arabic right to left; PS/2 keyboard</li>
+                            <li>The XVC programming language and XVR executables; the machine's RAM in <code>/ram</code></li>
+                            <li>Installed with the ODE installer; kernel under the itelx Kernel License 1.0, userspace under MPL-2.0</li>
+                        </ul>
+                        <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx-1.2.iso">ODE_installer_itelx-1.2.iso</a> · 179 MB<br><span class="ifos-sha">SHA-256 9d91e29dfa556b2a513ff8a3fac1c761a447e6ec5dbd851b965624d69f152950</span></p>
+                    </td>
+                </tr>
+            </table>
         </section>
 
         <footer class="page-footer">
