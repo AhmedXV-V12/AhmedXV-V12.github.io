@@ -10,7 +10,7 @@
 
             <div class="site-footer-brand">
                 <a href="/index.html" class="site-footer-brand-row">
-                    <img src="/logo.png" alt="" width="40" height="40" loading="lazy">
+                    <img src="${(IFX.logo && IFX.logo.ifelx) || '/logo.png'}" alt="" width="40" height="40" loading="lazy">
                     <span class="site-footer-brand-name">IFelx Web</span>
                 </a>
                 <p class="site-footer-desc">
@@ -23,16 +23,17 @@
             </div>
 
             <div class="site-footer-col">
-                <h4>Projects</h4>
+                <h2>Projects</h2>
                 <a href="/jowa-gpt/index.html">Jowa-mAi</a>
                 <a href="/jowa-football-ai/index.html">Jowa Football AI</a>
                 <a href="/ifelx/index.html">IFelxOS</a>
+                <a href="/ifos-subsystem/index.html">IFOS subsystem</a>
                 <a href="${IFX.engineUrl}" target="_blank" rel="noopener">IFelx Engine</a>
                 <a href="${IFX.chatUrl}" target="_blank" rel="noopener">IFelxChat</a>
             </div>
 
             <div class="site-footer-col">
-                <h4>Resources</h4>
+                <h2>Resources</h2>
                 <a href="/ifelx/index.html">Download IFelxOS</a>
                 <a href="/jowa-football-ai/v3/index.html#download">Download Football AI v3</a>
                 <a href="/jowa-gpt/index.html">Download Jowa-mAi</a>
@@ -40,7 +41,7 @@
             </div>
 
             <div class="site-footer-col">
-                <h4>Connect</h4>
+                <h2>Connect</h2>
                 <a href="https://www.instagram.com/axv.ifelx" target="_blank" rel="noopener">Instagram</a>
                 <a href="https://github.com/ahmedxv-v12" target="_blank" rel="noopener">GitHub</a>
             </div>

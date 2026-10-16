@@ -18,142 +18,170 @@
     <meta property="og:description" content="Open-source AI tools, operating systems, and technical projects by AXV.">
     <meta property="og:url" content="https://ahmedxv-v12.github.io/">
     <meta property="og:image" content="https://ahmedxv-v12.github.io/logo.png">
+    <meta property="og:image:alt" content="IFelx logo">
     <meta name="twitter:card" content="summary">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <meta name="twitter:title" content="IFelx Web — AXV Official">
+    <meta name="twitter:description" content="Open-source AI tools, operating systems, and technical projects by AXV.">
+    <meta name="twitter:image" content="https://ahmedxv-v12.github.io/logo.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "IFelx Web",
+        "url": "https://ahmedxv-v12.github.io/",
+        "description": "Official website of AXV: open-source AI tools, operating systems, and technical projects.",
+        "publisher": {
+            "@type": "Person",
+            "name": "Ahmed Walid",
+            "alternateName": "AXV",
+            "url": "https://ahmedxv-v12.github.io/",
+            "sameAs": ["https://github.com/AhmedXV-V12", "https://www.instagram.com/axv.ifelx"]
+        }
+    }
+    </script>
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/img/logo-400.webp" as="image" type="image/webp" fetchpriority="high">
     <link rel="stylesheet" href="style.css" />
     <script src="./navbar.js" defer></script>
     <script src="./footer.js" defer></script>
     <script src="./site.js" defer></script>
 </head>
-<body class="index-page">
+<body class="index-page home-page">
 
-    <main class="container">
+    <main class="home">
 
-        <!-- Hero: Logo + Title slide from top -->
-        <header class="page-header">
-            <div class="logo-container">
-                <span class="logo-halo"><img class="logo-img" src="logo.png" alt="IFelx Logo" width="200" height="200"></span>
-                <h1 class="logo-text">IFelx Web</h1>
+        <!-- Hero: the name and what it is on one side, the IFelx mark on the other -->
+        <header class="home-hero">
+            <div class="home-hero-text">
+                <div class="badges">
+                    <span class="badge">Open Source</span>
+                    <span class="badge"><span class="dot" style="color:#7adfa0"></span>Active</span>
+                </div>
+                <h1 class="home-title">IFelx Web</h1>
+                <p class="home-lead">The home of <strong>AXV</strong>’s projects: operating systems, AI models, an independent search engine and a private chat app, each with its downloads, documentation and release history.</p>
+                <div class="home-actions">
+                    <a class="btn btn-primary" href="#projects">Browse projects<svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                    <a class="btn btn-ghost" href="https://ifelx.tailce0b52.ts.net">Search with IFelx Engine<svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                </div>
+                <a class="home-news" href="ifos-subsystem/index.html">
+                    <span class="nav-new">New</span>
+                    <span class="home-news-text">itelxOS 1.3 in the IFOS subsystem: USB, FAT storage and programs from USB sticks</span>
+                    <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
             </div>
-            <p class="subtitle">Official platform of AXV</p>
-            <div class="badges">
-                <span class="badge">Open Source</span>
-                <span class="badge"><span class="dot" style="color:#7adfa0"></span>Active</span>
+            <div class="home-hero-mark" aria-hidden="true">
+                <span class="logo-halo"><img class="logo-img" src="/img/logo-400.webp" alt="" width="200" height="200" fetchpriority="high"></span>
             </div>
         </header>
 
-        <!-- Description: blur reveal + shimmer inside a card box -->
-        <div class="desc-card">
-            <p>
-                Explore a growing ecosystem of technical applications built by <strong>AXV</strong>. From intelligent AI assistants to custom operating systems — every project is designed with precision, performance, and the open-source community in mind.
-            </p>
-        </div>
-
-        <!-- Projects: horizontal pill buttons -->
-        <section aria-labelledby="projectsTitle">
-            <div class="section-head">
-                <h2 class="section-title" id="projectsTitle">Projects</h2>
-                <span class="section-count">7</span>
+        <!-- Featured: real screens from the projects -->
+        <section class="home-section" aria-labelledby="featuredTitle" data-filter-group>
+            <div class="home-section-head">
+                <h2 class="section-title" id="featuredTitle">Featured work</h2>
+                <p class="home-section-sub">Real screens from the projects.</p>
             </div>
-            <div class="buttons-grid" id="projectsGrid">
-                <a href="jowa-gpt/index.html" class="project-btn" data-name="jowa-mai jowa-gpt ai llm">Jowa-mAi</a>
-                <a href="jowa-football-ai/index.html" class="project-btn" data-name="jowa-football-ai game rl">Jowa Football AI</a>
-                <a href="ifelx/index.html" class="project-btn" data-name="ifelxos os linux">IFelxOS</a>
-                <a href="ifos-subsystem/index.html" class="project-btn" data-name="ifos subsystem ifos2 ifelxos2 ode installer itelxos">IFOS subsystem<span class="nav-new">New</span></a>
-                <a href="https://ifelxchat.tailce0b52.ts.net" class="project-btn" data-name="ifelxchat chat messenger messages calls">IFelxChat<span class="nav-new">New</span><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-                <a href="https://ifelx.tailce0b52.ts.net" class="project-btn" data-name="ifelx engine wex search">IFelx Engine<svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-                <a href="https://github.com/AhmedXV-V12/OpenWebfilemgr" class="project-btn" data-name="openwebfilemgr file manager github">OpenWebfilemgr<svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <div class="feature-grid">
+                <a class="feature feature--lead" href="ifos-subsystem/index.html" data-filter data-name="ifos subsystem ifelxos2 ifos2 ode itelxos">
+                    <span class="feature-shot"><img src="/img/show-ifelxos2.webp" alt="IFelxOS2 desktop with the IFelxUi dock and widgets" width="960" height="600" loading="lazy"></span>
+                    <span class="feature-body">
+                        <span class="feature-kicker"><span class="status-badge latest">New</span>Operating systems</span>
+                        <span class="feature-name">IFOS subsystem</span>
+                        <span class="feature-desc">IFOS2 as the base, IFelxOS2 as the full desktop, the open-source ODE installer, and itelxOS 1.3 with its own kernel.</span>
+                    </span>
+                </a>
+                <a class="feature" href="jowa-football-ai/v3/index.html" data-filter data-name="jowa football ai v3 mappo 11v11">
+                    <span class="feature-shot"><img src="/img/show-football-v3.webp" alt="A Jowa Football AI v3 match on the full pitch" width="960" height="640" loading="lazy"></span>
+                    <span class="feature-body">
+                        <span class="feature-kicker"><span class="status-badge latest">Latest</span>AI</span>
+                        <span class="feature-name">Jowa Football AI v3</span>
+                        <span class="feature-desc">11v11 football played by two AI brains trained with MAPPO, for Windows and Linux.</span>
+                    </span>
+                </a>
+                <a class="feature" href="ifelx/index.html" data-filter data-name="ifelxos linux debian">
+                    <span class="feature-shot"><img src="/img/show-ifelxos.webp" alt="The IFelxOS installer copying the system to disk" width="960" height="606" loading="lazy"></span>
+                    <span class="feature-body">
+                        <span class="feature-kicker"><span class="status-badge stable">Stable</span>Operating systems</span>
+                        <span class="feature-name">IFelxOS</span>
+                        <span class="feature-desc">A Debian-based Linux distribution with the Cinnamon desktop and the xv4 package manager.</span>
+                    </span>
+                </a>
             </div>
-            <p class="search-empty" id="searchEmpty" role="status">No projects match “<strong></strong>”</p>
         </section>
 
-        <!-- Project Status: animated cards with project images -->
-        <section aria-labelledby="statusTitle">
-            <div class="section-head" style="margin-top: 48px;">
-                <h2 class="section-title" id="statusTitle">Project Status</h2>
+        <!-- Every project, grouped; the navbar search filters this list -->
+        <section class="home-section" id="projects" aria-labelledby="projectsTitle">
+            <div class="home-section-head">
+                <h2 class="section-title" id="projectsTitle">All projects <span class="section-count" id="projectsCount">9</span></h2>
+                <p class="home-section-sub">Type in the search box at the top, or press <kbd>/</kbd>, to filter this list.</p>
             </div>
-            <div class="status-section">
-                <a class="status-card" href="jowa-gpt/index.html">
-                    <div class="status-icon">
-                        <img src="jowa.png" alt="" width="36" height="36">
-                    </div>
-                    <div class="status-info">
-                        <h3>Jowa-mAi</h3>
-                        <p>Conversational AI with advanced reasoning</p>
-                    </div>
-                    <div class="status-side">
-                        <span class="status-badge latest">Latest</span>
-                        <svg class="status-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </div>
-                </a>
-                <a class="status-card" href="jowa-football-ai/index.html">
-                    <div class="status-icon">
-                        <img src="jowa.png" alt="" width="36" height="36">
-                    </div>
-                    <div class="status-info">
-                        <h3>Jowa Football AI</h3>
-                        <p>Two AI brains play full 11v11 football</p>
-                    </div>
-                    <div class="status-side">
-                        <span class="status-badge latest">Latest</span>
-                        <svg class="status-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </div>
-                </a>
-                <a class="status-card" href="ifelx/index.html">
-                    <div class="status-icon">
-                        <img src="ifelx.png" alt="" width="36" height="36">
-                    </div>
-                    <div class="status-info">
-                        <h3>IFelxOS</h3>
-                        <p>Custom OS for developers &amp; power users</p>
-                    </div>
-                    <div class="status-side">
-                        <span class="status-badge stable">Stable</span>
-                        <svg class="status-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </div>
-                </a>
-                <a class="status-card" href="ifos-subsystem/index.html">
-                    <div class="status-icon">
-                        <img src="ifelx.png" alt="" width="36" height="36">
-                    </div>
-                    <div class="status-info">
-                        <h3>IFOS subsystem</h3>
-                        <p>IFOS2, IFelxOS2, the open-source ODE installer and itelxOS 1.2</p>
-                    </div>
-                    <div class="status-side">
-                        <span class="status-badge latest">New</span>
-                        <svg class="status-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </div>
-                </a>
-                <a class="status-card" href="https://ifelxchat.tailce0b52.ts.net">
-                    <div class="status-icon">
-                        <img src="ifelxchat.png" alt="" width="36" height="36">
-                    </div>
-                    <div class="status-info">
-                        <h3>IFelxChat</h3>
-                        <p>Private, encrypted chat with files, voice messages and calls</p>
-                    </div>
-                    <div class="status-side">
-                        <span class="status-badge live">Live</span>
-                        <svg class="status-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-                    </div>
-                </a>
-                <a class="status-card" href="https://ifelx.tailce0b52.ts.net">
-                    <div class="status-icon">
-                        <img src="logo.png" alt="" width="36" height="36">
-                    </div>
-                    <div class="status-info">
-                        <h3>IFelx Engine</h3>
-                        <p>Independent search engine with custom crawling and indexing</p>
-                    </div>
-                    <div class="status-side">
-                        <span class="status-badge live">Live</span>
-                        <svg class="status-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-                    </div>
-                </a>
+            <div class="project-index" id="projectsGrid">
+                <div class="project-group" data-filter-group>
+                    <h3 class="project-group-title" id="grp-operating-systems">Operating systems</h3>
+                    <ul class="project-list" aria-labelledby="grp-operating-systems">
+                    <li data-filter data-name="ifos subsystem ifos2 ifelxos2 ode installer itelxos"><a class="project-row" href="ifos-subsystem/index.html">
+                        <img src="/img/ifelx-112.webp" alt="" width="44" height="44" loading="lazy">
+                        <span class="project-row-text"><span class="project-row-name">IFOS subsystem</span><span class="project-row-desc">IFOS2, IFelxOS2, the ODE installer and itelxOS 1.3</span></span>
+                        <span class="status-badge latest">New</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a></li>
+                    <li data-filter data-name="ifelxos os linux debian"><a class="project-row" href="ifelx/index.html">
+                        <img src="/img/ifelx-112.webp" alt="" width="44" height="44" loading="lazy">
+                        <span class="project-row-text"><span class="project-row-name">IFelxOS</span><span class="project-row-desc">Debian-based Linux with the xv4 package manager</span></span>
+                        <span class="status-badge stable">Stable</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a></li>
+                    <li data-filter data-name="xv4 shop package manager"><a class="project-row" href="IFelx-shop/xv4/index.html">
+                        <img src="/img/ifelx-112.webp" alt="" width="44" height="44" loading="lazy">
+                        <span class="project-row-text"><span class="project-row-name">xv4 Package Manager</span><span class="project-row-desc">Packages for IFelxOS from IFelx Shop</span></span>
+                        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a></li>
+                    <li data-filter data-name="ode installer github"><a class="project-row" href="https://github.com/AhmedXV-V12/ODE-installer">
+                        <img src="/img/ifelx-112.webp" alt="" width="44" height="44" loading="lazy">
+                        <span class="project-row-text"><span class="project-row-name">ODE installer</span><span class="project-row-desc">Open-source OS installer, source on GitHub</span></span>
+                        <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                    </a></li>
+                    </ul>
+                </div>
+                <div class="project-group" data-filter-group>
+                    <h3 class="project-group-title" id="grp-ai">AI</h3>
+                    <ul class="project-list" aria-labelledby="grp-ai">
+                    <li data-filter data-name="jowa-mai jowa-gpt ai llm minigpt"><a class="project-row" href="jowa-gpt/index.html">
+                        <img src="/img/jowa-112.webp" alt="" width="44" height="44" loading="lazy">
+                        <span class="project-row-text"><span class="project-row-name">Jowa-mAi</span><span class="project-row-desc">A compact open-source MiniGPT built with PyTorch</span></span>
+                        <span class="status-badge latest">Latest</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a></li>
+                    <li data-filter data-name="jowa-football-ai game rl mappo"><a class="project-row" href="jowa-football-ai/index.html">
+                        <img src="/img/jowa-112.webp" alt="" width="44" height="44" loading="lazy">
+                        <span class="project-row-text"><span class="project-row-name">Jowa Football AI</span><span class="project-row-desc">Two AI brains play full 11v11 football</span></span>
+                        <span class="status-badge latest">Latest</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a></li>
+                    </ul>
+                </div>
+                <div class="project-group" data-filter-group>
+                    <h3 class="project-group-title" id="grp-online-services">Online services</h3>
+                    <ul class="project-list" aria-labelledby="grp-online-services">
+                    <li data-filter data-name="ifelx engine wex search ifse"><a class="project-row" href="https://ifelx.tailce0b52.ts.net">
+                        <img src="/img/logo-112.webp" alt="" width="44" height="44" loading="lazy">
+                        <span class="project-row-text"><span class="project-row-name">IFelx Engine</span><span class="project-row-desc">Independent search engine with its own crawler and index</span></span>
+                        <span class="status-badge live">Live</span><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                    </a></li>
+                    <li data-filter data-name="ifelxchat chat messenger messages calls"><a class="project-row" href="https://ifelxchat.tailce0b52.ts.net">
+                        <img src="/img/ifelxchat-112.webp" alt="" width="44" height="44" loading="lazy">
+                        <span class="project-row-text"><span class="project-row-name">IFelxChat</span><span class="project-row-desc">Private, encrypted chat with files, voice messages and calls</span></span>
+                        <span class="status-badge live">Live</span><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                    </a></li>
+                    </ul>
+                </div>
+                <div class="project-group" data-filter-group>
+                    <h3 class="project-group-title" id="grp-tools">Tools</h3>
+                    <ul class="project-list" aria-labelledby="grp-tools">
+                    <li data-filter data-name="openwebfilemgr file manager github"><a class="project-row" href="https://github.com/AhmedXV-V12/OpenWebfilemgr">
+                        <img src="/img/logo-112.webp" alt="" width="44" height="44" loading="lazy">
+                        <span class="project-row-text"><span class="project-row-name">OpenWebfilemgr</span><span class="project-row-desc">Open-source web file manager, source on GitHub</span></span>
+                        <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                    </a></li>
+                    </ul>
+                </div>
             </div>
+            <p class="search-empty" id="searchEmpty" role="status">No projects match “<strong></strong>”</p>
         </section>
 
     </main>

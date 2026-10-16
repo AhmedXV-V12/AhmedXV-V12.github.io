@@ -147,6 +147,13 @@ if (shots.length) {
         if (e.key === "Escape") closeBox();
         else if (e.key === "ArrowLeft") show(index - 1);
         else if (e.key === "ArrowRight") show(index + 1);
+        else if (e.key === "Tab") {
+            // keep focus on the viewer's buttons while it is open (it is modal)
+            const btns = Array.from(box.querySelectorAll("button"));
+            const at = btns.indexOf(document.activeElement);
+            e.preventDefault();
+            btns[(at + (e.shiftKey ? -1 : 1) + btns.length) % btns.length].focus();
+        }
     });
 
     let touchX = null;
@@ -170,12 +177,63 @@ if (!reduceMotion && "IntersectionObserver" in window) {
         });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
 
-    targets.forEach(el => {
+    // measured in the first frame, when layout is done anyway (no forced reflow at load)
+    requestAnimationFrame(() => targets.forEach(el => {
         const r = el.getBoundingClientRect();
         if (r.top < window.innerHeight) return;   // already on screen: no flash
         el.classList.add("ifx-reveal");
         io.observe(el);
+    }));
+}
+
+/* ── "On this page": contents for long pages ───────────── */
+/* Built from the section headings; shown beside the text on wide screens
+   (CSS), with the section being read marked as you scroll. */
+const container = document.querySelector(".page-container");
+const tocSections = container ? Array.from(container.querySelectorAll(":scope > .card")).filter(s => s.querySelector(":scope > h2")) : [];
+if (tocSections.length >= 3) {
+    const slug = t => t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    const nav = document.createElement("nav");
+    nav.className = "page-toc";
+    nav.setAttribute("aria-label", "On this page");
+    nav.innerHTML = '<p class="page-toc-title">On this page</p><ol></ol>';
+    const list = nav.querySelector("ol");
+    const links = new Map();
+    tocSections.forEach((sec, i) => {
+        const h = sec.querySelector(":scope > h2");
+        if (!sec.id) sec.id = slug(h.textContent) || "section-" + (i + 1);
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = "#" + sec.id;
+        // the heading text without badges or icons inside it
+        a.textContent = Array.from(h.childNodes).filter(n => n.nodeType === 3 || n.tagName === "CODE").map(n => n.textContent).join("").trim();
+        li.appendChild(a);
+        list.appendChild(li);
+        links.set(sec, a);
     });
+    const header = container.querySelector(":scope > .page-header");
+    if (header) header.after(nav); else container.prepend(nav);
+    // the contents column starts on the row after the header (a back link may come first)
+    const kids = Array.from(container.children);
+    nav.style.setProperty("--toc-row", String(header ? kids.indexOf(header) + 2 : 1));
+    container.classList.add("has-toc");
+
+    if ("IntersectionObserver" in window) {
+        const visible = new Set();
+        const mark = () => {
+            const first = tocSections.find(s => visible.has(s));
+            links.forEach((a, s) => {
+                const on = s === first;
+                a.classList.toggle("is-current", on);
+                if (on) a.setAttribute("aria-current", "location"); else a.removeAttribute("aria-current");
+            });
+        };
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(e => e.isIntersecting ? visible.add(e.target) : visible.delete(e.target));
+            mark();
+        }, { rootMargin: "-20% 0px -55% 0px" });
+        tocSections.forEach(s => spy.observe(s));
+    }
 }
 
 /* ── Version badge + release history ───────────────────── */
@@ -183,6 +241,16 @@ if (!reduceMotion && "IntersectionObserver" in window) {
    version shown in the corner. Every update is one release and versions count up
    one step at a time: 1.0 ... 1.9, 2.0 ... 2.9, 3.0 ... (never 1.10). */
 const RELEASES = [
+    { v: "7.0", date: "2026-10-16", changes: [
+        "Redesigned home page: a new hero with the IFelx mark, featured work with real screens from IFOS, Jowa Football AI v3 and IFelxOS, and one grouped index of every project with its status.",
+        "New navigation: a Projects menu with every project and its logo, direct links to IFelx Engine and IFelxChat, and a full-screen menu on phones.",
+        "Project pages share one layout: a large title beside the project logo, sections in one reading column, and an \"On this page\" list on wide screens that follows your scrolling.",
+        "Faster pages: the Inter font is now served by the site itself instead of Google Fonts, and logos and screenshots come in small WebP copies.",
+        "Easier to read: grey text is brighter so every label meets the WCAG AA contrast ratio.",
+        "Keyboard: a \"Skip to content\" link on every page, and Escape closes the mobile menu.",
+        "Search engines and link previews: every page has its own description, canonical address and preview card.",
+        "The IFOS subsystem card and quick search name itelxOS 1.3, and the footer links to the IFOS subsystem page.",
+    ] },
     { v: "6.9", date: "2026-10-11", changes: [
         "IFOS subsystem page: itelxOS 1.3, with USB, FAT storage and programs from USB sticks; the download is ITelxOS 1.3.",
         "A version history of itelxOS on the same page, with what each version brought and a download for every version, the first one (1.2) too.",
@@ -409,7 +477,8 @@ const versionBtn = document.createElement("button");
 versionBtn.type = "button";
 versionBtn.className = "ifx-version";
 versionBtn.textContent = "v" + RELEASES[0].v;
-versionBtn.setAttribute("aria-label", `IFelx Web version ${RELEASES[0].v}, open the release history`);
+// the accessible name starts with the visible text (WCAG 2.5.3, label in name)
+versionBtn.setAttribute("aria-label", `v${RELEASES[0].v}: IFelx Web release history`);
 versionBtn.setAttribute("aria-haspopup", "dialog");
 document.body.appendChild(versionBtn);
 

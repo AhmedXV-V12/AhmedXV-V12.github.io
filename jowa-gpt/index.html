@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#090909">
     <title>Jowa-mAi - Download</title>
+    <link rel="canonical" href="https://ahmedxv-v12.github.io/jowa-gpt/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="IFelx Web">
+    <meta property="og:title" content="Jowa-mAi - Download">
+    <meta property="og:description" content="Jowa-mAi — a compact open-source MiniGPT built with PyTorch by AXV. Runs on low-end hardware, no GPU required.">
+    <meta property="og:url" content="https://ahmedxv-v12.github.io/jowa-gpt/">
+    <meta property="og:image" content="https://ahmedxv-v12.github.io/logo.png">
+    <meta name="twitter:card" content="summary">
     <meta name="description" content="Jowa-mAi — a compact open-source MiniGPT built with PyTorch by AXV. Runs on low-end hardware, no GPU required.">
     <link rel="icon" href="/logo2.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../style.css" />
     <script src="../navbar.js" defer></script>
     <script src="../footer.js" defer></script>
@@ -20,7 +26,7 @@
     <main class="page-container">
 
         <header class="page-header">
-            <div class="logo-circle md"><img src="../jowa.png" alt="Jowa-mAi Logo"></div>
+            <div class="logo-circle md"><img src="/img/jowa-240.webp" alt="Jowa-mAi Logo" width="120" height="120" fetchpriority="high"></div>
             <h1>Jowa-mAi</h1>
             <p class="subtitle">Compact Open-Source MiniGPT — Made by <strong>Ahmed Walid (AXV)</strong></p>
             <div class="badges">
@@ -60,7 +66,7 @@
             <div class="how-step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                    <h4>Model Definition — <code>JowaMAI</code></h4>
+                    <h3>Model Definition — <code>JowaMAI</code></h3>
                     <p>A PyTorch <code>nn.Module</code> with an Embedding layer → 2-layer LSTM → Dropout → Linear output layer. Takes a sequence of character indices and predicts the next character at each step.</p>
                     <div class="code-block">
 <span class="kw">class</span> <span class="cls">JowaMAI</span>(nn.Module):
@@ -72,7 +78,7 @@
             <div class="how-step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                    <h4>Vocabulary / Tokenization</h4>
+                    <h3>Vocabulary / Tokenization</h3>
                     <p>No subword tokenizer — the model works at the character level. <code>data_tokens</code> is a list of every supported character (a–z, A–Z, 0–9, symbols, space, newline). Each character maps to its list index.</p>
                     <div class="code-block">
 <span class="cm"># encode</span>
@@ -86,7 +92,7 @@ char = data_tokens[predicted_index]</div>
             <div class="how-step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                    <h4>Remote Data Fetch</h4>
+                    <h3>Remote Data Fetch</h3>
                     <p><code>fetch_remote_data()</code> pulls a JSON file from GitHub. The JSON is a flat dictionary of <code>"question": "answer"</code> pairs used as the training corpus.</p>
                     <div class="code-block">
 url = <span class="str">"https://raw.githubusercontent.com/.../database.json"</span>
@@ -97,7 +103,7 @@ data = requests.get(url).json()  <span class="cm"># { "q": "a", ... }</span></di
             <div class="how-step">
                 <div class="step-num">4</div>
                 <div class="step-body">
-                    <h4>Training Loop</h4>
+                    <h3>Training Loop</h3>
                     <p>Each Q&A pair is formatted as <code>"Q: ...\nA: ...\n"</code> then encoded. The model learns to predict the next character given all previous ones. Uses <code>ReduceLROnPlateau</code> to decay the learning rate and early stopping (patience=10) to avoid overfitting.</p>
                     <div class="code-block">
 optimizer = Adam(lr=0.001)
@@ -115,7 +121,7 @@ scheduler = ReduceLROnPlateau(patience=5, factor=0.5)
             <div class="how-step">
                 <div class="step-num">5</div>
                 <div class="step-body">
-                    <h4>Text Generation</h4>
+                    <h3>Text Generation</h3>
                     <p>Given a user prompt, the model formats it as <code>"Q: {prompt}\nA: "</code>, then generates characters one by one using temperature-scaled softmax sampling until it hits a sentence-ending punctuation or max length.</p>
                     <div class="code-block">
 prompt → <span class="str">"Q: {prompt}\nA: "</span> → encode → feed to LSTM

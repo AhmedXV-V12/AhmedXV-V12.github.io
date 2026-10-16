@@ -34,28 +34,27 @@ const ICON = {
 const ENGINE_URL = "https://ifelx.tailce0b52.ts.net";
 const CHAT_URL   = "https://ifelxchat.tailce0b52.ts.net";
 
+/* small copies of the project logos for 34–48px slots (the originals are 1080px) */
+const LOGO = {
+    ifelx: "/img/logo-112.webp",
+    os:    "/img/ifelx-112.webp",
+    jowa:  "/img/jowa-112.webp",
+    chat:  "/img/ifelxchat-112.webp",
+};
+
 const PROJECTS = [
-    { name: "Jowa-mAi",         desc: "Compact open-source MiniGPT",           href: "/jowa-gpt/index.html",         icon: "/jowa.png",  keys: "jowa gpt mai ai llm minigpt lstm pytorch chat" },
-    { name: "Jowa Football AI", desc: "11v11 football played by two AI brains", href: "/jowa-football-ai/index.html", icon: "/jowa.png",  keys: "football soccer game rl dqn mappo 11v11 v3 self-play reinforcement" },
-    { name: "IFelxOS",          desc: "Debian-based Linux distribution",       href: "/ifelx/index.html",            icon: "/ifelx.png", keys: "ifelxos os linux debian distro xv4 iso cinnamon" },
-    { name: "IFelx Engine",     desc: "Independent search engine",             href: ENGINE_URL,                     icon: "/logo.png",  keys: "ifelx engine search wex crawler index ifse" },
-    { name: "IFelxChat",        desc: "Private encrypted chat, voice messages and calls", href: CHAT_URL,          icon: "/ifelxchat.png", keys: "ifelxchat chat messenger messages calls voice encrypted new" },
-    { name: "OpenWebfilemgr",   desc: "Open-source web file manager",          href: "https://github.com/AhmedXV-V12/OpenWebfilemgr", icon: "/logo.png", keys: "file manager web github open" },
-    { name: "IFOS subsystem",   desc: "IFOS2, IFelxOS2, ODE installer, itelxOS 1.2", href: "/ifos-subsystem/index.html", icon: "/ifelx.png", keys: "ifos ifos2 ifelxos2 ifelxui ode installer itelx itelxos itfs xvc subsystem new" },
-    { name: "ODE installer",    desc: "Open-source OS installer (GitHub)",  href: "https://github.com/AhmedXV-V12/ODE-installer", icon: "/ifelx.png", keys: "ode installer ifos iso usb github source open" },
-    { name: "xv4 Package Manager", desc: "IFelx Shop — packages for IFelxOS", href: "/IFelx-shop/xv4/index.html",   icon: "/ifelx.png", keys: "xv4 shop package manager install update upgrade ifos" },
+    { name: "Jowa-mAi",         desc: "Compact open-source MiniGPT",           href: "/jowa-gpt/index.html",         icon: LOGO.jowa,  keys: "jowa gpt mai ai llm minigpt lstm pytorch chat" },
+    { name: "Jowa Football AI", desc: "11v11 football played by two AI brains", href: "/jowa-football-ai/index.html", icon: LOGO.jowa,  keys: "football soccer game rl dqn mappo 11v11 v3 self-play reinforcement" },
+    { name: "IFelxOS",          desc: "Debian-based Linux distribution",       href: "/ifelx/index.html",            icon: LOGO.os,    keys: "ifelxos os linux debian distro xv4 iso cinnamon" },
+    { name: "IFelx Engine",     desc: "Independent search engine",             href: ENGINE_URL,                     icon: LOGO.ifelx, keys: "ifelx engine search wex crawler index ifse" },
+    { name: "IFelxChat",        desc: "Private encrypted chat, voice messages and calls", href: CHAT_URL,          icon: LOGO.chat,  keys: "ifelxchat chat messenger messages calls voice encrypted new" },
+    { name: "OpenWebfilemgr",   desc: "Open-source web file manager",          href: "https://github.com/AhmedXV-V12/OpenWebfilemgr", icon: LOGO.ifelx, keys: "file manager web github open" },
+    { name: "IFOS subsystem",   desc: "IFOS2, IFelxOS2, ODE installer, itelxOS 1.3", href: "/ifos-subsystem/index.html", icon: LOGO.os, keys: "ifos ifos2 ifelxos2 ifelxui ode installer itelx itelxos itfs xvc subsystem new" },
+    { name: "ODE installer",    desc: "Open-source OS installer (GitHub)",  href: "https://github.com/AhmedXV-V12/ODE-installer", icon: LOGO.os, keys: "ode installer ifos iso usb github source open" },
+    { name: "xv4 Package Manager", desc: "IFelx Shop — packages for IFelxOS", href: "/IFelx-shop/xv4/index.html",   icon: LOGO.os,    keys: "xv4 shop package manager install update upgrade ifos" },
 ];
 
-window.IFX = { icon: ICON, projects: PROJECTS, engineUrl: ENGINE_URL, chatUrl: CHAT_URL };
-
-const LINKS = [
-    { label: "Jowa-mAi",     href: "/jowa-gpt/index.html" },
-    { label: "Football AI",  href: "/jowa-football-ai/index.html" },
-    { label: "IFelxOS",      href: "/ifelx/index.html" },
-    { label: "IFelx Engine", href: ENGINE_URL },
-    { label: "IFelxChat",    href: CHAT_URL },
-    { label: "IFOS subsystem", href: "/ifos-subsystem/index.html", badge: "New" },
-];
+window.IFX = { icon: ICON, logo: LOGO, projects: PROJECTS, engineUrl: ENGINE_URL, chatUrl: CHAT_URL };
 
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const isExternal = href => /^https?:\/\//.test(href);
@@ -64,12 +63,19 @@ const section = path => (path.split("/").filter(Boolean)[0] || "").toLowerCase()
 
 /* ── Markup ────────────────────────────────────────────── */
 const here = section(location.pathname);
+const isHere = href => !isExternal(href) && here && section(href) === here;
 
-const linksHtml = LINKS.map(l => {
-    const current = !isExternal(l.href) && here && section(l.href) === here;
-    const badge = l.badge ? `<span class="nav-new">${esc(l.badge)}</span>` : "";
-    return `<a href="${l.href}"${ext(l.href)}${current ? ' class="is-current" aria-current="page"' : ""}>${esc(l.label)}${badge}</a>`;
-}).join("");
+/* "Projects" menu: every project with its logo, the page you are on marked */
+const menuItems = PROJECTS.map(p => `
+    <a class="navbar-menu-item${isHere(p.href) ? " is-current" : ""}" href="${p.href}"${ext(p.href)}${isHere(p.href) ? ' aria-current="page"' : ""}>
+        <img src="${p.icon}" alt="" width="36" height="36" loading="lazy">
+        <span class="navbar-menu-text">
+            <span class="navbar-menu-name">${esc(p.name)}${/\bnew\b/.test(p.keys) ? '<span class="nav-new">New</span>' : ""}</span>
+            <span class="navbar-menu-desc">${esc(p.desc)}</span>
+        </span>
+        ${isExternal(p.href) ? ICON.external : ""}
+    </a>`).join("");
+const onProject = PROJECTS.some(p => isHere(p.href));
 
 const navbar = document.createElement("nav");
 navbar.className = "navbar";
@@ -77,10 +83,23 @@ navbar.setAttribute("aria-label", "Main");
 navbar.innerHTML = `
     <div class="navbar-inner">
         <a href="/index.html" class="navbar-brand" aria-label="IFelx Web — home">
-            <img src="/logo.png" alt="" width="36" height="36">
+            <img src="${LOGO.ifelx}" alt="" width="36" height="36">
             <span class="navbar-brand-name">IFelx Web</span>
         </a>
         <div class="navbar-panel" id="navPanel">
+            <div class="navbar-links">
+                <div class="navbar-projects">
+                    <button type="button" class="navbar-projects-btn${onProject ? " is-current" : ""}" aria-expanded="false" aria-controls="navProjects">
+                        Projects<svg class="navbar-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="navbar-projects-menu" id="navProjects">
+                        <div class="navbar-menu-grid">${menuItems}</div>
+                        <a class="navbar-menu-all" href="/index.html#projects">All projects and their status${ICON.arrow}</a>
+                    </div>
+                </div>
+                <a href="${ENGINE_URL}" target="_blank" rel="noopener">IFelx Engine${ICON.external}</a>
+                <a href="${CHAT_URL}" target="_blank" rel="noopener">IFelxChat${ICON.external}</a>
+            </div>
             <div class="navbar-search" role="search">
                 <div class="navbar-search-box">
                     ${ICON.search}
@@ -91,13 +110,9 @@ navbar.innerHTML = `
                 </div>
                 <div class="navbar-results" id="navResults" role="listbox" aria-label="Projects"></div>
             </div>
-            <div class="navbar-links">
-                ${linksHtml}
-                <a href="https://www.instagram.com/axv.ifelx" target="_blank" rel="noopener" class="navbar-instagram" aria-label="Instagram @axv.ifelx">
-                    <span class="navbar-insta-icon">${ICON.instagram}</span>
-                    axv.ifelx
-                </a>
-            </div>
+            <a href="https://www.instagram.com/axv.ifelx" target="_blank" rel="noopener" class="navbar-instagram" aria-label="Instagram @axv.ifelx" title="Instagram @axv.ifelx">
+                ${ICON.instagram}<span class="navbar-instagram-label">axv.ifelx</span>
+            </a>
         </div>
         <button type="button" class="navbar-menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="navPanel">
             <span class="icon-open">${ICON.menu}</span>
@@ -107,10 +122,22 @@ navbar.innerHTML = `
 `;
 document.body.insertBefore(navbar, document.body.firstChild);
 
+/* ── Skip link: first stop for keyboard users ──────────── */
+const main = document.querySelector("main");
+if (main) {
+    if (!main.id) main.id = "main";
+    main.tabIndex = -1;
+    const skip = document.createElement("a");
+    skip.className = "ifx-skip";
+    skip.href = "#" + main.id;
+    skip.textContent = "Skip to content";
+    document.body.insertBefore(skip, navbar);
+}
+
 /* ── Scroll shadow ─────────────────────────────────────── */
 const onScroll = () => navbar.classList.toggle("is-scrolled", window.scrollY > 8);
 window.addEventListener("scroll", onScroll, { passive: true });
-onScroll();
+requestAnimationFrame(onScroll);   // after first layout: no forced reflow during load
 
 /* ── Mobile menu ───────────────────────────────────────── */
 const menuBtn = navbar.querySelector(".navbar-menu-btn");
@@ -120,7 +147,32 @@ const setMenu = open => {
 };
 menuBtn.addEventListener("click", () => setMenu(!navbar.classList.contains("is-menu-open")));
 document.addEventListener("click", e => { if (!navbar.contains(e.target)) setMenu(false); });
-window.addEventListener("resize", () => { if (window.innerWidth > 1099) setMenu(false); });
+/* Escape closes the open menu and gives focus back to its button */
+document.addEventListener("keydown", e => {
+    if (e.key !== "Escape" || !navbar.classList.contains("is-menu-open") || e.target === input) return;
+    setMenu(false);
+    menuBtn.focus();
+});
+window.addEventListener("resize", () => { if (window.innerWidth > 959) setMenu(false); });
+
+/* ── Projects menu ─────────────────────────────────────── */
+const projWrap = navbar.querySelector(".navbar-projects");
+const projBtn  = navbar.querySelector(".navbar-projects-btn");
+const setProjects = open => {
+    projWrap.classList.toggle("is-open", open);
+    projBtn.setAttribute("aria-expanded", String(open));
+};
+projBtn.addEventListener("click", () => setProjects(!projWrap.classList.contains("is-open")));
+document.addEventListener("click", e => { if (!projWrap.contains(e.target)) setProjects(false); });
+projWrap.addEventListener("keydown", e => {
+    if (e.key === "Escape" && projWrap.classList.contains("is-open")) {
+        e.stopPropagation();
+        setProjects(false);
+        projBtn.focus();
+    }
+});
+/* leaving the menu with Tab closes it */
+projWrap.addEventListener("focusout", e => { if (!projWrap.contains(e.relatedTarget)) setProjects(false); });
 
 /* ── Search ────────────────────────────────────────────── */
 const wrap    = navbar.querySelector(".navbar-search");
@@ -138,17 +190,23 @@ const highlight = (text, q) => {
     return esc(text.slice(0, i)) + "<mark>" + esc(text.slice(i, i + q.length)) + "</mark>" + esc(text.slice(i + q.length));
 };
 
-/* index page: filter the projects grid and status cards in place */
+/* index page: filter the featured work and the project index in place */
 const filterPage = q => {
     const grid = document.getElementById("projectsGrid");
     if (!grid) return;
     let shown = 0;
-    document.querySelectorAll("#projectsGrid .project-btn, .status-section .status-card").forEach(el => {
+    document.querySelectorAll("[data-filter]").forEach(el => {
         const hay = norm((el.getAttribute("data-name") || "") + " " + el.textContent);
         const ok = !q || hay.includes(q);
         el.hidden = !ok;
-        if (ok && el.classList.contains("project-btn")) shown++;
+        if (ok && el.querySelector(".project-row")) shown++;
     });
+    // a group (or the featured strip) with nothing left in it disappears too
+    document.querySelectorAll("[data-filter-group]").forEach(g => {
+        g.hidden = !g.querySelector("[data-filter]:not([hidden])");
+    });
+    const count = document.getElementById("projectsCount");
+    if (count) count.textContent = shown;
     const empty = document.getElementById("searchEmpty");
     if (empty) {
         empty.classList.toggle("show", !!q && shown === 0);
@@ -227,7 +285,7 @@ document.addEventListener("keydown", e => {
     const t = e.target;
     if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
     e.preventDefault();
-    if (window.innerWidth <= 1099) setMenu(true);
+    if (window.innerWidth <= 959) setMenu(true);
     input.focus();
 });
 })();
