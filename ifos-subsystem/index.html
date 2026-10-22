@@ -171,9 +171,9 @@ ip -br a</pre>
             <h2>IFelxOS2.5 <span class="badge latest ifos-inline-badge">New</span></h2>
             <p>IFelxOS2.5 is the interface update of IFelxOS2: the same system and the same IFelx look (colours, rounded corners, fonts, right to left first) with <strong>IFelxUi 1.5</strong>. It fixes how the interface lays out Arabic text, makes it lighter to run, and closes a hole in its web browser. Nothing in Debian underneath changed.</p>
             <div class="screenshots-grid">
-                <img src="./img/ifelxos25-desktop.png" alt="IFelxOS2.5 live desktop with the clock, system and status widgets" loading="lazy">
-                <img src="./img/ifelxos25-notification.png" alt="IFelxOS2.5 after signing in: the notification comes down at the top centre" loading="lazy">
+                <img src="./img/ifelxos25-ode.png" alt="The ODE installer installing IFelxOS2.5" loading="lazy">
                 <img src="./img/ifelxos25-login.png" alt="IFelxOS2.5 sign-in screen of the installed system" loading="lazy">
+                <img src="./img/ifelxos25-session.png" alt="IFelxOS2.5 after signing in: the notification comes down at the top centre" loading="lazy">
             </div>
             <h3 class="ifos-h3">IFelxOS2 and IFelxOS2.5 compared</h3>
             <table class="specs-table ifos-compare">
@@ -183,7 +183,7 @@ ip -br a</pre>
                 <tbody>
                     <tr><td>Released</td><td>2026-10-02</td><td>2026-10-18</td></tr>
                     <tr><td>Interface</td><td>IFelxUi 1.0 (with the 1.1 fixes)</td><td>IFelxUi 1.5</td></tr>
-                    <tr><td>Download</td><td>The ODE installer, 1.1 GB: it opens straight into the installer</td><td>A live ISO, 990 MB: the desktop starts from the stick, and the Installer in the dock writes it to a disk</td></tr>
+                    <tr><td>Download</td><td colspan="2" class="ifos-both">The same way for both: the ODE installer, 1.1 GB, which opens straight into the installer; the installed system is used as usual</td></tr>
                     <tr><td>Arabic text in buttons, fields, title bars, lists, lock screen</td><td>Sat low: the Arabic face has a taller line than the Latin one</td><td>Centred on its letters, level with English</td></tr>
                     <tr><td>An Arabic line that starts with a Latin word (“DHCP يكتب …”)</td><td>Read left to right</td><td>Takes the interface's direction: right to left</td></tr>
                     <tr><td>Notifications</td><td>In a corner, over the clock widget, the Settings sidebar and window buttons; appear at once</td><td>From the top centre, with a short drop</td></tr>
@@ -196,23 +196,32 @@ ip -br a</pre>
                 </tbody>
             </table>
             <h3 class="ifos-h3">Installing it</h3>
+            <p>IFelxOS2.5 is downloaded as its ODE installer, like IFelxOS2: start the computer from it and the installer opens directly.</p>
             <div class="how-step">
                 <div class="step-num">1</div>
-                <div class="step-body"><h4>Make the USB stick</h4><p>Write <code>IFelxOS2.5.iso</code> to a stick (Rufus, Etcher or <code>dd</code>), or open it in a virtual machine, and start the computer from it.</p></div>
+                <div class="step-body"><h4>Make the USB stick</h4><p>Any way works: Rufus (either mode), Etcher, Ventoy or <code>dd</code>. Start the computer from the stick.</p></div>
             </div>
             <div class="how-step">
                 <div class="step-num">2</div>
-                <div class="step-body"><h4>Try it</h4><p>The IFelxUi desktop starts from the stick, in Arabic; the language switches to English in Settings.</p></div>
+                <div class="step-body"><h4>Start, terms, disk</h4><p>Press <strong>Start</strong>, accept the terms, choose the disk. The stick you started from is never offered.</p></div>
             </div>
             <div class="how-step">
                 <div class="step-num">3</div>
-                <div class="step-body"><h4>Install</h4><p>Open the <strong>Installer</strong> from the dock: the disk (the stick you started from is never offered), the installation type, your account and password. After it is done, remove the stick and restart: the installed system opens on its sign-in screen.</p></div>
+                <div class="step-body"><h4>Installation type</h4><p><strong>Erase disk and install</strong> takes the whole disk. <strong>Choose a partition</strong> keeps the others; GParted opens from this page to make room.</p></div>
             </div>
-            <p class="ifos-note">Checked in QEMU/KVM before publishing: the live desktop, the installation, the installed disk started on UEFI and on BIOS, signing in, a wrong password refused, the lock screen.</p>
+            <div class="how-step">
+                <div class="step-num">4</div>
+                <div class="step-body"><h4>Your account</h4><p>Computer name, account name and password. This account can manage the computer with its password (sudo).</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">5</div>
+                <div class="step-body"><h4>Install and restart</h4><p>After <em>Done</em>, remove the stick and restart. IFelxOS2.5 opens on its sign-in screen; sign in and use it as usual.</p></div>
+            </div>
+            <p class="ifos-note">Checked in QEMU/KVM before publishing: the ODE installer started from the ISO, erased the disk and installed IFelxOS2.5; the installed disk started on UEFI and on BIOS, refused a wrong password and signed in.</p>
             <div class="download-buttons">
-                <a href="https://axv-1.tailce0b52.ts.net/IFOS/IFelxOS2.5.iso" class="project-btn">Download IFelxOS2.5 · 990 MB</a>
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/IFelxOS2.5-amd64.iso" class="project-btn">Download IFelxOS2.5 · 1.1 GB</a>
             </div>
-            <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/IFelxOS2.5.iso">IFelxOS2.5.iso</a> · 990 MB<br><span class="ifos-sha">SHA-256 7741bd10b063c6db01c596edfff948dd64fe283de9a7b23a8aeb783d004938ee</span></p>
+            <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/IFelxOS2.5-amd64.iso">IFelxOS2.5-amd64.iso</a> · 1.1 GB<br><span class="ifos-sha">SHA-256 b529069bd424132fdc6deb1becc6cd4e2aa67825679797d2bd9635c8ee46ef45</span></p>
         </section>
 
         <!-- ── ODE installer ────────────────────────────────── -->

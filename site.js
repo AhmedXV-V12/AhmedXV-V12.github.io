@@ -241,6 +241,10 @@ if (tocSections.length >= 3) {
    version shown in the corner. Every update is one release and versions count up
    one step at a time: 1.0 ... 1.9, 2.0 ... 2.9, 3.0 ... (never 1.10). */
 const RELEASES = [
+    { v: "7.2", date: "2026-10-22", changes: [
+        "IFelxOS2.5 is now downloaded as its ODE installer, like IFelxOS2: start the computer from it and the installer opens; the installed system is used as usual.",
+        "The IFelxOS2.5 section shows the ODE installer installing it and the installed system, with its installation steps.",
+    ] },
     { v: "7.1", date: "2026-10-22", changes: [
         "IFOS subsystem page: itelxOS 1.4, with its new sys commands (sys, sys.info, sys.info.device, sys.all and sys.top) and screenshots of them; the download is ITelxOS 1.4.",
         "How to update itelxOS 1.3 to 1.4 with update.xvr from a USB stick, step by step, with the update and a stick image that starts by itself to download.",
