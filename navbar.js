@@ -49,7 +49,7 @@ const PROJECTS = [
     { name: "IFelx Engine",     desc: "Independent search engine",             href: ENGINE_URL,                     icon: LOGO.ifelx, keys: "ifelx engine search wex crawler index ifse" },
     { name: "IFelxChat",        desc: "Private encrypted chat, voice messages and calls", href: CHAT_URL,          icon: LOGO.chat,  keys: "ifelxchat chat messenger messages calls voice encrypted new" },
     { name: "OpenWebfilemgr",   desc: "Open-source web file manager",          href: "https://github.com/AhmedXV-V12/OpenWebfilemgr", icon: LOGO.ifelx, keys: "file manager web github open" },
-    { name: "IFOS subsystem",   desc: "IFOS2, IFelxOS2, ODE installer, itelxOS 1.3", href: "/ifos-subsystem/index.html", icon: LOGO.os, keys: "ifos ifos2 ifelxos2 ifelxui ode installer itelx itelxos itfs xvc subsystem new" },
+    { name: "IFOS subsystem",   desc: "IFOS2, IFelxOS2.5, ODE installer, itelxOS 1.4", href: "/ifos-subsystem/index.html", icon: LOGO.os, keys: "ifos ifos2 ifelxos2 ifelxos2.5 ifelxui ode installer itelx itelxos itfs xvc sys top update subsystem new" },
     { name: "ODE installer",    desc: "Open-source OS installer (GitHub)",  href: "https://github.com/AhmedXV-V12/ODE-installer", icon: LOGO.os, keys: "ode installer ifos iso usb github source open" },
     { name: "xv4 Package Manager", desc: "IFelx Shop — packages for IFelxOS", href: "/IFelx-shop/xv4/index.html",   icon: LOGO.os,    keys: "xv4 shop package manager install update upgrade ifos" },
 ];

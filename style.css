@@ -2338,8 +2338,32 @@ a.ifos-node:hover { border-color: var(--accent-line); transform: translateY(-2px
 .ifos-version-dl { font-size: 0.88rem; }
 .ifos-sha { color: var(--text-4); font-size: 0.74rem; word-break: break-all; }
 
+/* commands keep their case in the label column */
+.specs-table td:first-child code { text-transform: none; letter-spacing: 0; font-size: 0.82rem; }
+
+/* IFelxOS2 and IFelxOS2.5 side by side; stacked on phones */
+.ifos-compare th {
+    text-align: start;
+    padding: 10px 8px;
+    color: var(--text);
+    font-size: 0.95rem;
+    letter-spacing: -0.3px;
+    border-bottom: 1px solid var(--line-2);
+}
+.ifos-compare th:last-child { color: var(--accent-text); }
+.ifos-compare td:nth-child(2) { color: var(--text-3); }
+.ifos-compare td:nth-child(3), .ifos-compare td.ifos-both { color: var(--text-2); }
+
 @media (max-width: 767px) {
     .ifos-branch { grid-template-columns: 1fr; }
+    .ifos-compare, .ifos-compare tbody, .ifos-compare tr, .ifos-compare td { display: block; width: auto; }
+    .ifos-compare thead { display: none; }
+    .ifos-compare tr { padding: 6px 0; }
+    .ifos-compare td { padding: 4px 8px; }
+    .ifos-compare td:first-child { width: auto; padding-top: 10px; }
+    .ifos-compare td:nth-child(2)::before { content: "IFelxOS2  "; color: var(--text-4); font-weight: 700; font-size: 0.76rem; }
+    .ifos-compare td:nth-child(3)::before { content: "IFelxOS2.5  "; color: var(--accent-text); font-weight: 700; font-size: 0.76rem; }
+    .ifos-compare td.ifos-both::before { content: "Both  "; }
 }
 
 /* ─── Jowa Football AI v3 — download tiles ──────────────── */

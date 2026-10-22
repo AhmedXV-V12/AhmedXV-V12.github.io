@@ -9,12 +9,12 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="IFelx Web">
     <meta property="og:title" content="IFOS subsystem">
-    <meta property="og:description" content="IFOS subsystem — IFOS2, the base; IFelxOS2, the full desktop system built on it; the open-source ODE installer; and itelxOS 1.3, a 64-bit system with its own kernel.">
+    <meta property="og:description" content="IFOS subsystem — IFOS2, the base; IFelxOS2 and its interface update IFelxOS2.5, the full desktop system built on it; the open-source ODE installer; and itelxOS 1.4, a 64-bit system with its own kernel.">
     <meta property="og:url" content="https://ahmedxv-v12.github.io/ifos-subsystem/">
     <meta property="og:image" content="https://ahmedxv-v12.github.io/logo.png">
     <meta name="twitter:card" content="summary">
-    <meta name="description" content="IFOS subsystem — IFOS2, the base; IFelxOS2, the full desktop system built on it; the open-source ODE installer; and itelxOS 1.3, a 64-bit system with its own kernel.">
-    <meta name="keywords" content="IFOS, IFOS2, IFelxOS2, IFelxUi, ODE installer, itelxOS, itelx, ITFS, XVC, IFelx">
+    <meta name="description" content="IFOS subsystem — IFOS2, the base; IFelxOS2 and its interface update IFelxOS2.5, the full desktop system built on it; the open-source ODE installer; and itelxOS 1.4, a 64-bit system with its own kernel.">
+    <meta name="keywords" content="IFOS, IFOS2, IFelxOS2, IFelxOS2.5, IFelxUi, ODE installer, itelxOS, itelx, ITFS, XVC, sys.top, IFelx">
     <link rel="icon" href="../ifelx.png" type="image/png">
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../style.css" />
@@ -34,15 +34,16 @@
                 <span class="badge latest">New</span>
                 <span class="badge">IFOS2</span>
                 <span class="badge">IFelxOS2</span>
+                <span class="badge">IFelxOS2.5</span>
                 <span class="badge">ODE installer</span>
-                <span class="badge">itelxOS 1.3</span>
+                <span class="badge">itelxOS 1.4</span>
             </div>
         </header>
 
         <!-- ── Overview ─────────────────────────────────────── -->
         <section class="card">
             <h2>How it fits together</h2>
-            <p><strong>IFOS2</strong> is the base: a small Debian 13 core. <strong>IFelxOS2</strong> is the complete operating system built on top of it, and the <strong>ODE installer</strong> is the installer, made from the same foundation, that writes it to a disk. <strong>itelxOS 1.3</strong> is a separate system with its own kernel that ODE also installs.</p>
+            <p><strong>IFOS2</strong> is the base: a small Debian 13 core. <strong>IFelxOS2</strong> is the complete operating system built on top of it, and <strong>IFelxOS2.5</strong> its interface update. The <strong>ODE installer</strong> is the installer, made from the same foundation, that writes it to a disk. <strong>itelxOS 1.4</strong> is a separate system with its own kernel that ODE also installs.</p>
             <div class="ifos-family" aria-label="Family of IFOS systems">
                 <a class="ifos-node base" href="#ifos2">
                     <span class="ifos-node-kicker">Base</span>
@@ -51,9 +52,9 @@
                 </a>
                 <div class="ifos-arrow" aria-hidden="true"></div>
                 <div class="ifos-branch">
-                    <a class="ifos-node" href="#ifelxos2">
+                    <a class="ifos-node" href="#ifelxos25">
                         <span class="ifos-node-kicker">System</span>
-                        <strong>IFelxOS2</strong>
+                        <strong>IFelxOS2 · 2.5</strong>
                         <span>IFelxUi desktop</span>
                     </a>
                     <a class="ifos-node" href="#ode">
@@ -63,7 +64,7 @@
                     </a>
                     <a class="ifos-node own" href="#itelx">
                         <span class="ifos-node-kicker">Own kernel</span>
-                        <strong>itelxOS 1.3</strong>
+                        <strong>itelxOS 1.4</strong>
                         <span>installed by ODE</span>
                     </a>
                 </div>
@@ -162,6 +163,56 @@ ip -br a</pre>
             <div class="download-buttons">
                 <a href="https://axv-1.tailce0b52.ts.net/IFOS/IFelxOS2-amd64.iso" class="project-btn">Download IFelxOS2 · 1.1 GB</a>
             </div>
+            <p class="ifos-note">Newer: <a href="#ifelxos25">IFelxOS2.5</a>, the interface update of IFelxOS2, below. IFelxOS2 stays available here as it was published.</p>
+        </section>
+
+        <!-- ── IFelxOS2.5 ───────────────────────────────────── -->
+        <section class="card" id="ifelxos25">
+            <h2>IFelxOS2.5 <span class="badge latest ifos-inline-badge">New</span></h2>
+            <p>IFelxOS2.5 is the interface update of IFelxOS2: the same system and the same IFelx look (colours, rounded corners, fonts, right to left first) with <strong>IFelxUi 1.5</strong>. It fixes how the interface lays out Arabic text, makes it lighter to run, and closes a hole in its web browser. Nothing in Debian underneath changed.</p>
+            <div class="screenshots-grid">
+                <img src="./img/ifelxos25-desktop.png" alt="IFelxOS2.5 live desktop with the clock, system and status widgets" loading="lazy">
+                <img src="./img/ifelxos25-notification.png" alt="IFelxOS2.5 after signing in: the notification comes down at the top centre" loading="lazy">
+                <img src="./img/ifelxos25-login.png" alt="IFelxOS2.5 sign-in screen of the installed system" loading="lazy">
+            </div>
+            <h3 class="ifos-h3">IFelxOS2 and IFelxOS2.5 compared</h3>
+            <table class="specs-table ifos-compare">
+                <thead>
+                    <tr><th scope="col"></th><th scope="col">IFelxOS2</th><th scope="col">IFelxOS2.5</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Released</td><td>2026-10-02</td><td>2026-10-18</td></tr>
+                    <tr><td>Interface</td><td>IFelxUi 1.0 (with the 1.1 fixes)</td><td>IFelxUi 1.5</td></tr>
+                    <tr><td>Download</td><td>The ODE installer, 1.1 GB: it opens straight into the installer</td><td>A live ISO, 990 MB: the desktop starts from the stick, and the Installer in the dock writes it to a disk</td></tr>
+                    <tr><td>Arabic text in buttons, fields, title bars, lists, lock screen</td><td>Sat low: the Arabic face has a taller line than the Latin one</td><td>Centred on its letters, level with English</td></tr>
+                    <tr><td>An Arabic line that starts with a Latin word (“DHCP يكتب …”)</td><td>Read left to right</td><td>Takes the interface's direction: right to left</td></tr>
+                    <tr><td>Notifications</td><td>In a corner, over the clock widget, the Settings sidebar and window buttons; appear at once</td><td>From the top centre, with a short drop</td></tr>
+                    <tr><td>Desktop widgets, lock and sign-in card</td><td>Fixed heights: the clock ran into its date, the status card had an empty half</td><td>As tall as what they show</td></tr>
+                    <tr><td>Small grey text, light theme</td><td>Dim grey; recessed areas stayed dark in the light theme</td><td>Brighter grey in both themes; recessed areas follow the theme</td></tr>
+                    <tr><td>Processor, memory, network, battery readings</td><td>Read from <code>/proc</code> and <code>/sys</code> on every frame, sixty times a second while a window is dragged</td><td>Read at most every 0.9 s and shared</td></tr>
+                    <tr><td>Built-in web browser</td><td>Fetched pages as root: <code>file:///etc/shadow</code> could be read from the session</td><td>Fetches as the signed-in account; only http, https and file; redirects only to http or https</td></tr>
+                    <tr><td>Name servers in Settings › Network</td><td>Any text went into <code>/etc/resolv.conf</code></td><td>Only IPv4 and IPv6 addresses; the file is replaced atomically</td></tr>
+                    <tr><td>Base, boot, licence</td><td colspan="2" class="ifos-both">The same: Debian 13 with Linux 6.12; UEFI (IFelxBoot) and BIOS (GRUB); AGPL-3.0</td></tr>
+                </tbody>
+            </table>
+            <h3 class="ifos-h3">Installing it</h3>
+            <div class="how-step">
+                <div class="step-num">1</div>
+                <div class="step-body"><h4>Make the USB stick</h4><p>Write <code>IFelxOS2.5.iso</code> to a stick (Rufus, Etcher or <code>dd</code>), or open it in a virtual machine, and start the computer from it.</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">2</div>
+                <div class="step-body"><h4>Try it</h4><p>The IFelxUi desktop starts from the stick, in Arabic; the language switches to English in Settings.</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">3</div>
+                <div class="step-body"><h4>Install</h4><p>Open the <strong>Installer</strong> from the dock: the disk (the stick you started from is never offered), the installation type, your account and password. After it is done, remove the stick and restart: the installed system opens on its sign-in screen.</p></div>
+            </div>
+            <p class="ifos-note">Checked in QEMU/KVM before publishing: the live desktop, the installation, the installed disk started on UEFI and on BIOS, signing in, a wrong password refused, the lock screen.</p>
+            <div class="download-buttons">
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/IFelxOS2.5.iso" class="project-btn">Download IFelxOS2.5 · 990 MB</a>
+            </div>
+            <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/IFelxOS2.5.iso">IFelxOS2.5.iso</a> · 990 MB<br><span class="ifos-sha">SHA-256 7741bd10b063c6db01c596edfff948dd64fe283de9a7b23a8aeb783d004938ee</span></p>
         </section>
 
         <!-- ── ODE installer ────────────────────────────────── -->
@@ -224,14 +275,28 @@ sudo tools/make-custom-ode.sh \
             </div>
         </section>
 
-        <!-- ── itelxOS 1.3 ──────────────────────────────────── -->
+        <!-- ── itelxOS 1.4 ──────────────────────────────────── -->
         <section class="card" id="itelx">
-            <h2>itelxOS 1.3</h2>
+            <h2>itelxOS 1.4</h2>
             <p>itelxOS is a 64-bit operating system of the IFelx family written from scratch: its own kernel, its own filesystem (<strong>ITFS</strong>), the <strong>itelx terminal</strong>, the <strong>XVC</strong> programming language and <strong>XVR</strong> executables. It is not Linux. The console draws Arabic and English, and Arabic text runs right to left.</p>
             <div class="screenshots-grid">
                 <img src="./img/itelx-boot.png" alt="itelxOS starting from its installed disk" loading="lazy">
                 <img src="./img/itelx-help.png" alt="itelx terminal: help" loading="lazy">
                 <img src="./img/itelx-xvc.png" alt="Running XVC and XVR programs on itelxOS" loading="lazy">
+            </div>
+            <h3 class="ifos-h3">New in 1.4: the sys commands</h3>
+            <p>What the system is, what it is doing and what it runs on, read from the machine itself when you ask: the processor (CPUID), the firmware's memory map, the SMBIOS and ACPI tables, PCI configuration space, and the processor's time stamp counter, which the kernel now reads at every switch between programs. What the machine does not say is shown as “-”; serial numbers are never shown.</p>
+            <table class="specs-table">
+                <tr><td><code>sys</code></td><td>the system: version and kernel build, how it started (UEFI or BIOS), running time, clock, owner, system disk and boot partition with free space, memory, processor, screen, processes, programs</td></tr>
+                <tr><td><code>sys.info</code></td><td>processor, memory and graphics use over one second: programs, kernel and idle shares, interrupts, system calls and switches per second, memory by programs and kernel, and the screen drawing (itelx has no graphics driver, so the GPU's share is 0 %)</td></tr>
+                <tr><td><code>sys.info.device</code></td><td>the hardware, from the processor to the graphics: cores and threads, speed, caches, features; memory modules with type, speed, maker and part number; computer, board and case; firmware, UEFI version, Secure Boot, SMBIOS and ACPI; graphics, disks and partitions, USB and PCI devices</td></tr>
+                <tr><td><code>sys.all</code></td><td>all three at once</td></tr>
+                <tr><td><code>sys.top</code></td><td>every process, live, most processor time first, like top and htop; <code>q</code>, Esc or Ctrl+C ends it</td></tr>
+            </table>
+            <div class="screenshots-grid">
+                <img src="./img/itelx14-sys.png" alt="itelx 1.4: sys, the system" loading="lazy">
+                <img src="./img/itelx14-device.png" alt="itelx 1.4: sys.info.device, the hardware" loading="lazy">
+                <img src="./img/itelx14-top.png" alt="itelx 1.4: sys.top with a busy program at 100 %" loading="lazy">
             </div>
             <table class="specs-table">
                 <tr><td>Kernel</td><td>itelx (own), x86-64, NX / SMEP / SMAP on</td></tr>
@@ -242,7 +307,8 @@ sudo tools/make-custom-ode.sh \
                 <tr><td>USB</td><td>xHCI (USB 1.1 to 3.x): keyboards, mice, hubs, sticks, card readers, external disks</td></tr>
                 <tr><td>USB storage</td><td>FAT32, FAT16, FAT12, read and write (not exFAT or NTFS)</td></tr>
                 <tr><td>Disk space</td><td>256 MB at least</td></tr>
-                <tr><td>Installer</td><td>ODE installer for itelxOS</td></tr>
+                <tr><td>Installer</td><td>ODE installer for itelxOS; updates from a USB stick (<code>update.xvr</code>)</td></tr>
+                <tr><td>System information</td><td><code>sys</code>, <code>sys.info</code>, <code>sys.info.device</code>, <code>sys.all</code>, <code>sys.top</code></td></tr>
                 <tr><td>Licence</td><td>Kernel: itelx Kernel License 1.0 · Userspace: MPL-2.0</td></tr>
             </table>
             <h3 class="ifos-h3">Licence</h3>
@@ -261,7 +327,9 @@ sudo tools/make-custom-ode.sh \
                 <tr><td><code>cat</code> · <code>write</code> · <code>copy</code> · <code>move</code></td><td>show, type into, copy, rename files</td></tr>
                 <tr><td><code>run file.xvc</code> · <code>/dex/app.xvr</code></td><td>run an XVC program or an executable</td></tr>
                 <tr><td><code>usb</code> · <code>install</code> · <code>eject</code></td><td>USB devices, put a program from a stick into <code>/dex</code>, write a stick out before unplugging it</td></tr>
-                <tr><td><code>ps</code> · <code>kill</code> · <code>mem</code> · <code>mounts</code></td><td>processes and system information</td></tr>
+                <tr><td><code>sys</code> · <code>sys.info</code> · <code>sys.info.device</code> · <code>sys.all</code></td><td>the system, its use, its hardware, all three</td></tr>
+                <tr><td><code>sys.top</code> · <code>ps</code> · <code>kill</code></td><td>processes, live or once; stop one</td></tr>
+                <tr><td><code>mem</code> · <code>mounts</code> · <code>log</code></td><td>short system information</td></tr>
                 <tr><td><code>reboot</code> · <code>poweroff</code></td><td>restart, switch off</td></tr>
                 <tr><td>Alt+Shift</td><td>keyboard between English and Arabic</td></tr>
             </table>
@@ -271,12 +339,52 @@ print(<span class="str">"Hello from XVC!"</span>)
 let name = <span class="str">"itelx"</span>
 print(<span class="str">"this is "</span> + name + <span class="str">" "</span> + str(1) + <span class="str">"."</span> + str(3))</pre>
             <div class="download-buttons">
-                <a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx.iso" class="project-btn">Download ITelxOS 1.3 · 179 MB</a>
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx.iso" class="project-btn">Download ITelxOS 1.4 · 179 MB</a>
             </div>
+
+            <h3 class="ifos-h3" id="itelx-update">Updating itelxOS 1.3 to 1.4</h3>
+            <p>No reinstalling and nothing erased: the update comes on a USB stick as <code>update.xvr</code>, a program of the update kind. When the stick goes in, itelx asks <em>are you need update ?</em> and runs it only on <em>yes</em>. It carries the 1.4 files with their checksums, writes each one next to the old one, reads it back, and only then puts it in place; a file that is already the 1.4 one is left alone, so it can run again at any time.</p>
+            <p>The 1.3 kernel lets no program write the partition the computer starts the kernel from. So no program, not even an update, can replace the kernel while 1.3 runs: the update from 1.3 takes two steps, the second from the stick. From 1.4 on, the update the user accepted, and only it, may write that partition, and updates take one step.</p>
+            <div class="how-step">
+                <div class="step-num">1</div>
+                <div class="step-body"><h4>Put update.xvr on a stick</h4><p>Copy <code>update.xvr</code> to the top of any FAT32 stick. For a computer that starts with BIOS, write <code>itelx-1.4-update-usb.img.gz</code> to the stick instead (Rufus in DD mode or Etcher take it as it is): the same update on a stick that also starts by itself.</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">2</div>
+                <div class="step-body"><h4>Plug it into itelxOS 1.3, answer yes</h4><p>The system files on the disk become 1.4: the terminal with the sys commands, <code>top</code>, <code>init</code>, XVC and the kernel's copy in <code>/kernel</code>. A plain stick is made to start itelxOS 1.4 by itself. The sys commands already work and say what still needs the 1.4 kernel.</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">3</div>
+                <div class="step-body"><h4>Start once from the stick, answer yes again</h4><p>Restart and choose the stick in the firmware's boot menu (often F12, F11, F10, F8 or Esc). itelxOS 1.4 starts from the stick with your own disk and asks again. On yes the 1.4 kernel goes onto the disk's boot partition (the 1.3 kernel stays there as <code>vmlinuz.old</code>), and the boot files on the stick are removed.</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">4</div>
+                <div class="step-body"><h4>Remove the stick and restart</h4><p>itelxOS 1.4 starts from the disk; <code>sys</code> shows kernel 1.4. Your files in <code>/dex</code> and everywhere else are where they were.</p></div>
+            </div>
+            <p class="ifos-note">Checked in QEMU/KVM on the published 1.3 image: UEFI with a plain FAT32 stick and BIOS with the stick image, both steps, then the disk alone; afterwards the boot partition and the stick pass <code>fsck.fat</code> and the system disk passes the ITFS check. On 1.4 the same update takes one step, and the boot partition stays closed to any program the user starts by hand.</p>
+            <div class="download-buttons">
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-1.4/update.xvr" class="project-btn">Download update.xvr · 1.1 MB</a>
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-1.4/itelx-1.4-update-usb.img.gz" class="project-btn ifos-src-btn">Update stick image (BIOS and UEFI) · 0.7 MB</a>
+            </div>
+            <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-1.4/update.xvr">update.xvr</a> · 1,136,473 bytes<br><span class="ifos-sha">SHA-256 9fc430cfdbd41d2e644c7b2016461a7c8e25f65f1b49756c83e06ddc0cab1cea</span><br><a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-1.4/itelx-1.4-update-usb.img.gz">itelx-1.4-update-usb.img.gz</a> · 658,508 bytes<br><span class="ifos-sha">SHA-256 921dc912523033c3c9d9d92100752e2dddc17f5b10cb2daa82f13e6bd3236468</span></p>
+            <p>Or install itelxOS 1.4 from its ODE installer above: that erases the disk.</p>
             <h3 class="ifos-h3">Versions</h3>
             <table class="specs-table ifos-versions">
                 <tr>
-                    <td>1.3<br><span class="badge latest">Latest</span><br>2026-10-10</td>
+                    <td>1.4<br><span class="badge latest">Latest</span><br>2026-10-22</td>
+                    <td>
+                        <p>What the system is, what it is doing and what it runs on.</p>
+                        <ul class="ifos-changes">
+                            <li>New terminal commands: <code>sys</code>, <code>sys.info</code>, <code>sys.info.device</code>, <code>sys.all</code> and <code>sys.top</code> (also <code>top</code>)</li>
+                            <li>The kernel reads the firmware's SMBIOS tables (computer, board, firmware, memory modules), counts the processors in ACPI, and lists PCI devices and disks for programs</li>
+                            <li>Processor time measured with the time stamp counter at every switch between programs, so <code>ps</code> and <code>sys.top</code> show what each one really used</li>
+                            <li>An update the user accepted may replace the kernel; <code>update.xvr</code> brings itelxOS 1.3 to 1.4 from a USB stick</li>
+                        </ul>
+                        <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx-1.4.iso">ODE_installer_itelx-1.4.iso</a> · 179 MB<br><span class="ifos-sha">SHA-256 b1a014b9a373f9994b793ee3bf1bb768124e5b68a12b7606dcf7e4553640c95b</span><br>Update from 1.3: <a href="#itelx-update">update.xvr</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1.3<br>2026-10-10</td>
                     <td>
                         <p>USB, FAT storage, and programs from outside the system.</p>
                         <ul class="ifos-changes">

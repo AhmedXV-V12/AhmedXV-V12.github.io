@@ -241,6 +241,13 @@ if (tocSections.length >= 3) {
    version shown in the corner. Every update is one release and versions count up
    one step at a time: 1.0 ... 1.9, 2.0 ... 2.9, 3.0 ... (never 1.10). */
 const RELEASES = [
+    { v: "7.1", date: "2026-10-22", changes: [
+        "IFOS subsystem page: itelxOS 1.4, with its new sys commands (sys, sys.info, sys.info.device, sys.all and sys.top) and screenshots of them; the download is ITelxOS 1.4.",
+        "How to update itelxOS 1.3 to 1.4 with update.xvr from a USB stick, step by step, with the update and a stick image that starts by itself to download.",
+        "itelxOS 1.4 in the version history; 1.3 and the first version, 1.2, stay downloadable.",
+        "IFelxOS2.5 on the IFOS subsystem page: the interface update of IFelxOS2, with screenshots, a download and a side-by-side comparison with IFelxOS2, which stays downloadable.",
+        "The home page, the project index and the quick search name itelxOS 1.4 and IFelxOS2.5.",
+    ] },
     { v: "7.0", date: "2026-10-16", changes: [
         "Redesigned home page: a new hero with the IFelx mark, featured work with real screens from IFOS, Jowa Football AI v3 and IFelxOS, and one grouped index of every project with its status.",
         "New navigation: a Projects menu with every project and its logo, direct links to IFelx Engine and IFelxChat, and a full-screen menu on phones.",
