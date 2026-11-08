@@ -241,6 +241,12 @@ if (tocSections.length >= 3) {
    version shown in the corner. Every update is one release and versions count up
    one step at a time: 1.0 ... 1.9, 2.0 ... 2.9, 3.0 ... (never 1.10). */
 const RELEASES = [
+    { v: "7.3", date: "2026-11-08", changes: [
+        "IFOS subsystem page: itelxOS 2.2, with what is new since 1.4 (kernel modules, services, the network, a web browser, the recovery screen) and new screenshots; the download is ITelxOS 2.2.",
+        "How to update itelxOS to 2.2 with update.xvr: one step from 1.4, 2.0 or 2.1, two steps from 1.3, with the update and a stick image to download.",
+        "itelxOS 2.2 in the version history; 1.4, 1.3 and the first version, 1.2, stay downloadable.",
+        "The home page, the project index and the quick search name itelxOS 2.2.",
+    ] },
     { v: "7.2", date: "2026-10-22", changes: [
         "IFelxOS2.5 is now downloaded as its ODE installer, like IFelxOS2: start the computer from it and the installer opens; the installed system is used as usual.",
         "The IFelxOS2.5 section shows the ODE installer installing it and the installed system, with its installation steps.",

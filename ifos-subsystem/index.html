@@ -9,11 +9,11 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="IFelx Web">
     <meta property="og:title" content="IFOS subsystem">
-    <meta property="og:description" content="IFOS subsystem — IFOS2, the base; IFelxOS2 and its interface update IFelxOS2.5, the full desktop system built on it; the open-source ODE installer; and itelxOS 1.4, a 64-bit system with its own kernel.">
+    <meta property="og:description" content="IFOS subsystem — IFOS2, the base; IFelxOS2 and its interface update IFelxOS2.5, the full desktop system built on it; the open-source ODE installer; and itelxOS 2.2, a 64-bit system with its own kernel.">
     <meta property="og:url" content="https://ahmedxv-v12.github.io/ifos-subsystem/">
     <meta property="og:image" content="https://ahmedxv-v12.github.io/logo.png">
     <meta name="twitter:card" content="summary">
-    <meta name="description" content="IFOS subsystem — IFOS2, the base; IFelxOS2 and its interface update IFelxOS2.5, the full desktop system built on it; the open-source ODE installer; and itelxOS 1.4, a 64-bit system with its own kernel.">
+    <meta name="description" content="IFOS subsystem — IFOS2, the base; IFelxOS2 and its interface update IFelxOS2.5, the full desktop system built on it; the open-source ODE installer; and itelxOS 2.2, a 64-bit system with its own kernel.">
     <meta name="keywords" content="IFOS, IFOS2, IFelxOS2, IFelxOS2.5, IFelxUi, ODE installer, itelxOS, itelx, ITFS, XVC, sys.top, IFelx">
     <link rel="icon" href="../ifelx.png" type="image/png">
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -36,14 +36,14 @@
                 <span class="badge">IFelxOS2</span>
                 <span class="badge">IFelxOS2.5</span>
                 <span class="badge">ODE installer</span>
-                <span class="badge">itelxOS 1.4</span>
+                <span class="badge">itelxOS 2.2</span>
             </div>
         </header>
 
         <!-- ── Overview ─────────────────────────────────────── -->
         <section class="card">
             <h2>How it fits together</h2>
-            <p><strong>IFOS2</strong> is the base: a small Debian 13 core. <strong>IFelxOS2</strong> is the complete operating system built on top of it, and <strong>IFelxOS2.5</strong> its interface update. The <strong>ODE installer</strong> is the installer, made from the same foundation, that writes it to a disk. <strong>itelxOS 1.4</strong> is a separate system with its own kernel that ODE also installs.</p>
+            <p><strong>IFOS2</strong> is the base: a small Debian 13 core. <strong>IFelxOS2</strong> is the complete operating system built on top of it, and <strong>IFelxOS2.5</strong> its interface update. The <strong>ODE installer</strong> is the installer, made from the same foundation, that writes it to a disk. <strong>itelxOS 2.2</strong> is a separate system with its own kernel that ODE also installs.</p>
             <div class="ifos-family" aria-label="Family of IFOS systems">
                 <a class="ifos-node base" href="#ifos2">
                     <span class="ifos-node-kicker">Base</span>
@@ -64,7 +64,7 @@
                     </a>
                     <a class="ifos-node own" href="#itelx">
                         <span class="ifos-node-kicker">Own kernel</span>
-                        <strong>itelxOS 1.4</strong>
+                        <strong>itelxOS 2.2</strong>
                         <span>installed by ODE</span>
                     </a>
                 </div>
@@ -232,7 +232,7 @@ ip -br a</pre>
             <div class="screenshots-grid">
                 <img src="./img/ode-welcome.png" alt="ODE welcome page" loading="lazy">
                 <img src="./img/ode-terms.png" alt="ODE terms page" loading="lazy">
-                <img src="./img/itelx-ode-terms.png" alt="The same ODE carrying itelxOS" loading="lazy">
+                <img src="./img/itelx22-ode-terms.png" alt="The same ODE carrying itelxOS" loading="lazy">
             </div>
 
             <h3 class="ifos-h3">Put your own system in ODE</h3>
@@ -284,16 +284,31 @@ sudo tools/make-custom-ode.sh \
             </div>
         </section>
 
-        <!-- ── itelxOS 1.4 ──────────────────────────────────── -->
+        <!-- ── itelxOS 2.2 ──────────────────────────────────── -->
         <section class="card" id="itelx">
-            <h2>itelxOS 1.4</h2>
-            <p>itelxOS is a 64-bit operating system of the IFelx family written from scratch: its own kernel, its own filesystem (<strong>ITFS</strong>), the <strong>itelx terminal</strong>, the <strong>XVC</strong> programming language and <strong>XVR</strong> executables. It is not Linux. The console draws Arabic and English, and Arabic text runs right to left.</p>
+            <h2>itelxOS 2.2</h2>
+            <p>itelxOS is a 64-bit operating system of the IFelx family written from scratch: its own kernel, its own filesystem (<strong>ITFS</strong>), the <strong>itelx terminal</strong>, the <strong>XVC</strong> programming language and <strong>XVR</strong> executables. It is not Linux. The console draws Arabic and English, and Arabic text runs right to left. Since 2.0 it has a network with its own TLS, a web browser, services and a recovery system.</p>
             <div class="screenshots-grid">
-                <img src="./img/itelx-boot.png" alt="itelxOS starting from its installed disk" loading="lazy">
-                <img src="./img/itelx-help.png" alt="itelx terminal: help" loading="lazy">
-                <img src="./img/itelx-xvc.png" alt="Running XVC and XVR programs on itelxOS" loading="lazy">
+                <img src="./img/itelx22-boot.png" alt="itelxOS 2.2 started from its installed disk" loading="lazy">
+                <img src="./img/itelx22-help.png" alt="itelx 2.2 terminal: help" loading="lazy">
+                <img src="./img/itelx22-xvc.png" alt="Running an XVC program on itelxOS 2.2" loading="lazy">
             </div>
-            <h3 class="ifos-h3">New in 1.4: the sys commands</h3>
+            <h3 class="ifos-h3">New since 1.4</h3>
+            <p>Versions 2.0 and 2.1 were not released on their own; everything in them is in 2.2.</p>
+            <table class="specs-table">
+                <tr><td>Kernel modules</td><td>network drivers and the TCP/IP stack live outside the kernel, in <code>/kernel/modules</code>; <code>kmod</code> lists, loads and unloads them</td></tr>
+                <tr><td>Services</td><td><code>xvinit</code> runs what is in <code>/system/services</code>; <code>service</code> shows, starts, stops and restarts them</td></tr>
+                <tr><td>Network</td><td>Ethernet with DHCP, DNS, TCP/IP and TLS 1.3 and 1.2, written for itelx; <code>net</code>, <code>reach</code>, <code>get</code>, <code>peek</code></td></tr>
+                <tr><td>Web</td><td><code>web</code> opens HTML pages, from the network or from a file (no CSS or JavaScript)</td></tr>
+                <tr><td>Tools</td><td><code>pen</code> edits text, <code>search.text</code> and <code>search.file</code> search, <code>task</code> and <code>space</code> show processes and volumes</td></tr>
+                <tr><td>Recovery</td><td>when itelxOS cannot start, a red screen offers <strong>Use backup</strong> (keeps your files and puts a working system back) and <strong>Use manual</strong> (a small repair terminal with <code>see-log</code>, <code>disk.open</code>, <code>copy</code>)</td></tr>
+                <tr><td>Fixed in 2.2</td><td>from a hand test of every command: typing ahead no longer freezes the console, a disk restored from its backup superblock is safe to write, “Use backup” works on a damaged disk, <code>install</code> onto the same file no longer empties it, the PCnet card reads its real address</td></tr>
+            </table>
+            <div class="screenshots-grid">
+                <img src="./img/itelx22-net.png" alt="itelx 2.2: the network card, an echo and a download over HTTPS" loading="lazy">
+                <img src="./img/itelx22-recovery.png" alt="itelx 2.2: the red recovery screen" loading="lazy">
+            </div>
+            <h3 class="ifos-h3">The sys commands</h3>
             <p>What the system is, what it is doing and what it runs on, read from the machine itself when you ask: the processor (CPUID), the firmware's memory map, the SMBIOS and ACPI tables, PCI configuration space, and the processor's time stamp counter, which the kernel now reads at every switch between programs. What the machine does not say is shown as “-”; serial numbers are never shown.</p>
             <table class="specs-table">
                 <tr><td><code>sys</code></td><td>the system: version and kernel build, how it started (UEFI or BIOS), running time, clock, owner, system disk and boot partition with free space, memory, processor, screen, processes, programs</td></tr>
@@ -303,9 +318,9 @@ sudo tools/make-custom-ode.sh \
                 <tr><td><code>sys.top</code></td><td>every process, live, most processor time first, like top and htop; <code>q</code>, Esc or Ctrl+C ends it</td></tr>
             </table>
             <div class="screenshots-grid">
-                <img src="./img/itelx14-sys.png" alt="itelx 1.4: sys, the system" loading="lazy">
-                <img src="./img/itelx14-device.png" alt="itelx 1.4: sys.info.device, the hardware" loading="lazy">
-                <img src="./img/itelx14-top.png" alt="itelx 1.4: sys.top with a busy program at 100 %" loading="lazy">
+                <img src="./img/itelx22-sys.png" alt="itelx 2.2: sys, the system" loading="lazy">
+                <img src="./img/itelx22-device.png" alt="itelx 2.2: sys.info.device, the hardware" loading="lazy">
+                <img src="./img/itelx22-top.png" alt="itelx 2.2: sys.top, every process, live" loading="lazy">
             </div>
             <table class="specs-table">
                 <tr><td>Kernel</td><td>itelx (own), x86-64, NX / SMEP / SMAP on</td></tr>
@@ -315,6 +330,7 @@ sudo tools/make-custom-ode.sh \
                 <tr><td>Keyboard</td><td>PS/2 and USB, English and Arabic (Alt+Shift)</td></tr>
                 <tr><td>USB</td><td>xHCI (USB 1.1 to 3.x): keyboards, mice, hubs, sticks, card readers, external disks</td></tr>
                 <tr><td>USB storage</td><td>FAT32, FAT16, FAT12, read and write (not exFAT or NTFS)</td></tr>
+                <tr><td>Network</td><td>Ethernet: Intel e1000, e1000e and igb, Realtek RTL8139 and r8169, AMD PCnet, virtio. No Wi-Fi. All but r8169 were tested in QEMU; r8169 has not been tested</td></tr>
                 <tr><td>Disk space</td><td>256 MB at least</td></tr>
                 <tr><td>Installer</td><td>ODE installer for itelxOS; updates from a USB stick (<code>update.xvr</code>)</td></tr>
                 <tr><td>System information</td><td><code>sys</code>, <code>sys.info</code>, <code>sys.info.device</code>, <code>sys.all</code>, <code>sys.top</code></td></tr>
@@ -325,7 +341,7 @@ sudo tools/make-custom-ode.sh \
             <h3 class="ifos-h3">Installing it</h3>
             <p>The download is the ODE installer for itelxOS, with the same pages as IFelxOS2's. It asks for an account, but itelxOS has no sign-in: the name is kept as the computer's owner (<code>/system/owner</code>) and the password is not stored. After restarting, the computer starts straight into the itelx terminal.</p>
             <div class="screenshots-grid ifos-shots-1">
-                <img src="./img/itelx-ode-installed.png" alt="ODE: itelxOS installed — ITFS written, BIOS and UEFI set up" loading="lazy">
+                <img src="./img/itelx22-ode-installed.png" alt="ODE: itelxOS installed — ITFS written, BIOS and UEFI set up" loading="lazy">
             </div>
             <p class="ifos-note">In a virtual machine give itelxOS a SATA, IDE or NVMe disk: with a virtio disk it starts but reports that the system disk was not found. PS/2 and USB keyboards both type.</p>
             <h3 class="ifos-h3">Using the terminal</h3>
@@ -339,6 +355,10 @@ sudo tools/make-custom-ode.sh \
                 <tr><td><code>sys</code> · <code>sys.info</code> · <code>sys.info.device</code> · <code>sys.all</code></td><td>the system, its use, its hardware, all three</td></tr>
                 <tr><td><code>sys.top</code> · <code>ps</code> · <code>kill</code></td><td>processes, live or once; stop one</td></tr>
                 <tr><td><code>mem</code> · <code>mounts</code> · <code>log</code></td><td>short system information</td></tr>
+                <tr><td><code>net</code> · <code>reach</code> · <code>get</code> · <code>peek</code> · <code>web</code></td><td>network cards and addresses, is a computer reachable, download a file, see what an address answers, open a web page</td></tr>
+                <tr><td><code>pen</code> · <code>search.text</code> · <code>search.file</code></td><td>edit a text file, find text in files, find files by name</td></tr>
+                <tr><td><code>task</code> · <code>space</code> · <code>service</code> · <code>kmod</code></td><td>processes, volumes, services, kernel modules</td></tr>
+                <tr><td><code>update</code> · <code>restart.recovery</code></td><td>install a downloaded system update, start again into the recovery screen</td></tr>
                 <tr><td><code>reboot</code> · <code>poweroff</code></td><td>restart, switch off</td></tr>
                 <tr><td>Alt+Shift</td><td>keyboard between English and Arabic</td></tr>
             </table>
@@ -346,41 +366,67 @@ sudo tools/make-custom-ode.sh \
 <pre class="code-block"><span class="cm"># hello.xvc - the first XVC program</span>
 print(<span class="str">"Hello from XVC!"</span>)
 let name = <span class="str">"itelx"</span>
-print(<span class="str">"this is "</span> + name + <span class="str">" "</span> + str(1) + <span class="str">"."</span> + str(3))</pre>
+print(<span class="str">"this is "</span> + name + <span class="str">": 1 + 2 = "</span> + str(1 + 2))</pre>
             <div class="download-buttons">
-                <a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx.iso" class="project-btn">Download ITelxOS 1.4 · 179 MB</a>
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx.iso" class="project-btn">Download ITelxOS 2.2 · 180 MB</a>
             </div>
 
-            <h3 class="ifos-h3" id="itelx-update">Updating itelxOS 1.3 to 1.4</h3>
-            <p>No reinstalling and nothing erased: the update comes on a USB stick as <code>update.xvr</code>, a program of the update kind. When the stick goes in, itelx asks <em>are you need update ?</em> and runs it only on <em>yes</em>. It carries the 1.4 files with their checksums, writes each one next to the old one, reads it back, and only then puts it in place; a file that is already the 1.4 one is left alone, so it can run again at any time.</p>
-            <p>The 1.3 kernel lets no program write the partition the computer starts the kernel from. So no program, not even an update, can replace the kernel while 1.3 runs: the update from 1.3 takes two steps, the second from the stick. From 1.4 on, the update the user accepted, and only it, may write that partition, and updates take one step.</p>
+            <h3 class="ifos-h3" id="itelx-update">Updating itelxOS to 2.2</h3>
+            <p>No reinstalling and nothing erased: the update comes on a USB stick as <code>update.xvr</code>, a program of the update kind. When the stick goes in, itelx asks <em>are you need update ?</em> and runs it only on <em>yes</em>. It carries the 2.2 files with their checksums, writes each one next to the old one, reads it back, and only then puts it in place; a file that is already the 2.2 one is left alone, so it can run again at any time.</p>
+            <p><strong>From 1.4, 2.0 or 2.1: one step</strong></p>
             <div class="how-step">
                 <div class="step-num">1</div>
-                <div class="step-body"><h4>Put update.xvr on a stick</h4><p>Copy <code>update.xvr</code> to the top of any FAT32 stick. For a computer that starts with BIOS, write <code>itelx-1.4-update-usb.img.gz</code> to the stick instead (Rufus in DD mode or Etcher take it as it is): the same update on a stick that also starts by itself.</p></div>
+                <div class="step-body"><h4>Put update.xvr on a stick</h4><p>Copy <code>update.xvr</code> to the top of any FAT32 stick. On 2.0 or 2.1 you can also download it with <code>get</code> and run <code>update update.xvr</code>.</p></div>
             </div>
             <div class="how-step">
                 <div class="step-num">2</div>
-                <div class="step-body"><h4>Plug it into itelxOS 1.3, answer yes</h4><p>The system files on the disk become 1.4: the terminal with the sys commands, <code>top</code>, <code>init</code>, XVC and the kernel's copy in <code>/kernel</code>. A plain stick is made to start itelxOS 1.4 by itself. The sys commands already work and say what still needs the 1.4 kernel.</p></div>
+                <div class="step-body"><h4>Plug it in, answer yes</h4><p>The system files are updated, then on the boot partition the backup system and last the kernel; the old kernel stays there as <code>vmlinuz.old</code>.</p></div>
             </div>
             <div class="how-step">
                 <div class="step-num">3</div>
-                <div class="step-body"><h4>Start once from the stick, answer yes again</h4><p>Restart and choose the stick in the firmware's boot menu (often F12, F11, F10, F8 or Esc). itelxOS 1.4 starts from the stick with your own disk and asks again. On yes the 1.4 kernel goes onto the disk's boot partition (the 1.3 kernel stays there as <code>vmlinuz.old</code>), and the boot files on the stick are removed.</p></div>
+                <div class="step-body"><h4>Restart</h4><p>itelxOS 2.2 starts from the disk; <code>sys</code> shows kernel 2.2. Your files in <code>/dex</code> and everywhere else are where they were.</p></div>
+            </div>
+            <p><strong>From 1.3: two steps</strong></p>
+            <p>The 1.3 kernel lets no program write the partition the computer starts the kernel from, so the update finishes from the stick. A computer that starts with BIOS needs the stick image for step 2.</p>
+            <div class="how-step">
+                <div class="step-num">1</div>
+                <div class="step-body"><h4>Put the update on a stick</h4><p>Copy <code>update.xvr</code> to the top of any FAT32 stick. For a computer that starts with BIOS, write <code>itelx-2.2-update-usb.img.gz</code> to the stick instead (Rufus in DD mode or Etcher take it as it is): the same update on a stick that also starts by itself.</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">2</div>
+                <div class="step-body"><h4>Plug it into itelxOS 1.3, answer yes</h4><p>The system files on the disk become 2.2. A plain stick is made to start itelxOS 2.2 by itself.</p></div>
+            </div>
+            <div class="how-step">
+                <div class="step-num">3</div>
+                <div class="step-body"><h4>Start once from the stick, answer yes again</h4><p>Restart and choose the stick in the firmware's boot menu (often F12, F11, F10, F8 or Esc). itelxOS 2.2 starts from the stick with your own disk and asks again. On yes the 2.2 kernel goes onto the disk's boot partition (the 1.3 kernel stays there as <code>vmlinuz.old</code>).</p></div>
             </div>
             <div class="how-step">
                 <div class="step-num">4</div>
-                <div class="step-body"><h4>Remove the stick and restart</h4><p>itelxOS 1.4 starts from the disk; <code>sys</code> shows kernel 1.4. Your files in <code>/dex</code> and everywhere else are where they were.</p></div>
+                <div class="step-body"><h4>Remove the stick and restart</h4><p>itelxOS 2.2 starts from the disk; <code>sys</code> shows kernel 2.2. Your files in <code>/dex</code> and everywhere else are where they were.</p></div>
             </div>
-            <p class="ifos-note">Checked in QEMU/KVM on the published 1.3 image: UEFI with a plain FAT32 stick and BIOS with the stick image, both steps, then the disk alone; afterwards the boot partition and the stick pass <code>fsck.fat</code> and the system disk passes the ITFS check. On 1.4 the same update takes one step, and the boot partition stays closed to any program the user starts by hand.</p>
+            <p class="ifos-note">Checked in QEMU/KVM: the update from the real 1.3 and 1.4 images on UEFI and BIOS, and from an installed 2.1 on UEFI. The disk then starts 2.2 by itself and the user's files stay.</p>
             <div class="download-buttons">
-                <a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-1.4/update.xvr" class="project-btn">Download update.xvr · 1.1 MB</a>
-                <a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-1.4/itelx-1.4-update-usb.img.gz" class="project-btn ifos-src-btn">Update stick image (BIOS and UEFI) · 0.7 MB</a>
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-2.2/update.xvr" class="project-btn">Download update.xvr · 3.6 MB</a>
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-2.2/itelx-2.2-update-usb.img.gz" class="project-btn ifos-src-btn">Update stick image (BIOS and UEFI) · 2.1 MB</a>
             </div>
-            <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-1.4/update.xvr">update.xvr</a> · 1,136,473 bytes<br><span class="ifos-sha">SHA-256 9fc430cfdbd41d2e644c7b2016461a7c8e25f65f1b49756c83e06ddc0cab1cea</span><br><a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-1.4/itelx-1.4-update-usb.img.gz">itelx-1.4-update-usb.img.gz</a> · 658,508 bytes<br><span class="ifos-sha">SHA-256 921dc912523033c3c9d9d92100752e2dddc17f5b10cb2daa82f13e6bd3236468</span></p>
-            <p>Or install itelxOS 1.4 from its ODE installer above: that erases the disk.</p>
+            <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-2.2/update.xvr">update.xvr</a> · 3,569,235 bytes<br><span class="ifos-sha">SHA-256 142ba5d94ce3b8cd2c648063d2587586222f4d253c759983f5295ad78b4296d1</span><br><a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-2.2/itelx-2.2-update-usb.img.gz">itelx-2.2-update-usb.img.gz</a> · 2,108,873 bytes<br><span class="ifos-sha">SHA-256 e9b65d2a9c015e1b8110f94706b6aa9c9e9bd788aed07f8664470198b08a8bcc</span></p>
+            <p>Or install itelxOS 2.2 from its ODE installer above: that erases the disk.</p>
             <h3 class="ifos-h3">Versions</h3>
             <table class="specs-table ifos-versions">
                 <tr>
-                    <td>1.4<br><span class="badge latest">Latest</span><br>2026-10-22</td>
+                    <td>2.2<br><span class="badge latest">Latest</span><br>2026-11-08</td>
+                    <td>
+                        <p>The network, a web browser, services, a recovery system, and the fixes of a hand test of every command. 2.0 and 2.1 were not released on their own; everything in them is here.</p>
+                        <ul class="ifos-changes">
+                            <li>2.0: kernel modules, <code>xvinit</code> and services, Ethernet with DHCP, DNS, TCP/IP and TLS 1.3 and 1.2, <code>web</code>, <code>pen</code>, <code>search</code>, and the red recovery screen with the backup system</li>
+                            <li>2.1: “Use manual” became a small repair system of its own, with <code>see-log</code>, the boot log and <code>disk.open</code></li>
+                            <li>2.2: no freeze when typing ahead; a disk restored from its backup superblock is safe to write; “Use backup” works on a damaged disk and keeps your files; <code>install</code> onto the same file no longer empties it; the PCnet card reads its real address; the update question asks again until the answer is yes or no; <code>eject</code> refuses a volume that is not on USB</li>
+                        </ul>
+                        <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx-2.2.iso">ODE_installer_itelx-2.2.iso</a> · 180 MB<br><span class="ifos-sha">SHA-256 0bc8c4fcc11102f046ef849d318dd7c1ea4a74580d9cf66cb8ab6545f150e987</span><br>Update from 1.3 or later: <a href="#itelx-update">update.xvr</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1.4<br>2026-10-22</td>
                     <td>
                         <p>What the system is, what it is doing and what it runs on.</p>
                         <ul class="ifos-changes">
@@ -389,7 +435,7 @@ print(<span class="str">"this is "</span> + name + <span class="str">" "</span> 
                             <li>Processor time measured with the time stamp counter at every switch between programs, so <code>ps</code> and <code>sys.top</code> show what each one really used</li>
                             <li>An update the user accepted may replace the kernel; <code>update.xvr</code> brings itelxOS 1.3 to 1.4 from a USB stick</li>
                         </ul>
-                        <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx-1.4.iso">ODE_installer_itelx-1.4.iso</a> · 179 MB<br><span class="ifos-sha">SHA-256 b1a014b9a373f9994b793ee3bf1bb768124e5b68a12b7606dcf7e4553640c95b</span><br>Update from 1.3: <a href="#itelx-update">update.xvr</a></p>
+                        <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx-1.4.iso">ODE_installer_itelx-1.4.iso</a> · 179 MB<br><span class="ifos-sha">SHA-256 b1a014b9a373f9994b793ee3bf1bb768124e5b68a12b7606dcf7e4553640c95b</span><br>Update from 1.3: <a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-1.4/update.xvr">update.xvr</a> · 1,136,473 bytes<br><span class="ifos-sha">SHA-256 9fc430cfdbd41d2e644c7b2016461a7c8e25f65f1b49756c83e06ddc0cab1cea</span><br><a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-1.4/itelx-1.4-update-usb.img.gz">itelx-1.4-update-usb.img.gz</a> · 658,508 bytes<br><span class="ifos-sha">SHA-256 921dc912523033c3c9d9d92100752e2dddc17f5b10cb2daa82f13e6bd3236468</span></p>
                     </td>
                 </tr>
                 <tr>
