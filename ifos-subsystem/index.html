@@ -294,7 +294,7 @@ sudo tools/make-custom-ode.sh \
                 <img src="./img/itelx22-xvc.png" alt="Running an XVC program on itelxOS 2.2" loading="lazy">
             </div>
             <h3 class="ifos-h3">New since 1.4</h3>
-            <p>Versions 2.0 and 2.1 were not released on their own; everything in them is in 2.2.</p>
+            <p>Version 2.0 was not released on its own; everything in it is in 2.1 and 2.2.</p>
             <table class="specs-table">
                 <tr><td>Kernel modules</td><td>network drivers and the TCP/IP stack live outside the kernel, in <code>/kernel/modules</code>; <code>kmod</code> lists, loads and unloads them</td></tr>
                 <tr><td>Services</td><td><code>xvinit</code> runs what is in <code>/system/services</code>; <code>service</code> shows, starts, stops and restarts them</td></tr>
@@ -416,13 +416,27 @@ print(<span class="str">"this is "</span> + name + <span class="str">": 1 + 2 = 
                 <tr>
                     <td>2.2<br><span class="badge latest">Latest</span><br>2026-11-08</td>
                     <td>
-                        <p>The network, a web browser, services, a recovery system, and the fixes of a hand test of every command. 2.0 and 2.1 were not released on their own; everything in them is here.</p>
+                        <p>The fixes of a hand test of every command of 2.1.</p>
                         <ul class="ifos-changes">
-                            <li>2.0: kernel modules, <code>xvinit</code> and services, Ethernet with DHCP, DNS, TCP/IP and TLS 1.3 and 1.2, <code>web</code>, <code>pen</code>, <code>search</code>, and the red recovery screen with the backup system</li>
-                            <li>2.1: “Use manual” became a small repair system of its own, with <code>see-log</code>, the boot log and <code>disk.open</code></li>
-                            <li>2.2: no freeze when typing ahead; a disk restored from its backup superblock is safe to write; “Use backup” works on a damaged disk and keeps your files; <code>install</code> onto the same file no longer empties it; the PCnet card reads its real address; the update question asks again until the answer is yes or no; <code>eject</code> refuses a volume that is not on USB</li>
+                            <li>Typing ahead no longer freezes the console</li>
+                            <li>A disk restored from its backup superblock is safe to write</li>
+                            <li>“Use backup” works on a damaged disk and keeps your files</li>
+                            <li><code>install</code> onto the same file no longer empties it</li>
+                            <li>The PCnet card reads its real address; the update question asks again until the answer is yes or no; <code>eject</code> refuses a volume that is not on USB</li>
                         </ul>
                         <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx-2.2.iso">ODE_installer_itelx-2.2.iso</a> · 180 MB<br><span class="ifos-sha">SHA-256 0bc8c4fcc11102f046ef849d318dd7c1ea4a74580d9cf66cb8ab6545f150e987</span><br>Update from 1.3 or later: <a href="#itelx-update">update.xvr</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.1<br>2026-10-25</td>
+                    <td>
+                        <p>The network, a web browser, services and a recovery system. 2.0 was not released on its own; everything in it is here.</p>
+                        <ul class="ifos-changes">
+                            <li>From 2.0: kernel modules, <code>xvinit</code> and services, Ethernet with DHCP, DNS, TCP/IP and TLS 1.3 and 1.2, <code>web</code>, <code>pen</code>, <code>search.text</code> and <code>search.file</code>, and the red recovery screen with the backup system</li>
+                            <li>New in 2.1: “Use manual” became a small repair system of its own, with <code>see-log</code>, the boot log and <code>disk.open</code></li>
+                        </ul>
+                        <p class="ifos-note">Prefer 2.2: this version has the problems fixed there, and three of them can lose files. New files can overwrite old ones on a disk restored from its backup superblock, “Use backup” can fail on a damaged disk and leave the computer restarting, and <code>install</code> onto the same file empties it.</p>
+                        <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx-2.1.iso">ODE_installer_itelx-2.1.iso</a> · 180 MB (the build of 2026-11-07, with a fix to the ATA disk driver)<br><span class="ifos-sha">SHA-256 b1955ab898aef634ab5e0ec034368f512e66f1f2fe6196b870e74eb3b9fc6d31</span></p>
                     </td>
                 </tr>
                 <tr>

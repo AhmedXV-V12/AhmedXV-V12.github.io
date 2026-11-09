@@ -241,6 +241,9 @@ if (tocSections.length >= 3) {
    version shown in the corner. Every update is one release and versions count up
    one step at a time: 1.0 ... 1.9, 2.0 ... 2.9, 3.0 ... (never 1.10). */
 const RELEASES = [
+    { v: "7.4", date: "2026-11-09", changes: [
+        "IFOS subsystem page: itelxOS 2.1 is in the version history and can be downloaded, with a note on the problems that 2.2 fixes.",
+    ] },
     { v: "7.3", date: "2026-11-08", changes: [
         "IFOS subsystem page: itelxOS 2.2, with what is new since 1.4 (kernel modules, services, the network, a web browser, the recovery screen) and new screenshots; the download is ITelxOS 2.2.",
         "How to update itelxOS to 2.2 with update.xvr: one step from 1.4, 2.0 or 2.1, two steps from 1.3, with the update and a stick image to download.",
