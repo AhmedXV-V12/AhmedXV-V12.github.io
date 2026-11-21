@@ -1470,7 +1470,7 @@ body.index-page { padding-top: var(--navbar-h); }
 .home-news:hover { color: var(--text); border-color: var(--line-3); background: rgba(255,255,255,0.03); }
 .home-news:hover svg { transform: translateX(3px); }
 
-/* the IFelx mark, with its orbiting light and two squircle echoes */
+/* the IFelx mark with two squircle echoes (no glow) */
 .home-hero-mark {
     position: relative;
     display: grid;
@@ -1494,7 +1494,7 @@ body.index-page { padding-top: var(--navbar-h); }
 .logo-halo { position: relative; display: inline-flex; z-index: 1; }
 
 .logo-img {
-    width: clamp(168px, 22vw, 272px);
+    width: clamp(200px, 27vw, 340px);
     height: auto;
     aspect-ratio: 1;
     border-radius: 36%;
@@ -1502,38 +1502,15 @@ body.index-page { padding-top: var(--navbar-h); }
     background: linear-gradient(160deg, #222 0%, #151515 100%);
     border: 1px solid var(--line-2);
     padding: 12%;
-    box-shadow: 0 0 0 10px rgba(255,255,255,0.018), 0 40px 100px rgba(21,90,182,0.30), inset 0 1px 0 rgba(255,255,255,0.06);
+    box-shadow: 0 0 0 10px rgba(255,255,255,0.018), inset 0 1px 0 rgba(255,255,255,0.06);
     animation: heroGrow .8s var(--ease-out) both;
-}
-
-/* slow orbiting accent light on a squircle ring around the hero logo */
-@property --ifx-angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
-}
-
-.logo-halo::before {
-    content: "";
-    position: absolute;
-    inset: -14px;
-    border-radius: 38%;
-    padding: 1px;
-    background: conic-gradient(from var(--ifx-angle), rgba(255,255,255,0.06) 0 55%, rgba(122,175,255,0.75) 75%, rgba(255,255,255,0.06) 95%);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-    opacity: 0;
-    animation: fadeOnly 1s ease-out .6s forwards, orbit 9s linear .6s infinite;
-    pointer-events: none;
 }
 
 @media (max-width: 899px) {
     .home-hero { padding-top: 28px; gap: 28px; }
     .home-hero-mark { order: -1; justify-content: start; min-height: 0; }
     .home-hero-mark::before, .home-hero-mark::after { display: none; }
-    .logo-img { width: 112px; padding: 14%; box-shadow: 0 0 0 8px rgba(255,255,255,0.018), 0 24px 60px rgba(21,90,182,0.28); }
-    .logo-halo::before { inset: -9px; }
+    .logo-img { width: 136px; padding: 14%; box-shadow: 0 0 0 8px rgba(255,255,255,0.018); }
 }
 
 /* sections */
@@ -2121,7 +2098,6 @@ html[dir="rtl"] .back-link svg { scale: -1 1; }
     100% { box-shadow: 0 0 0 0 transparent; }
 }
 
-@keyframes orbit { to { --ifx-angle: 360deg; } }
 
 /* ─── Responsive ────────────────────────────────────────── */
 @media (min-width: 768px) {
@@ -2172,7 +2148,6 @@ html[dir="rtl"] .back-link svg { scale: -1 1; }
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-    .logo-halo::before { display: none; }
     .ifx-reveal { opacity: 1; transform: none; }
 }
 

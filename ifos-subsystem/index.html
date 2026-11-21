@@ -9,11 +9,11 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="IFelx Web">
     <meta property="og:title" content="IFOS subsystem">
-    <meta property="og:description" content="IFOS subsystem — IFOS2, the base; IFelxOS2 and its interface update IFelxOS2.5, the full desktop system built on it; the open-source ODE installer; and itelxOS 2.3, a 64-bit system with its own kernel.">
+    <meta property="og:description" content="IFOS subsystem — IFOS2, the base; IFelxOS2 and its interface update IFelxOS2.5, the full desktop system built on it; the open-source ODE installer; and itelxOS 2.4, a 64-bit system with its own kernel.">
     <meta property="og:url" content="https://ahmedxv-v12.github.io/ifos-subsystem/">
     <meta property="og:image" content="https://ahmedxv-v12.github.io/logo.png">
     <meta name="twitter:card" content="summary">
-    <meta name="description" content="IFOS subsystem — IFOS2, the base; IFelxOS2 and its interface update IFelxOS2.5, the full desktop system built on it; the open-source ODE installer; and itelxOS 2.3, a 64-bit system with its own kernel.">
+    <meta name="description" content="IFOS subsystem — IFOS2, the base; IFelxOS2 and its interface update IFelxOS2.5, the full desktop system built on it; the open-source ODE installer; and itelxOS 2.4, a 64-bit system with its own kernel.">
     <meta name="keywords" content="IFOS, IFOS2, IFelxOS2, IFelxOS2.5, IFelxUi, ODE installer, itelxOS, itelx, ITFS, XVC, sys.top, IFelx">
     <link rel="icon" href="../ifelx.png" type="image/png">
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -36,14 +36,14 @@
                 <span class="badge">IFelxOS2</span>
                 <span class="badge">IFelxOS2.5</span>
                 <span class="badge">ODE installer</span>
-                <span class="badge">itelxOS 2.3</span>
+                <span class="badge">itelxOS 2.4</span>
             </div>
         </header>
 
         <!-- ── Overview ─────────────────────────────────────── -->
         <section class="card">
             <h2>How it fits together</h2>
-            <p><strong>IFOS2</strong> is the base: a small Debian 13 core. <strong>IFelxOS2</strong> is the complete operating system built on top of it, and <strong>IFelxOS2.5</strong> its interface update. The <strong>ODE installer</strong> is the installer, made from the same foundation, that writes it to a disk. <strong>itelxOS 2.3</strong> is a separate system with its own kernel that ODE also installs.</p>
+            <p><strong>IFOS2</strong> is the base: a small Debian 13 core. <strong>IFelxOS2</strong> is the complete operating system built on top of it, and <strong>IFelxOS2.5</strong> its interface update. The <strong>ODE installer</strong> is the installer, made from the same foundation, that writes it to a disk. <strong>itelxOS 2.4</strong> is a separate system with its own kernel that ODE also installs.</p>
             <div class="ifos-family" aria-label="Family of IFOS systems">
                 <a class="ifos-node base" href="#ifos2">
                     <span class="ifos-node-kicker">Base</span>
@@ -64,7 +64,7 @@
                     </a>
                     <a class="ifos-node own" href="#itelx">
                         <span class="ifos-node-kicker">Own kernel</span>
-                        <strong>itelxOS 2.3</strong>
+                        <strong>itelxOS 2.4</strong>
                         <span>installed by ODE</span>
                     </a>
                 </div>
@@ -284,15 +284,20 @@ sudo tools/make-custom-ode.sh \
             </div>
         </section>
 
-        <!-- ── itelxOS 2.3 ──────────────────────────────────── -->
+        <!-- ── itelxOS 2.4 ──────────────────────────────────── -->
         <section class="card" id="itelx">
-            <h2>itelxOS 2.3</h2>
+            <h2>itelxOS 2.4</h2>
             <p>itelxOS is a 64-bit operating system of the IFelx family written from scratch: its own kernel, its own filesystem (<strong>ITFS</strong>), the <strong>itelx terminal</strong>, the <strong>XVC</strong> programming language and <strong>XVR</strong> executables. It is not Linux. The console draws Arabic and English, and Arabic text runs right to left. Since 2.0 it has a network with its own TLS, a web browser, services and a recovery system.</p>
             <div class="screenshots-grid">
                 <img src="./img/itelx22-boot.png" alt="itelxOS 2.2 started from its installed disk" loading="lazy">
                 <img src="./img/itelx22-help.png" alt="itelx 2.2 terminal: help" loading="lazy">
                 <img src="./img/itelx22-xvc.png" alt="Running an XVC program on itelxOS 2.2" loading="lazy">
             </div>
+            <h3 class="ifos-h3">New in 2.4</h3>
+            <table class="specs-table">
+                <tr><td>The keyboard</td><td>only the program in front reads it. A program you run reads until it ends, then the terminal again; a program in the background that reads waits, and the terminal keeps every line you type. A terminal whose parent terminal was killed keeps the keyboard, and the new terminal shows itself when it ends. Ctrl+C still stops the program you ran</td></tr>
+                <tr><td>Good to know</td><td>the start-up program (<code>/system/startup.xvc</code>) runs behind the terminal and cannot ask questions; <code>&amp;</code> after <code>pen</code>, <code>web</code>, <code>net</code> or <code>get</code> is not used, and the terminal now says so</td></tr>
+            </table>
             <h3 class="ifos-h3">New in 2.3</h3>
             <table class="specs-table">
                 <tr><td><code>/dex</code> in order</td><td><code>/dex/bin</code> holds the programs: executables (<code>.xvr</code>) and small apps (XVC programs, <code>.xvc</code>); <code>install</code> puts new ones there and a program runs by its name. <code>/dex/system</code> holds the test programs, <code>/dex/LOWSYSTEM</code> is kept for later. On an updated computer the programs already in <code>/dex</code> stay where they are and still run by their name</td></tr>
@@ -306,7 +311,7 @@ sudo tools/make-custom-ode.sh \
                 <img src="./img/itelx23-white.png" alt="itelx 2.3: terminal-white, black text on white" loading="lazy">
             </div>
             <h3 class="ifos-h3">New since 1.4</h3>
-            <p>Version 2.0 was not released on its own; everything in it is in 2.1, 2.2 and 2.3.</p>
+            <p>Version 2.0 was not released on its own; everything in it is in 2.1 and every version after it.</p>
             <table class="specs-table">
                 <tr><td>Kernel modules</td><td>network drivers and the TCP/IP stack live outside the kernel, in <code>/kernel/modules</code>; <code>kmod</code> lists, loads and unloads them</td></tr>
                 <tr><td>Services</td><td><code>xvinit</code> runs what is in <code>/system/services</code>; <code>service</code> shows, starts, stops and restarts them</td></tr>
@@ -381,12 +386,12 @@ print(<span class="str">"Hello from XVC!"</span>)
 let name = <span class="str">"itelx"</span>
 print(<span class="str">"this is "</span> + name + <span class="str">": 1 + 2 = "</span> + str(1 + 2))</pre>
             <div class="download-buttons">
-                <a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx.iso" class="project-btn">Download ITelxOS 2.3 · 180 MB</a>
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx.iso" class="project-btn">Download ITelxOS 2.4 · 180 MB</a>
             </div>
 
-            <h3 class="ifos-h3" id="itelx-update">Updating itelxOS to 2.3</h3>
-            <p>No reinstalling and nothing erased: the update comes on a USB stick as <code>update.xvr</code>, a program of the update kind. When the stick goes in, itelx asks <em>are you need update ?</em> and runs it only on <em>yes</em>. It carries the 2.3 files with their checksums, writes each one next to the old one, reads it back, and only then puts it in place; a file that is already the 2.3 one is left alone, so it can run again at any time.</p>
-            <p><strong>From 1.4, 2.0, 2.1 or 2.2: one step</strong></p>
+            <h3 class="ifos-h3" id="itelx-update">Updating itelxOS to 2.4</h3>
+            <p>No reinstalling and nothing erased: the update comes on a USB stick as <code>update.xvr</code>, a program of the update kind. When the stick goes in, itelx asks <em>are you need update ?</em> and runs it only on <em>yes</em>. It carries the 2.4 files with their checksums, writes each one next to the old one, reads it back, and only then puts it in place; a file that is already the 2.4 one is left alone, so it can run again at any time.</p>
+            <p><strong>From 1.4, 2.0, 2.1, 2.2 or 2.3: one step</strong></p>
             <div class="how-step">
                 <div class="step-num">1</div>
                 <div class="step-body"><h4>Put update.xvr on a stick</h4><p>Copy <code>update.xvr</code> to the top of any FAT32 stick. On 2.0 or later you can also download it with <code>get</code> and run <code>update update.xvr</code>.</p></div>
@@ -397,37 +402,49 @@ print(<span class="str">"this is "</span> + name + <span class="str">": 1 + 2 = 
             </div>
             <div class="how-step">
                 <div class="step-num">3</div>
-                <div class="step-body"><h4>Restart</h4><p>itelxOS 2.3 starts from the disk; <code>sys</code> shows kernel 2.3. Your files in <code>/dex</code> and everywhere else are where they were; new programs go into <code>/dex/bin</code>.</p></div>
+                <div class="step-body"><h4>Restart</h4><p>itelxOS 2.4 starts from the disk; <code>sys</code> shows kernel 2.4. Your files in <code>/dex</code> and everywhere else are where they were; new programs go into <code>/dex/bin</code>.</p></div>
             </div>
             <p><strong>From 1.3: two steps</strong></p>
             <p>The 1.3 kernel lets no program write the partition the computer starts the kernel from, so the update finishes from the stick. A computer that starts with BIOS needs the stick image for step 2.</p>
             <div class="how-step">
                 <div class="step-num">1</div>
-                <div class="step-body"><h4>Put the update on a stick</h4><p>Copy <code>update.xvr</code> to the top of any FAT32 stick. For a computer that starts with BIOS, write <code>itelx-2.3-update-usb.img.gz</code> to the stick instead (Rufus in DD mode or Etcher take it as it is): the same update on a stick that also starts by itself.</p></div>
+                <div class="step-body"><h4>Put the update on a stick</h4><p>Copy <code>update.xvr</code> to the top of any FAT32 stick. For a computer that starts with BIOS, write <code>itelx-2.4-update-usb.img.gz</code> to the stick instead (Rufus in DD mode or Etcher take it as it is): the same update on a stick that also starts by itself.</p></div>
             </div>
             <div class="how-step">
                 <div class="step-num">2</div>
-                <div class="step-body"><h4>Plug it into itelxOS 1.3, answer yes</h4><p>The system files on the disk become 2.3. A plain stick is made to start itelxOS 2.3 by itself.</p></div>
+                <div class="step-body"><h4>Plug it into itelxOS 1.3, answer yes</h4><p>The system files on the disk become 2.4. A plain stick is made to start itelxOS 2.4 by itself.</p></div>
             </div>
             <div class="how-step">
                 <div class="step-num">3</div>
-                <div class="step-body"><h4>Start once from the stick, answer yes again</h4><p>Restart and choose the stick in the firmware's boot menu (often F12, F11, F10, F8 or Esc). itelxOS 2.3 starts from the stick with your own disk and asks again. On yes the 2.3 kernel goes onto the disk's boot partition (the 1.3 kernel stays there as <code>vmlinuz.old</code>).</p></div>
+                <div class="step-body"><h4>Start once from the stick, answer yes again</h4><p>Restart and choose the stick in the firmware's boot menu (often F12, F11, F10, F8 or Esc). itelxOS 2.4 starts from the stick with your own disk and asks again. On yes the 2.4 kernel goes onto the disk's boot partition (the 1.3 kernel stays there as <code>vmlinuz.old</code>).</p></div>
             </div>
             <div class="how-step">
                 <div class="step-num">4</div>
-                <div class="step-body"><h4>Remove the stick and restart</h4><p>itelxOS 2.3 starts from the disk; <code>sys</code> shows kernel 2.3. Your files in <code>/dex</code> and everywhere else are where they were; new programs go into <code>/dex/bin</code>.</p></div>
+                <div class="step-body"><h4>Remove the stick and restart</h4><p>itelxOS 2.4 starts from the disk; <code>sys</code> shows kernel 2.4. Your files in <code>/dex</code> and everywhere else are where they were; new programs go into <code>/dex/bin</code>.</p></div>
             </div>
-            <p class="ifos-note">Checked in QEMU/KVM: the update from the real 1.3 and 1.4 images on UEFI and BIOS, and from a used 2.2 with the user's own programs in <code>/dex</code> on UEFI. The disk then starts 2.3 by itself, the user's files stay and their programs still run by their name.</p>
+            <p class="ifos-note">Checked in QEMU/KVM: the update from the real 1.3 and 1.4 images on UEFI and BIOS, and from the published 2.3 and a used 2.2 with the user's own programs on UEFI. The disk then starts 2.4 by itself, the user's files stay and their programs still run by their name.</p>
             <div class="download-buttons">
-                <a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-2.3/update.xvr" class="project-btn">Download update.xvr · 3.7 MB</a>
-                <a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-2.3/itelx-2.3-update-usb.img.gz" class="project-btn ifos-src-btn">Update stick image (BIOS and UEFI) · 2.2 MB</a>
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-2.4/update.xvr" class="project-btn">Download update.xvr · 3.7 MB</a>
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-2.4/itelx-2.4-update-usb.img.gz" class="project-btn ifos-src-btn">Update stick image (BIOS and UEFI) · 2.2 MB</a>
             </div>
-            <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-2.3/update.xvr">update.xvr</a> · 3,715,195 bytes<br><span class="ifos-sha">SHA-256 8d1371ba0a556d17597d9e261fbb29bfc19c5e99965bd5bb66abf6c01c7a395e</span><br><a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-2.3/itelx-2.3-update-usb.img.gz">itelx-2.3-update-usb.img.gz</a> · 2,184,158 bytes<br><span class="ifos-sha">SHA-256 1b3ca94c13a71e46b41eccbb0ad0a97673cbe439f13aef179ed2d24018eaea8d</span><br>The 2.2 update stays at <a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-2.2/update.xvr">itelx-2.2/update.xvr</a>.</p>
-            <p>Or install itelxOS 2.3 from its ODE installer above: that erases the disk.</p>
+            <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-2.4/update.xvr">update.xvr</a> · 3,717,787 bytes<br><span class="ifos-sha">SHA-256 4f61d5d42641770c81704f6ee1921e96d2eeb8b7a5bf4ef5b063aee8c8ceaf5e</span><br><a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-2.4/itelx-2.4-update-usb.img.gz">itelx-2.4-update-usb.img.gz</a> · 2,186,122 bytes<br><span class="ifos-sha">SHA-256 0e983a557a28836ce57ef2285594d9cfec67d15e5914387367dbccdfc2287474</span><br>The earlier updates stay at <a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-2.3/update.xvr">itelx-2.3/update.xvr</a> and <a href="https://axv-1.tailce0b52.ts.net/IFOS/itelx-2.2/update.xvr">itelx-2.2/update.xvr</a>.</p>
+            <p>Or install itelxOS 2.4 from its ODE installer above: that erases the disk.</p>
             <h3 class="ifos-h3">Versions</h3>
             <table class="specs-table ifos-versions">
                 <tr>
-                    <td>2.3<br><span class="badge latest">Latest</span><br>2026-11-21</td>
+                    <td>2.4<br><span class="badge latest">Latest</span><br>2026-11-21</td>
+                    <td>
+                        <p>The keyboard belongs to the program in front.</p>
+                        <ul class="ifos-changes">
+                            <li>A program in the background that reads the keyboard waits; the terminal keeps every line</li>
+                            <li>A terminal whose parent terminal was killed keeps the keyboard; the new one shows itself after it</li>
+                            <li><code>&amp;</code> after a command of the system says that command runs in front</li>
+                        </ul>
+                        <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/ODE_installer_itelx-2.4.iso">ODE_installer_itelx-2.4.iso</a> · 180 MB<br><span class="ifos-sha">SHA-256 c46b22d752ef00bcd671c351647f906827ed1927969041b9fb730781e5799cd0</span><br>Update from 1.3 or later: <a href="#itelx-update">update.xvr</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.3<br>2026-11-21</td>
                     <td>
                         <p><code>/dex</code> in order and the terminal in three colours.</p>
                         <ul class="ifos-changes">
