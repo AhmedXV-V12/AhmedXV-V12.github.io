@@ -241,6 +241,9 @@ if (tocSections.length >= 3) {
    version shown in the corner. Every update is one release and versions count up
    one step at a time: 1.0 ... 1.9, 2.0 ... 2.9, 3.0 ... (never 1.10). */
 const RELEASES = [
+    { v: "7.7", date: "2026-11-26", changes: [
+        "Cleaner look: the heavy blue glows are gone from the page background, the download and main buttons, the project logo, the section marks and the latest-version card.",
+    ] },
     { v: "7.6", date: "2026-11-21", changes: [
         "Home page: the IFelx mark is bigger and has no blue glow or moving light around it.",
         "IFOS subsystem page: itelxOS 2.4, in which only the program in front reads the keyboard; the download is ITelxOS 2.4 and the update brings 2.4 to 1.3 and later.",

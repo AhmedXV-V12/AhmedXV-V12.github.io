@@ -115,9 +115,7 @@ body::before {
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background:
-        radial-gradient(900px 520px at 50% -140px, rgba(21,90,182,0.16), transparent 70%),
-        radial-gradient(600px 400px at 100% 100%, rgba(21,90,182,0.05), transparent 70%);
+    background: none;
 }
 
 img, svg { max-width: 100%; }
@@ -641,14 +639,12 @@ button { cursor: pointer; }
 .download-buttons .project-btn {
     background: var(--accent);
     border-color: rgba(255,255,255,0.14);
-    box-shadow: 0 10px 30px var(--accent-glow);
     padding: 16px 36px;
 }
 
 .download-buttons .project-btn:hover {
     background: var(--accent-hi);
     border-color: rgba(255,255,255,0.3);
-    box-shadow: 0 16px 40px rgba(21,90,182,0.4);
 }
 
 .download-buttons .project-btn .btn-icon { opacity: 0.9; }
@@ -672,7 +668,7 @@ button { cursor: pointer; }
     border: 1px solid var(--line-2);
     overflow: hidden;
     flex-shrink: 0;
-    box-shadow: 0 0 0 8px rgba(255,255,255,0.02), 0 24px 70px rgba(21,90,182,0.22), inset 0 1px 0 rgba(255,255,255,0.06);
+    box-shadow: 0 0 0 8px rgba(255,255,255,0.02), inset 0 1px 0 rgba(255,255,255,0.06);
 }
 
 .logo-circle img { width: 60%; height: 60%; object-fit: contain; }
@@ -710,7 +706,6 @@ button { cursor: pointer; }
     height: 0.9em;
     border-radius: 4px;
     background: var(--accent);
-    box-shadow: 0 0 12px var(--accent-glow);
     flex-shrink: 0;
 }
 
@@ -1322,9 +1317,7 @@ button { cursor: pointer; }
 
 .version-card.latest {
     border-color: var(--accent-line);
-    background:
-        radial-gradient(400px 160px at 0% 0%, rgba(21,90,182,0.14), transparent 70%),
-        var(--surface);
+    background: var(--surface);
 }
 
 .version-info h3 {
@@ -1440,7 +1433,7 @@ body.index-page { padding-top: var(--navbar-h); }
 .btn svg { width: 17px; height: 17px; flex-shrink: 0; transition: transform .2s var(--ease-out); }
 .btn:active { transform: scale(0.98); }
 
-.btn-primary { background: var(--accent); color: #fff; box-shadow: 0 10px 28px rgba(21,90,182,0.35); }
+.btn-primary { background: var(--accent); color: #fff; }
 .btn-primary:hover { background: var(--accent-hi); }
 .btn-primary:hover .go { transform: translateX(3px); }
 
@@ -2386,7 +2379,6 @@ a.ifos-node:hover { border-color: var(--accent-line); transform: translateY(-2px
     font-size: 0.92rem;
     font-weight: 700;
     letter-spacing: -0.5px;
-    box-shadow: 0 8px 22px var(--accent-glow);
     transition: background .2s;
 }
 
