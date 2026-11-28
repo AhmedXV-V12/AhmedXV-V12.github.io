@@ -241,6 +241,10 @@ if (tocSections.length >= 3) {
    version shown in the corner. Every update is one release and versions count up
    one step at a time: 1.0 ... 1.9, 2.0 ... 2.9, 3.0 ... (never 1.10). */
 const RELEASES = [
+    { v: "7.8", date: "2026-11-28", changes: [
+        "IFOS subsystem page: IFelxOS2.6, in which the interface (IFelxUi 1.6) is the xv4 package ifelxui and the system has its own package, ifos, so it is updated through xv4 instead of a new ISO.",
+        "IFelxOS2.5 and every earlier system stay downloadable.",
+    ] },
     { v: "7.7", date: "2026-11-26", changes: [
         "Cleaner look: the heavy blue glows are gone from the page background, the download and main buttons, the project logo, the section marks and the latest-version card.",
     ] },

@@ -9,12 +9,12 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="IFelx Web">
     <meta property="og:title" content="IFOS subsystem">
-    <meta property="og:description" content="IFOS subsystem — IFOS2, the base; IFelxOS2 and its interface update IFelxOS2.5, the full desktop system built on it; the open-source ODE installer; and itelxOS 2.4, a 64-bit system with its own kernel.">
+    <meta property="og:description" content="IFOS subsystem — IFOS2, the base; IFelxOS2 and its updates IFelxOS2.5 and IFelxOS2.6, the full desktop system built on it; the open-source ODE installer; and itelxOS 2.4, a 64-bit system with its own kernel.">
     <meta property="og:url" content="https://ahmedxv-v12.github.io/ifos-subsystem/">
     <meta property="og:image" content="https://ahmedxv-v12.github.io/logo.png">
     <meta name="twitter:card" content="summary">
-    <meta name="description" content="IFOS subsystem — IFOS2, the base; IFelxOS2 and its interface update IFelxOS2.5, the full desktop system built on it; the open-source ODE installer; and itelxOS 2.4, a 64-bit system with its own kernel.">
-    <meta name="keywords" content="IFOS, IFOS2, IFelxOS2, IFelxOS2.5, IFelxUi, ODE installer, itelxOS, itelx, ITFS, XVC, sys.top, IFelx">
+    <meta name="description" content="IFOS subsystem — IFOS2, the base; IFelxOS2 and its updates IFelxOS2.5 and IFelxOS2.6, the full desktop system built on it; the open-source ODE installer; and itelxOS 2.4, a 64-bit system with its own kernel.">
+    <meta name="keywords" content="IFOS, IFOS2, IFelxOS2, IFelxOS2.5, IFelxOS2.6, ifos, xv4, IFelxUi, ODE installer, itelxOS, itelx, ITFS, XVC, sys.top, IFelx">
     <link rel="icon" href="../ifelx.png" type="image/png">
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../style.css" />
@@ -35,6 +35,7 @@
                 <span class="badge">IFOS2</span>
                 <span class="badge">IFelxOS2</span>
                 <span class="badge">IFelxOS2.5</span>
+                <span class="badge">IFelxOS2.6</span>
                 <span class="badge">ODE installer</span>
                 <span class="badge">itelxOS 2.4</span>
             </div>
@@ -43,7 +44,7 @@
         <!-- ── Overview ─────────────────────────────────────── -->
         <section class="card">
             <h2>How it fits together</h2>
-            <p><strong>IFOS2</strong> is the base: a small Debian 13 core. <strong>IFelxOS2</strong> is the complete operating system built on top of it, and <strong>IFelxOS2.5</strong> its interface update. The <strong>ODE installer</strong> is the installer, made from the same foundation, that writes it to a disk. <strong>itelxOS 2.4</strong> is a separate system with its own kernel that ODE also installs.</p>
+            <p><strong>IFOS2</strong> is the base: a small Debian 13 core. <strong>IFelxOS2</strong> is the complete operating system built on top of it, with its updates <strong>IFelxOS2.5</strong> and <strong>IFelxOS2.6</strong>. The <strong>ODE installer</strong> is the installer, made from the same foundation, that writes it to a disk. <strong>itelxOS 2.4</strong> is a separate system with its own kernel that ODE also installs.</p>
             <div class="ifos-family" aria-label="Family of IFOS systems">
                 <a class="ifos-node base" href="#ifos2">
                     <span class="ifos-node-kicker">Base</span>
@@ -52,9 +53,9 @@
                 </a>
                 <div class="ifos-arrow" aria-hidden="true"></div>
                 <div class="ifos-branch">
-                    <a class="ifos-node" href="#ifelxos25">
+                    <a class="ifos-node" href="#ifelxos26">
                         <span class="ifos-node-kicker">System</span>
-                        <strong>IFelxOS2 · 2.5</strong>
+                        <strong>IFelxOS2 · 2.6</strong>
                         <span>IFelxUi desktop</span>
                     </a>
                     <a class="ifos-node" href="#ode">
@@ -168,7 +169,7 @@ ip -br a</pre>
 
         <!-- ── IFelxOS2.5 ───────────────────────────────────── -->
         <section class="card" id="ifelxos25">
-            <h2>IFelxOS2.5 <span class="badge latest ifos-inline-badge">New</span></h2>
+            <h2>IFelxOS2.5</h2>
             <p>IFelxOS2.5 is the interface update of IFelxOS2: the same system and the same IFelx look (colours, rounded corners, fonts, right to left first) with <strong>IFelxUi 1.5</strong>. It fixes how the interface lays out Arabic text, makes it lighter to run, and closes a hole in its web browser. Nothing in Debian underneath changed.</p>
             <div class="screenshots-grid">
                 <img src="./img/ifelxos25-ode.png" alt="The ODE installer installing IFelxOS2.5" loading="lazy">
@@ -222,6 +223,44 @@ ip -br a</pre>
                 <a href="https://axv-1.tailce0b52.ts.net/IFOS/IFelxOS2.5-amd64.iso" class="project-btn">Download IFelxOS2.5 · 1.1 GB</a>
             </div>
             <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/IFelxOS2.5-amd64.iso">IFelxOS2.5-amd64.iso</a> · 1.1 GB<br><span class="ifos-sha">SHA-256 b529069bd424132fdc6deb1becc6cd4e2aa67825679797d2bd9635c8ee46ef45</span></p>
+            <p class="ifos-note">Newer: <a href="#ifelxos26">IFelxOS2.6</a>, below. IFelxOS2.5 stays available here as it was published.</p>
+        </section>
+
+        <!-- ── IFelxOS2.6 ───────────────────────────────────── -->
+        <section class="card" id="ifelxos26">
+            <h2>IFelxOS2.6 <span class="badge latest ifos-inline-badge">New</span></h2>
+            <p>IFelxOS2.6 is the same desktop as IFelxOS2.5. What changed is how the system is put together: from now on the system itself is updated through <strong>xv4</strong>, the package manager, instead of a new ISO for every change.</p>
+            <div class="screenshots-grid">
+                <img src="./img/ifelxos26-ode.png" alt="The ODE installer installing IFelxOS2.6" loading="lazy">
+                <img src="./img/ifelxos26-login.png" alt="IFelxOS2.6 sign-in screen of the installed system" loading="lazy">
+                <img src="./img/ifelxos26-session.png" alt="IFelxOS2.6 after signing in: the notification says IFelxOS2.6" loading="lazy">
+            </div>
+            <h3 class="ifos-h3">What is new</h3>
+            <table class="specs-table ifos-compare">
+                <thead>
+                    <tr><th scope="col"></th><th scope="col">IFelxOS2.5</th><th scope="col">IFelxOS2.6</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Released</td><td>2026-10-18</td><td>2026-11-28</td></tr>
+                    <tr><td>Interface</td><td>IFelxUi 1.5 in <code>/dex/IFelxUi</code>, outside xv4</td><td>IFelxUi 1.6, the xv4 package <code>ifelxui</code> in <code>/dex/apps/ifelxui</code>; <code>/dex/IFelxUi</code> stays as a link to it</td></tr>
+                    <tr><td>The system's own package</td><td>None: every change to the system came as a new ISO</td><td><code>ifos</code> in <code>/dex/apps/ifos</code>: changes to the system come as new versions of it. Its first version, 1.0.0, only names the system IFelxOS 2.6 in <code>/etc/os-release</code>; it removes and adds nothing</td></tr>
+                    <tr><td>Package manager</td><td>xv4.sh 3.0</td><td>xv4.sh 3.4: runs <code>ifos apply</code> after installing or updating <code>ifos</code>, and refuses to remove <code>ifos</code> or <code>ifelxui</code></td></tr>
+                    <tr><td>Desktop, apps, base, boot, licence</td><td colspan="2" class="ifos-both">The same: IFelxUi's look and apps, Debian 13 with Linux 6.12, UEFI (IFelxBoot) and BIOS (GRUB), AGPL-3.0</td></tr>
+                </tbody>
+            </table>
+            <h3 class="ifos-h3">Keeping it up to date</h3>
+            <p>The interface and the system are updated like any app:</p>
+<pre class="code-block">sudo xv4.sh update
+sudo xv4.sh upgrade     <span class="cm"># ifelxui, ifos and the apps you installed</span>
+ifos status             <span class="cm"># the version of ifos and what it does</span></pre>
+            <p>IFelxOS2.5 does not become 2.6 this way: the interface moved to a new place, so install IFelxOS2.6 from its ISO. From 2.6 on, changes to the system come through <code>ifos</code>.</p>
+            <h3 class="ifos-h3">Installing it</h3>
+            <p>Like IFelxOS2.5: write the ISO to a USB stick (Rufus, Etcher, Ventoy or <code>dd</code>), start the computer from it, and the ODE installer opens directly. Accept the terms, choose the disk and the installation type, create your account, then restart into the sign-in screen.</p>
+            <p class="ifos-note">Checked in QEMU/KVM before publishing: the ODE installer started from the ISO, erased the disk and installed IFelxOS2.6; the installed disk started on UEFI and on BIOS, refused a wrong password and signed in. On the installed disk: IFelxUi in <code>/dex/apps/ifelxui</code>, <code>ifos</code> in <code>/dex/apps/ifos</code>, os-release says IFelxOS 2.6, and <code>xv4.sh remove</code> refuses both.</p>
+            <div class="download-buttons">
+                <a href="https://axv-1.tailce0b52.ts.net/IFOS/IFelxOS2.6-amd64.iso" class="project-btn">Download IFelxOS2.6 · 1.1 GB</a>
+            </div>
+            <p class="ifos-version-dl"><a href="https://axv-1.tailce0b52.ts.net/IFOS/IFelxOS2.6-amd64.iso">IFelxOS2.6-amd64.iso</a> · 1.1 GB<br><span class="ifos-sha">SHA-256 64c87f1a757e0f63312f2833a4f6712edeedfb35ed1a0637cf313ea20a6086cd</span></p>
         </section>
 
         <!-- ── ODE installer ────────────────────────────────── -->
